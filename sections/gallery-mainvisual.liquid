@@ -1,0 +1,23 @@
+<div id="mainVisual" class="mainVisual">
+  {% assign video_url = section.settings.video_url %}
+  <div class="mainvisualVideo">
+    <div class="mainvisualVideoContent">
+      <iframe src="https://player.vimeo.com/video/{{ video_url.id }}?autoplay=0&loop=1&muted=0" width="640" height="360" frameBorder="0" allow="fullscreen" allowFullScreen></iframe>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "メインビジュアル",
+  "settings": [
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video URL",
+      "accept": ["vimeo"],
+      "info": "vimeoのみ、Youtube不可"
+    }
+  ]
+}
+{% endschema %}

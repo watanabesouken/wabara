@@ -1,0 +1,21 @@
+<ul class="collectionFilterList for-feature">
+  {%- for block in section.blocks -%}
+    {% assign tag =  block.settings.title | handleize %}
+    {%- assign icon = block.settings.tag_icon %}
+    {%- assign icon_width = block.settings.tag_icon_width %}
+    <li class="itemFilter" data-handle="{{tag}}">
+      {% if current_tags contains tag %}
+        {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+      {% else %}
+        {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+      {% endif %}
+      <span class="itemFilterIcon">
+        <img class=""
+        src="{{ icon | img_url: 'master' }}"
+        width="{{ icon_width }}"
+        alt=""
+        >
+      </span>
+    </li>
+  {%- endfor -%}
+</ul>

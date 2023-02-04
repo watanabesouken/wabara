@@ -1,0 +1,64 @@
+<section class="collectionPage staticPage rosie">
+  <header class="collectionHeader" {% if collection.image != blank %}style="background-image: url({{collection.image | img_url: 'master'}})"{% endif %}>
+    <h1 class="collectionText">
+      <span class="subTitle heading is-secondary with-line">育てる</span>
+      <span class="mainTitle">おへやで育てるばら</span>
+    </h1>
+  </header>
+
+  <section id="rosieDescription" class="collectionDescription contentComponent">
+    <header class="titleComponent">
+      <h3 class="heading is-secondary nova with-line"><span>Rosie</span></h3>
+    </header>
+    <p>朝、目覚めると昨日よりも少し綻んだ蕾。<br>少しづつ色づきはじめた。 <br>それから数日、いつの間にか花がさいて、 楚々とした美しさに、心がときめく。</p>
+    <p>満開になったお花は、 少しづつ色を褪色させながらも まだ健気に咲いている。<br>花が終わった後も、 葉っぱは緑で生命の営みは続いていく。<br>茶色くなった花がらにも、愛おしさを感じる。</p>
+    <p>Rosie（ロージー）。<br class="visible-phone">それは、この小さな苗の愛称。<br>ペットのように、 家族の一員となって欲しいと願いを込めて。</p>
+    <p>日々の発見、毎日のときめき。<br>Rosie、おへやで育てるばら。</p>
+    <a href="#rosieStory" class="nova heading uppercaseTitle ankerLink">Story<span class="dropdownArrow">{% render 'icon' with 'arrow' %}</span></a>
+  </section>
+
+  <section id="rosieLineup" class="staticSection withBgColor">
+
+    <div class="staticCollectionWrap">
+      <header class="titleComponent">
+        <h3 class="heading is-secondary nova uppercaseTitle with-line"><span>Line Up</span></h3>
+        <p>{{ collection.description }}</p>
+      </header>
+
+      {% comment %}
+      {% section 'filter-tags-color' %}
+      {% endcomment %}
+
+      {% paginate collection.products by 20 %}
+
+        <div class="collectionBlock">
+          <div class="productListComponent">
+            <ul class="productList">
+              {% for product in collection.products %}
+                {% include 'products-list' %}
+              {% else %}
+                <p>一致する商品がありません。</p>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        {%- include 'pagination' -%}
+      {% endpaginate %}
+    </div>
+
+  </section>
+
+  <section id="rosieStory" class="rosieSection staticSection">
+    {% section 'rosie-column-block' %}
+  </section>
+
+  <div class="backtoTopComponent">
+    <a href="#rosieLineup" class="heading ankerLink">商品一覧へ戻る<span class="dropdownArrow">{% render 'icon' with 'arrow' %}</span></a>
+  </div>
+
+</section>
+
+<div class="contentComponent">
+  {% render 'content-banner' %}
+</div>

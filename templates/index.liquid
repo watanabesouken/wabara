@@ -1,0 +1,98 @@
+<!-- /templates/index.liquid -->
+
+<div class="home">
+  {% section 'index-mainvisual' %}
+  <div class="contentComponent">
+    {% comment %}
+    <div class="visible-phone">
+      <a href="/pages/mothersday" class="mothersdayBanner">
+        <div class="txtWrap">
+          <h2 class="heading with-line"><span>5/1〜5/11のお届け</span></h2>
+          <p>母の日期間の商品はこちら</p>
+        </div>
+      </a>
+    </div>
+    {% endcomment %}
+    {% section 'index-about' %}
+    {% if settings.mothersday_bannser == true %}
+      <div class="mothersdayBanner">
+        <a href="/pages/mothersday2022">
+          <img
+            srcset="
+              {{ 'mothersday_banner_top_sp.jpg' | asset_img_url: '767x' }} 767w,
+              {{ 'mothersday_banner_top_pc.jpg' | asset_img_url: 'master' }} 1218w"
+            sizes="(max-width: 767px) 50vw, 100vw"
+            src="{{ mothersday_banner_top_pc.jpg | asset_img_url }}"
+            alt="HAPPY MOTHER'S DAY 2022年母の日特集はこちら"
+            width="1218"
+            loading="lazy"
+          >
+        </a>
+      </div>
+    {% endif %}
+    <section id="productLineUp" class="onlineShopComponent">
+      <header class="titleComponent">
+        <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Online shop</span></h2>
+        <p>琵琶湖のほとりにある農園から、<br class="visible-phone">心を込めて大切に育てたお花を直接お届けします</p>
+      </header>
+      {% section 'content-onlineshop-main' %}
+      {% section 'content-onlineshop-banner' %}
+    </section>
+    {% section 'index-products' %}
+    {% section 'index-journal' %}
+  </div>
+  {% section 'index-gallery' %}
+  <div class="contentComponent">
+    {% section 'index-workshop' %}
+  </div>
+  {% render 'common-static-farm' %}
+  <div class="contentComponent">
+    {% render 'common-static-instagram' %}
+  </div>
+</div>
+
+<script defer>
+  const customLoadingArea = document.querySelector('#loadingArea');
+
+  document.querySelector('body').classList.remove("loading");
+
+  if ("#home" == location.hash) {
+    customLoadingArea.style.display = "none";
+    customLoadingArea.classList.remove("visible");
+  } else {
+    setTimeout(function(){
+      customLoadingArea.classList.remove("visible");
+    }, 2000);
+    setTimeout(function(){
+      customLoadingArea.style.display = "none";
+    }, 3000);
+  }
+
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max) - 1;
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }
+
+  var randomViewImg = function (parentDomId, childDomClass) {
+    var minNum = 0;
+    var maxNum = document.getElementById(parentDomId).dataset.randomLength;
+
+    var randomNumber = getRandomIntInclusive(minNum, maxNum);
+
+    var parentDOM = document.getElementById(parentDomId);
+    var childDOM = parentDOM.getElementsByClassName(childDomClass)[randomNumber];
+    childDOM.classList.remove("hide");
+  }
+
+  randomViewImg("loadingImg", "randomImg");
+  if (document.getElementById("mainvisualContent") != null) {
+    randomViewImg("mainvisualContent", "mvImg");
+  }
+
+  window.onload = function(){
+    //console.log('test');
+  }
+
+
+</script>

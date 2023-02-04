@@ -1,0 +1,105 @@
+<!-- /templates/page.gallery.liquid -->
+<div class="staticPage galleryPage">
+<section class="gallerySection">
+  <header class="titleComponent">
+    <h1 class="heading is-primary nova uppercaseTitle with-line"><span>Gallery</span></h1>
+    <p>ばら農園の風景、時間、音</p>
+  </header>
+
+  <div class="galleryMv">
+    {% section 'gallery-mainvisual' %}
+  </div>
+
+  <section class="galleryWrap">
+    <section class="blogSection galleryItem">
+      <section class="blogRosesSection blogSectionChild">
+        <header class="titleComponent">
+          <h2 class="heading with-line">
+            <span class="heading is-primary nova uppercaseTitle">Roses</span>
+            <span class="lead">いのちを感じる、和ばら</span>
+          </h2>
+        </header>
+        <ul class="blogList">
+          {% for article in blogs.roses.articles %}
+            {% unless article.tags contains "下書き" %}
+              <li class="heading nova uppercaseTitle">
+                <a href="{{ article.url }}">
+                  {{ article.title }}
+                </a>
+              </li>
+            {% endunless %}
+          {% else %}
+          <li class="heading nova uppercaseTitle">
+            Coming soon
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="blogFarmSection blogSectionChild">
+        <header class="titleComponent">
+          <h2 class="heading with-line">
+            <span class="heading is-primary nova uppercaseTitle">Farm</span>
+            <span class="lead">自然の営み、季節のゆらぎ</span>
+          </h2>
+        </header>
+        <ul class="blogList">
+          {% for article in blogs.farm.articles %}
+            {% unless article.tags contains "下書き" %}
+              <li class="heading nova uppercaseTitle">
+                <a href="{{ article.url }}">
+                  {{ article.title }}
+                </a>
+              </li>
+            {% endunless %}
+          {% else %}
+          <li class="heading nova uppercaseTitle">
+            Coming soon
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </section>
+
+    <section class="soundscapeSection galleryItem">
+      <header class="titleComponent">
+        <h2 class="heading with-line">
+          <span class="heading is-primary nova uppercaseTitle">Soundscape</span>
+          <span class="lead">農園に流れる音、時間</span>
+        </h2>
+      </header>
+      <ul class="soundscapeList">
+        <ul class="blogList">
+          {% for article in blogs.soundscape.articles %}
+            {% unless article.tags contains "下書き" %}
+              <li class="heading nova uppercaseTitle">
+                <a href="{{ article.url }}">
+                  {{ article.title }}
+                </a>
+              </li>
+            {% endunless %}
+          {% else %}
+          <li class="heading nova uppercaseTitle">
+            Coming soon
+          </li>
+          {% endfor %}
+        </ul>
+      </ul>
+    </section>
+
+    <section class="downloadSection galleryItem">
+      <header class="titleComponent">
+        <h2 class="heading with-line">
+          <span class="heading is-primary nova uppercaseTitle">Downloads</span>
+          <span class="lead">ダウンロードコンテンツ</span>
+        </h2>
+      </header>
+      <ul class="downloadList">
+        <li class="heading nova uppercaseTitle">
+          <a href="/pages/wallpapers">Wallpapers</a>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+</section>
+</div>

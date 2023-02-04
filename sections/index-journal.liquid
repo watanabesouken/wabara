@@ -1,0 +1,43 @@
+<!-- /sections/index-journal.liquid -->
+<section class="indexJournalSection">
+  <header class="titleComponent">
+    <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Journal</span></h2>
+    <p>お知らせ、ばらを育てながら考えたこと</p>
+  </header>
+  <div class="articleListComponent">
+      {% for article in blogs.news-1.articles limit:3 %}
+      <article class="articleItem">
+        <a href="{{ article.url }}" class="articleLink">
+          {% if article.image != blank %}
+            <div class="imgSquareFit">
+              {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img class="article__featured-image lazyload"
+                  src="{{ article.image | img_url: '300x300' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                  data-aspectratio="{{ article.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ article.title | escape }}">
+            </div>
+          {% else %}
+            <div class="imgSquareFit">
+              <img src="{{ 'top_about_photo_pc.jpg' | asset_img_url }}" data-src="{{ 'top_about_photo_pc.jpg' | asset_img_url: 'master' }}" data-widths="[250, 500, 750]" alt="" width="250" height="" class="lazyload">
+            </div>
+          {% endif %}
+          <div class="articleInfo">
+            <span class="articleDate nova">{{ article.published_at | date: '%Y.%m.%d' }}</span>
+            <h3 class="articleTitle">{{ article.title }}</h3>
+            <ul class="articleTags">
+            {%- for tag in article.tags -%}
+              <li>{{ tag }}</li>
+            {%- endfor -%}
+          </ul>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  <div class="articleMoreLink">
+    <a href="/blogs/news-1" class="borderLink">すべてみる</a>
+  </div>
+</section>

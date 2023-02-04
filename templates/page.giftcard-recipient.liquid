@@ -1,0 +1,277 @@
+{{ 'theme_giftcard.css' | asset_url | stylesheet_tag }}
+
+<div class="staticPage">
+  <section class="giftCard for-recipient">
+    <header class="giftCard__mv">
+      <h1 class="mvTtl">WABARA <br> eGIFT <br class="isSp"> CARD</h1>
+      <p class="mvTxt">Send Your Thanks</p>
+    </header>
+
+    <section class="giftCard__concept">
+      <div class="contentWidth">
+        <div class="conceptWrapper">
+          <h2 class="conceptTtl">想いを伝える<br>WABARAのeギフトカード</h2>
+          <div class="conceptList">
+            <p>eギフトカードのご利用ありがとうございます。</p>
+            <p>國枝啓司のばら園「Rose Farm KEJI」では、<br> オリジナルのばら「WABARA」を育てています。</p>
+            <p>WABARAは、「風になびく、野に咲く花のようなばらを育てたい」という思想のもと、一般的なばらとは異なり、柔らかい花姿で、たおやかな茎を持ち、香り高く、日毎に表情をかえていきます。</p>
+            <p>切り花やブーケの他、食無肥料・無農薬で育てられたばらを使用したお茶やスキンケア用品など多彩なギフトをご用意しています。</p>
+            <p>お贈り主さまの想いとともにWABARAの世界をお楽しみください。</p>
+            <div class="linkWrap">
+              <a href="/pages/about">WABARAについて</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__guide">
+      <div class="contentWidth">
+        <div class="guideWrapper" id="giftcardGuide">
+          <div class="guideTtl">
+            <h2 class="enTtl">GUIDE</h2>
+            <p class="jaTtl">使い方</p>
+          </div>
+
+          <ul class="guideList">
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP1</h3>
+              <p class="itemTxt">eギフトカードの贈り主様から受け取ったメールやLINEから、eギフトカードのURLをクリックして、eギフトカードを開きます。</p>
+              <div class="eGiftContent">
+                <p class="eGiftContent__txt">贈り主さまの想いを込めて、<br>WABARAのeギフトカードをお届けします。</p>
+                <p class="eGiftContent__linktxt">eギフトカードを見る（以下のURLにアクセス）</p>
+                https://checkout.shopify.com/gift_cards/xxxxxxxx/
+                <br>xxxxxxxxxxxxxxxxxxxxxxxx
+                <p class="eGiftContent__linktxt">eギフトカードの利用方法を見る（以下のURLにアクセス）</p>
+                <a href="pages/giftcard-recipient" class="eGiftContent__link">https://www.wabararose.com/pages/giftcard-recipient</a>
+              </div>
+            </li>
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP2</h3>
+              <p class="itemTxt">eギフトカードに表示される「ギフトカードコード」をお控えください。</p>
+              <div class="itemImg">
+                <img src="{{ 'giftcard_guide_code.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_code.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+              </div>
+            </li>
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP3</h3>
+              <p class="itemTxt">オンラインショップにて、お好きな商品をお選びください。決済時、eギフトカードの金額分が割引される形でご利用いただけます。</p>
+              <div class="itemImg">
+                <div class="hidden-phone">
+                  <img src="{{ 'giftcard_guide_step3_recipient.jpg' | asset_img_url }}" data-src="{{ 'giftcard_guide_step3_recipient.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                </div>
+                <div class="visible-phone">
+                  <img src="{{ 'giftcard_guide_step3_recipient_sp.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_step3_recipient_sp.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                </div>
+              </div>
+              <p>※eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます。（ギフトカード内に記載の有効期限内で何度でもご利用可能）</p>
+            </li>
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP4</h3>
+              <p class="itemTxt">決済画面にて「ギフトカードまたはクーポンコード」入力欄に用意していたギフトカードページのコードを入力し、「適用」をクリック。eギフトカードの金額が反映されたことを確認し、決済してください。</p>
+              <div class="itemImg hidden-phone">
+                <img src="{{ 'giftcard_guide_step4_recipient.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_step4_recipient.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+              </div>
+              <div class="itemImg visible-phone">
+                <img src="{{ 'giftcard_guide_step4_recipient_sp1.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_step4_recipient_sp1.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                <img src="{{ 'giftcard_guide_step4_recipient_sp2.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_step4_recipient_sp2.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__cases">
+      <div class="contentWidth">
+        <div class="caseWrapper">
+          <div class="casesTtl">
+            <h2 class="enTtl">CASES</h2>
+            <p class="jaTtl">おすすめの利用例</p>
+          </div>
+
+          <div class="casesContent">
+            <p class="casesTxt">金額別に以下のようなご利用例があります。</p>
+            <div class="casesTab">
+              <input id="aTab" type="radio" name="tabItem" checked>
+              <label class="tabItem" for="aTab">¥2,200</label>
+              <input id="bTab" type="radio" name="tabItem">
+              <label class="tabItem" for="bTab">¥6,050</label>
+              <input id="cTab" type="radio" name="tabItem">
+              <label class="tabItem" for="cTab">¥8,800</label>
+              <input id="dTab" type="radio" name="tabItem">
+              <label class="tabItem" for="dTab">¥11,000</label>
+              <input id="eTab" type="radio" name="tabItem">
+              <label class="tabItem" for="eTab">¥22,000</label>
+
+              <div id="aContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">シャルロットペリアン1本＋送料</p>
+                  <a href="/collections/wabararose-catalog/products/wabararose-charlotte-perriand" class="contentImg">
+                    <img src="{{ 'giftcard_case2200_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case2200_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/collections/wabararose-catalog/products/wabararose-charlotte-perriand" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">お好きなわばら2本＋送料</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case2200_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case2200_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/collections/wabararose-catalog" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+              </div>
+
+              <div id="bContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】マンスリーブーケ 1種（内容は毎月変わります）</p>
+                  <a href="/collections/limited-product" class="contentImg">
+                    <img src="{{ 'giftcard_case6050_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case6050_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/collections/limited-product" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】お好きなばら5本(シャルロットペリアンの場合には本数が変わります)＋残りは次回のお買い物で</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case6050_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case6050_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/collections/wabararose-catalog" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+              </div>
+
+              <div id="cContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束mini(わばら15本＋わばらの枝葉) </p>
+                  <a href="/products/bouquet-mini" class="contentImg">
+                    <img src="{{ 'giftcard_case11000_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case11000_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/products/bouquet-mini" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】WABARA SKIN CARE  SET</p>
+                  <a href="/pages/skincare" class="contentImg">
+                    <img src="{{ 'giftcard_case11000_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case11000_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/pages/skincare" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+              </div>
+
+              <div id="dContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束S(わばら18本＋わばらの枝葉) </p>
+                  <a href="/products/bouquet-s" class="contentImg">
+                    <img src="{{ 'giftcard_case16500_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case16500_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/products/bouquet-s" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】お好きなばら20本(シャルロットペリアンの場合には本数が変わります)</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case16500_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case16500_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/collections/wabararose-catalog" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+              </div>
+
+              <div id="eContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束L (わばら40本＋わばらの枝葉)</p>
+                  <a href="/products/bouquet-l" class="contentImg">
+                    <img src="{{ 'giftcard_case22000_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case22000_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/products/bouquet-l" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】シャルロットペリアン30本(ブーケL)</p>
+                  <a href="/products/bouquet-l-rose-charlotte-perriand-1" class="contentImg">
+                    <img src="{{ 'giftcard_case22000_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case22000_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                  <a href="/products/bouquet-l-rose-charlotte-perriand-1" class="btn is-secondary with-bg">
+                    <span>この商品を見る</span>
+                  </a>
+                </section>
+              </div>
+
+              <p>＊北海道/沖縄など遠方地域の方は商品により一部送料をご負担いただく場合がございます。送料含めてギフトカードの金額以内の商品をお選びいただければ、ご負担なく購入いただくこと可能です。</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__qa">
+      <div class="contentWidth">
+        <div class="qaWrapper">
+          <div class="qaTtl">
+            <h2 class="enTtl">FAQ</h2>
+            <p class="jaTtl">よくある質問</p>
+          </div>
+
+          <ul class="accordionList" id="accordionList">
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>eギフトカードを使用する際、負担する金額はありますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">プリペイド式なので、贈った金額内の商品であればご負担なくお買い物が可能です。お贈りされた方にも金額内でご負担なくお届けできる商品をご提案しておりますのでご安心くださいませ。<br>＊北海道/沖縄など遠方地域の方は商品により一部送料をご負担いただく場合がございます</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>全国のお花屋さんや直売所で使用できますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">WABARAオリジナルの商品になりますのでWABARAオンラインストアのみでご使用いただけます。オンラインストアでご購入後、WABARAの直売所（滋賀県守山市）で商品をお受け取りいただくことは可能です。ご購入時にご相談くださいませ。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>残高や有効期限はどこで確認ができますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">残高・有効期限ともにギフトカードページ内、以下の赤枠部分に記載しております。</p>
+                <div class="itemImg">
+                  <img src="{{ 'giftcard_guide_aside.png' | asset_img_url }}" data-src="{{ 'giftcard_guide_aside.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</div>
+
+<script src="{{ 'theme_giftcard.js' | asset_url }}" defer="defer"></script>

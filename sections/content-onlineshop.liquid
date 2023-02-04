@@ -1,0 +1,81 @@
+<!-- /sections/content-onlineshop.liquid -->
+<ul class="onlineShopList for-collection">
+  {%- for block in section.blocks -%}
+    {% assign collection = collections[block.settings.custom_collection] %}
+    {% if block.settings.content_img != blank %}
+      {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+    {% endif %}
+    {% if block.settings.content_img_sp != blank %}
+      {%- assign img_mobile_url = block.settings.content_img_sp | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_mobile_src_url = block.settings.content_img_sp | img_url: '828x' -%}
+    {% endif %}
+    <li class="onlineShopItem customCollection">
+      <a href="{{ collection.url }}">
+        <div class="hidden-phone">
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="visible-phone">
+          <img class="lazyload"
+          src="{{ img_mobile_src_url }}"
+          data-src="{{ img_mobile_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="contentWrap">
+          <dl class="collectionText">
+            <dt class="subTitle heading is-secondary with-line">{{ collection.metafields.custom_fields["collection_sub_title"] }}</dt>
+            <dd class="mainTitle">{{ collection.title }}</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+
+{% schema %}
+{
+  "name": "Online Shop（コレクション）",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "Online Shop（コレクション）",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_link_collection",
+      "name": "コレクション埋め込み",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "custom_collection",
+          "label": "リンク先コレクション"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "バナー内の画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img_sp",
+          "label": "バナー内の画像（モバイル表示用）"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

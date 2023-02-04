@@ -1,0 +1,21 @@
+<!-- /sections/index-gallery.liquid -->
+<section class="indexGallerySection galleryVisualComponent">
+  <a href="/pages/gallery" class="galleryLink">
+    <div class="hidden-phone">
+      <div class="imgSquareFit">
+        <img src="{{ 'gallery_bg_img.jpg' | asset_img_url }}" data-src="{{ 'gallery_bg_img.jpg' | asset_img_url: 'master' }}" data-widths="[1280, 2560, 3840]" alt="" width="1280" height="" class="lazyload">
+      </div>
+    </div>
+    <div class="visible-phone">
+      <div class="imgSquareFit">
+        <img src="{{ 'gallery_bg_img_sp.jpg' | asset_img_url }}" data-src="{{ 'gallery_bg_img_sp.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" alt="" width="375" height="" class="lazyload">
+      </div>
+    </div>
+    <div class="galleryTitleWrap">
+      <div class="galleryTitle">
+        <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Gallery</span></h2>
+        <p>ばら農園の風景、時間、音</p>
+      </div>
+    </div>
+  </a>
+</section>

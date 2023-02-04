@@ -1,0 +1,378 @@
+@charset "UTF-8";
+.accountPage {
+  padding: 0 45px 95px;
+}
+.accountPage.centeringForm {
+  width: auto;
+  max-width: 413px;
+  margin: 0 auto;
+  text-align: center;
+}
+.accountPage .form-message {
+  margin-bottom: 40px;
+}
+.accountPage .accountHeading {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.accountPage .myPageWrap {
+  width: auto;
+}
+.accountPage .myPageWrap a {
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+.accountPage .myPageHeading {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.accountPage .myPageSection {
+  margin-bottom: 90px;
+}
+.accountPage .noteTxt {
+  font-size: 12px;
+  color: #3B3E43;
+}
+.accountPage .accountDescription {
+  text-align: left;
+  margin-bottom: 50px;
+}
+.accountPage .accountDescription .box {
+  margin-top: -10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 15px 0;
+}
+.accountPage.for-account .myPageHeading {
+  font-weight: bold;
+}
+.accountPage .tableComponent {
+  width: 100%;
+  font-size: 16px;
+}
+.accountPage .tableComponent thead {
+  border-bottom: 1px solid #707070;
+}
+.accountPage .tableComponent thead th {
+  font-size: 14px;
+  padding-bottom: 5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.accountPage .tableComponent thead th:last-child {
+  text-align: right;
+}
+.accountPage .tableComponent tbody tr {
+  border-bottom: 1px solid #707070;
+}
+.accountPage .tableComponent tbody td {
+  padding: 20px 0;
+}
+.accountPage .tableComponent tbody td:last-child {
+  text-align: right;
+}
+.accountPage .orderDetailTable tbody th:not(:last-child), .accountPage .orderDetailTable tbody td:not(:last-child) {
+  padding-right: 40px;
+}
+.accountPage .orderDetailTable tbody td {
+  padding: 45px 0;
+}
+.accountPage .orderNum {
+  width: 160px;
+}
+.accountPage .orderPayment {
+  width: 168px;
+}
+.accountPage .orderDeliver {
+  width: 168px;
+}
+.accountPage .orderFullfill {
+  width: 140px;
+}
+.accountPage .orderTotal {
+  width: 90px;
+}
+.accountPage .orderDetailThoot {
+  display: flex;
+  justify-content: flex-end;
+}
+.accountPage .orderDetailThoot:last-child {
+  border-top: 1px solid #707070;
+}
+.accountPage .orderDetailDl {
+  padding: 15px 0;
+}
+.accountPage .orderDetailDl > div {
+  display: flex;
+  padding: 2px 0;
+}
+.accountPage .orderDetailDl dt {
+  width: 85px;
+}
+.accountPage .orderDetailDl dd {
+  text-align: right;
+  flex-grow: 1;
+}
+.accountPage .orderDetailAddress {
+  display: flex;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  margin-bottom: 50px;
+}
+.accountPage .orderDetailAddress .heading {
+  margin-bottom: 30px;
+}
+.accountPage .orderDetailAddress > div {
+  width: 50%;
+}
+.accountPage .orderDetailAddress p {
+  line-height: 2.3;
+}
+.accountPage .formComponent {
+  letter-spacing: 0;
+}
+.accountPage .formComponent .primaryLine {
+  width: auto;
+}
+.accountPage .formComponent .primaryLine label {
+  display: block;
+  line-height: 1;
+  margin-bottom: 7px;
+  text-align: left;
+}
+.accountPage .formComponent .primaryLine select {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #707070;
+  padding: 0 5px;
+}
+.accountPage .formComponent .primaryLine input:not([type=checkbox]) {
+  display: block;
+  width: 100%;
+}
+.accountPage .formComponent .primaryLine + .primaryLine {
+  margin-top: 20px;
+}
+.accountPage .formComponent .primaryLine.is-flex {
+  align-items: center;
+}
+.accountPage .formComponent .primaryLine.is-flex label {
+  margin-bottom: 0;
+}
+.accountPage .formComponent .primaryLine.is-flex label.labelTxt {
+  margin-bottom: 7px;
+}
+.accountPage .formComponent .primaryLine.is-flex .primaryLineChild {
+  width: calc((100% - 16px) / 2);
+}
+.accountPage .formComponent .primaryLine.is-flex .primaryLineChild:not(:last-child) {
+  margin-right: 16px;
+}
+.accountPage .formComponent .submitBtn {
+  margin: 30px 0;
+}
+.accountPage .formComponent .submitBtn .btn {
+  font-size: 16px;
+}
+.accountPage .formComponent .loginAside span {
+  display: block;
+  margin-bottom: 15px;
+}
+.accountPage .formComponent .loginAside a {
+  font-size: 13px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+}
+.accountPage .formComponent .loginAside button[type=button], .accountPage .formComponent .loginAside .is-text {
+  text-decoration: underline;
+}
+.accountPage .addressUl > li {
+  margin-bottom: 50px;
+}
+.accountPage .addressEditUl {
+  display: flex;
+}
+.accountPage .addressEditUl li + li {
+  padding-left: 20px;
+}
+.accountPage .addressEditUl .btn {
+  padding: 0;
+  text-decoration: underline;
+}
+.accountPage .addressForm {
+  padding-top: 40px;
+  width: auto;
+  max-width: 413px;
+}
+.accountPage #AddressNewButton {
+  padding: 0;
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  .accountPage {
+    padding: 0 30px 60px;
+  }
+  .accountPage .form-message {
+    margin-bottom: 20px;
+  }
+  .accountPage .accountHeading {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .accountPage .myPageWrap {
+    margin: 35px auto 0;
+  }
+  .accountPage .myPageHeading {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .accountPage .myPageSection {
+    font-size: 14px;
+    margin-bottom: 50px;
+  }
+  .accountPage .accountDescription {
+    margin-bottom: 35px;
+  }
+  .accountPage .orderNum {
+    width: inherit;
+  }
+  .accountPage .orderPayment {
+    width: inherit;
+  }
+  .accountPage .orderDeliver {
+    width: inherit;
+  }
+  .accountPage .orderFullfill {
+    width: inherit;
+  }
+  .accountPage .orderTotal {
+    width: inherit;
+  }
+  .accountPage .tableComponent {
+    font-size: 14px;
+  }
+  .accountPage .accountDetailTable {
+    display: block;
+  }
+  .accountPage .accountDetailTable thead {
+    display: none;
+  }
+  .accountPage .accountDetailTable tbody {
+    display: block;
+    border-top: 1px solid #707070;
+  }
+  .accountPage .accountDetailTable tbody tr, .accountPage .accountDetailTable tbody th, .accountPage .accountDetailTable tbody td {
+    display: block;
+  }
+  .accountPage .accountDetailTable tbody tr {
+    padding: 17px 0 5px;
+  }
+  .accountPage .accountDetailTable tbody th, .accountPage .accountDetailTable tbody td {
+    text-align: right;
+    position: relative;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .accountPage .accountDetailTable tbody th::before, .accountPage .accountDetailTable tbody td::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: rgba(51, 51, 51, 0.5);
+  }
+  .accountPage .accountDetailTable tbody th::before {
+    content: "注文番号";
+  }
+  .accountPage .accountDetailTable tbody td {
+    padding: 0;
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(1)::before {
+    content: "注文日";
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(2)::before {
+    content: "お届け日指定";
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(3)::before {
+    content: "お届け時間指定";
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(4)::before {
+    content: "決済状況";
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(5)::before {
+    content: "発送状況";
+  }
+  .accountPage .accountDetailTable tbody td:nth-of-type(6)::before {
+    content: "合計金額";
+  }
+  .accountPage .orderDetailTable thead th:last-child {
+    width: auto;
+  }
+  .accountPage .orderDetailTable tbody th, .accountPage .orderDetailTable tbody td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .accountPage .orderDetailTable tbody th:not(:last-child), .accountPage .orderDetailTable tbody td:not(:last-child) {
+    padding-right: 30px;
+  }
+  .accountPage .orderDetailTable tbody td:last-child {
+    width: auto;
+  }
+  .accountPage .orderDetailDl dt {
+    width: 55px;
+  }
+  .accountPage .orderDetailAddress {
+    display: block;
+  }
+  .accountPage .orderDetailAddress .heading {
+    margin-bottom: 15px;
+  }
+  .accountPage .orderDetailAddress > div {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .accountPage .orderDetailAddress p {
+    line-height: 1.9;
+  }
+  .accountPage .formComponent {
+    max-width: inherit;
+  }
+  .accountPage .formComponent .submitBtn {
+    margin: 30px 0 22px;
+  }
+  .accountPage .formComponent .submitBtn .btn {
+    height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .accountPage .formComponent .primaryLine {
+    max-width: inherit;
+  }
+  .accountPage .formComponent .primaryLine input:not([type=checkbox]) {
+    font-size: 16px;
+  }
+  .accountPage .formComponent .primaryLine input:not([type=checkbox])::placeholder {
+    font-size: 14px;
+  }
+}
+
+/* 2022.12.17 定期購入リンク */
+.accountHeading__link {
+    display: inline-block;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(51,51,51,.3);
+    font-size: 14px;
+    margin-top: 40px;
+    transition: .3s all ease-in;
+    line-height: 1;
+    padding-bottom:5px;
+}
+
+@media (max-width: 767px) {
+  .accountHeading__link {
+    font-size: 14px;
+    margin-top: 15px;
+    padding-bottom: 3px;
+}
+}

@@ -1,0 +1,35 @@
+<!-- /sections/index-products.liquid -->
+<section class="indexProductSection">
+  <header class="titleComponent">
+    <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Seasonal Flowers</span></h2>
+    <p>今だけの、お花たち</p>
+  </header>
+  <div class="productListComponent">
+    <ul class="productList">
+      {% for product in collections[section.settings.home_featured_products].products %}
+        {% include 'products-list' %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Seasonal Flowers",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "おすすめ商品",
+      "settings": {
+      }
+    }
+  ],
+  "settings": [
+    {
+      "type": "collection",
+      "id": "home_featured_products",
+      "label": "コレクション"
+    }
+  ]
+}
+{% endschema %}

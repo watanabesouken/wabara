@@ -1,0 +1,329 @@
+<!-- /templates/product.liquid -->
+<div class="productDetailPage contentComponent">
+
+  <!-- /sections/product-contents.liquid -->
+  <div class="productMainInfo" itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="product-template"
+    data-enable-history-state="true">
+
+    <meta itemprop="name" content="{{ product.title }}">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ product.featured_media | img_url: 'grande' }}">
+    <div class="hide" itemprop="description">{{ product.description }}</div>
+
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    {% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+      <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+      <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+      <section class="productSection">
+        <div class="productImgArea">
+          <div id="productSlider" class="productSlider">
+            {% for image in product.images %}
+              {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              <div class="productImgSlide">
+                <img class="productImg lazyload fade-in{% unless forloop.first == true %} lazypreload{% endunless %}"
+                  {%- if forloop.first == true -%}
+                    src="{{ img_src_url }}"
+                  {%- endif -%}
+                  data-src="{{ img_url }}"
+                  data-widths="[1080, 1296, 1512, 1728, 1944, 2048, 4472]"
+                  data-sizes="auto" alt="">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="productInfoArea">
+          <h1 class="heading productTitle">{{ product.title }}</h1>
+          {% if product.type == 'スキンケア' %}
+            <h2 class="skinCareTtl">WABARA SKIN CARE</h2>
+          {% endif %}
+
+          {% if product.handle == 'skincare-serum' %}
+            <p class="skinCareTxt">美容液 / 40ml</p>
+          {% elsif product.handle == 'skincare-oilserum' %}
+            <p class="skinCareTxt">オイル美容液 / 15ml</p>
+          {% elsif product.handle == 'skincare-claypack' %}
+            <p class="skinCareTxt">塗るマスク / 30g</p>
+          {% elsif product.handle == 'skincare-set' %}
+            <p class="skinCareTxt">スキンケア3点セット</p>
+          {% endif %}
+          <div class="price-container productPrice nova" data-price-container>
+            {% comment %}
+              Optionally show the 'compare at' or original price of the product.
+            {% endcomment %}
+            <div class="productVariantPrice">
+              {% include 'product-price', variant: current_variant %}
+            </div>
+            {% unless product.available %}
+              <span class="soldTxt">売り切れ</span>
+            {% endunless %}
+          </div>
+          
+        {% render 'huckleberry-subscription-product' %}
+          
+          {% assign product_start_date = product.metafields.my_fields.order_start_date_time %}
+
+          {% if product.available %}
+
+            {% if product_start_date != blank %}
+              {% render "product-order-date" %}
+            {% endif %}
+
+            {% capture "form_classes" %}
+              product-single__form{% if product.has_only_default_variant %} product-single__form--no-variants{% endif %}
+            {%- endcapture %}
+            {% capture "form_id" %}AddToCartForm{%- endcapture %}
+
+            {% form 'product', product, class:form_classes, id:form_id, data-product-form: '' %}
+
+              {% if product.has_only_default_variant %}
+                <div id="infiniteoptions-container"></div>
+
+
+
+              <div data-anygift="marker"></div>
+                
+                <div class="productVariantInfo{% if product.has_only_default_variant %} hide{% endif %}">
+                  <select form="AddToCartForm" name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants no-js">
+                    {% for variant in product.variants %}
+                      {% if variant.available %}
+                        <option {% if variant == product.selected_or_first_available_variant %}
+                          selected="selected" {% endif %}
+                          data-sku="{{ variant.sku }}"
+                          value="{{ variant.id }}">
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option disabled="disabled">
+                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                        </option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="productBtn{% if product_start_date != blank %} productDateTarget hide {% endif %}">
+                  <div class="productQuantitySelector">
+                    <span class="productQuantityBtn decrease-quantity">{% include 'icon' with 'minus' %}</span>
+                    <input type="number" class="productQuantityNum nova" id="Quantity" name="quantity" value="1" min="1" max="20" form="AddToCartForm">
+                    <span class="productQuantityBtn increase-quantity">{% include 'icon' with 'plus' %}</span>
+                  </div>
+                  <button type="submit" name="add" id="AddToCart" class="btn is-primary with-bg"><span><span>{% render 'icon' with 'cartplus' %}</span>カートに入れる</span></button>
+                </div>
+                {% if product_start_date != blank %}
+                  <div class="productBtn productWaitTarget hide">
+                    <div class="btn is-primary is-disable"><span>販売開始日をお待ちください</span></div>
+                  </div>
+                {% endif %}
+              {% else %}
+                <div class="productBtn{% if product_start_date != blank %} productDateTarget hide {% endif %}">
+                  <div class="productQuantitySelector">
+                    <label for="Quantity" class="visibility-hidden">数量選択</label>
+                    <span class="productQuantityBtn decrease-quantity">{% include 'icon' with 'minus' %}</span>
+                    <input type="number" class="productQuantityNum nova" id="Quantity" name="quantity" value="1" min="1" max="20" form="AddToCartForm">
+                    <span class="productQuantityBtn increase-quantity">{% include 'icon' with 'plus' %}</span>
+                  </div>
+                  <button type="button" class="modalOpenBtn btn is-primary with-bg"><span>オプション選択へ進む</span></button>
+                </div>
+                {% if product_start_date != blank %}
+                  <div class="productBtn productWaitTarget hide">
+                    <div class="btn is-primary is-disable"><span>販売開始日をお待ちください</span></div>
+                  </div>
+                {% endif %}
+                <div id="productModal" class="productModal">
+                  {% include 'product-form' %}
+                  <div class="modalBg"></div>
+                </div>
+              {% endif %}
+
+            {% endform %}
+          {% else %}
+            <div class="productBtn">
+              {% unless product.tags contains 'bis-hidden' %}
+                <button id="BIS_trigger" class="btn is-primary is-stock"><span>再販売のお知らせを受け取る</span></button>
+              {% else %}
+                <div class="btn is-primary is-disable"><span>売り切れ</span></div>
+              {% endunless %}
+            </div>
+            <ul class="customBannerComponent">
+              <li class="customBannerItem for-instagram is-fullwidth">
+                <a href="https://www.instagram.com/rosefarmkeiji/" target="_blank" rel="nofollow noreferrer">
+                  <div class="imgWrap">
+                    <img src="{{ 'banner_bg_instagram.jpg' | asset_img_url }}" data-src="{{ 'banner_bg_instagram.jpg' | asset_img_url: 'master' }}" data-widths="[550, 1100, 1650]" alt="" width="550" height="" class="lazyload">
+                  </div>
+                  <div class="contentWrap">
+                    <dl class="bannerText">
+                      <dt class="mainTitle heading is-secondary with-line nova">INSTAGRAM</dt>
+                      <dd class="subTitle">農園からお届けする<br class="visible-phone">WABARAのインスタをフォロー</dd>
+                    </dl>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          {% endif %}
+
+          <div class="productDesc stripHtml">{{ product.description }}</div>
+          {% if product.handle == 'skincare-serum' or product.handle == 'skincare-oilserum' or product.handle == 'skincare-claypack' %}
+          <div class="skinCareSetDetail">
+            <a href="/products/skincare-set" class="skinCareSetDetail__link">
+              <div class="setImg">
+                <img
+                src="{{ 'skin_care_set.png' | asset_img_url }}"
+                data-src="{{ 'skin_care_set.png' | asset_img_url: 'master' }}"
+                data-widths="[375, 750, 1125]"
+                data-sizes="auto"
+                alt="" class="lazyload">
+              </div>
+             <div class="setContent">
+               <p class="setContent__txt">スキンケア3点セットはこちら</p>
+             </div>
+            </a>
+          </div>
+          {% endif %}
+
+          {% for tag in product.tags %}
+
+            {% if tag == '和ばら全種' or tag == '園芸苗' %}
+              <div class="productFilterListWrap">
+                {% if product.type == '切り花' %}
+                  {% section 'filter-tags-flowers' %}
+                {% elsif product.type == '園芸苗' %}
+                  {% section 'filter-tags-seedling' %}
+                {% endif %}
+                {% section 'filter-tags-series' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          <div class="productCustomFields">
+            {% assign product_delivery_info = product.metafields.custom_fields["product_delivery_info"] %}
+            {% assign product_delivery_date = product.metafields.custom_fields["product_delivery_date"] %}
+            {% assign product_notice = product.metafields.custom_fields["product_notice"] %}
+
+            <div class="productInfoAcordionWrap">
+              {% if product_delivery_info != blank %}
+                <div class="productInfoAcordion">
+                  <button class="btn productInfoAcordionBtn" aria-expanded="false">
+                    <span>配送について（農園から直接配送します）</span>
+                    <span class="dropdownBtn">{% render 'icon' with 'arrow' %}</span>
+                  </button>
+                  <div class="productInfoAcordionContent stripHtml">{{ product_delivery_info }}</div>
+                </div>
+              {% endif %}
+              {% if product_delivery_date != blank %}
+                <div class="productInfoAcordion">
+                  <button class="btn productInfoAcordionBtn" aria-expanded="false">
+                    <span>お届け日について</span>
+                    <span class="dropdownBtn">{% render 'icon' with 'arrow' %}</span>
+                  </button>
+                  <div class="productInfoAcordionContent stripHtml">{{ product_delivery_date }}</div>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if product.type == '切り花' %}
+              <div class="productMoreLink">
+                <a href="/pages/faq">わばらの切り花について、もっと詳しく</a>
+              </div>
+            {% elsif product.type == '園芸苗' %}
+              <div class="productMoreLink">
+                <a href="/pages/faq">わばらの園芸苗について、もっと詳しく</a>
+              </div>
+            {% elsif product.type == '生体水' or product.type == 'フード' %}
+              <div class="productMoreLink">
+                <a href="/pages/faq">わばらの食べるばらについて、もっと詳しく</a>
+              </div>
+            {% endif %}
+
+            {% if product.type == '切り花' or product.type == '花束・ボックス' %}
+              <div class="productNote">
+                <h3>ご購入の前に、知っていただきたいこと</h3>
+                <div class="stripHtml">
+                  <ul>
+                    <li>なるべく傷まないよう大切に梱包しますが、輸送で外側の花びらに少し傷が付くこともあります。</li>
+                    <li>通常のお花屋さんでは、一番先に開く外側の花びらをとっていることがありますが、WABARAでは、お花のありのままの姿として、そして内側の花びらの保護として、多少の傷つきがある場合にもそのままお届けしています。気になるようでしたら、花びらをとってご鑑賞ください。</li>
+                    <li>しなだれるように咲くのも和ばらの特長の一つです。元気がないわけではありません。下向きに咲く美しい姿をお楽しみください。</li>
+                    <li>蕾から満開まで、その日の農園の景色を詰め込んでお届けしています。咲いているものも収穫してからお日にちが経ったものではございません。農園の風景としてお楽しみください。</li>
+                    <li>スプレー咲きのお花は、真ん中のお花が一番最初に開花し順番に花を咲かせます。通常の流通では真ん中のお花を取ってしまうことが多いですが、咲いたお花と蕾のグラデーションが美しいので、WABARAでは開いたお花もそのままお届けをしています。</li>
+                  </ul>
+                  <p>命あるばらたちが表現する時のうつろいをお楽しみください。</p>
+                </div>
+              </div>
+            {% endif %}
+
+          </div>
+
+          <div class="productBtn {% if product_start_date != blank %} productDateTarget hide {% endif %} cosmeticsBtn">
+            {% if product.available %}
+              <div class="productQuantitySelector">
+                <label for="Quantity-sub" class="visibility-hidden">数量選択</label>
+                <span class="productQuantityBtn decrease-quantity">{% include 'icon' with 'minus' %}</span>
+                <input type="number" class="productQuantityNum nova" id="Quantity-sub" name="quantity-sub" value="1" min="1" max="20">
+                <span class="productQuantityBtn increase-quantity">{% include 'icon' with 'plus' %}</span>
+              </div>
+              {% if product.has_only_default_variant %}
+                <button type="submit" name="add" id="AddToCart-sub" class="btn is-primary with-bg" form="AddToCartForm"><span><span>{% render 'icon' with 'cartplus' %}</span>カートに入れる</span></button>
+              {% else %}
+                <button type="button" class="modalOpenBtn btn is-primary with-bg"><span>オプション選択へ進む</span></button>
+              {% endif %}
+            {% else %}
+              {% unless product.tags contains 'bis-hidden' %}
+                <button id="BIS_trigger" class="btn is-primary is-stock"><span>再販売のお知らせを受け取る</span></button>
+              {% else %}
+                <div class="btn is-primary is-disable"><span>売り切れ</span></div>
+              {% endunless %}
+            {% endif %}
+          </div>
+          {% if product.type != 'スキンケア' %}
+          {% if product_start_date != blank %}
+            <div class="productBtn productWaitTarget hide">
+              <div class="btn is-primary is-disable"><span>販売開始日をお待ちください</span></div>
+            </div>
+          {% endif %}
+          {% endif %}
+
+          <div class="productShare">
+            <p class="heading">この商品をシェア</p>
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: featured_image %}
+          </div>
+
+          <div id="bundler-target-element"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {% unless product == empty %}
+    <script type="application/json" id="ProductJson-{{ section.id }}">
+      {{ product | json }}
+    </script>
+    <script type="application/json" id="ModelJson-{{ section.id }}">
+      {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+  {% endunless %}
+
+  {% if product.handle == 'skincare-serum' %}
+    {{ 'theme_cosmetics.css' | asset_url | stylesheet_tag }}
+    {% section 'product-cosmetics-serum-content' %}
+  {% elsif product.handle == 'skincare-oilserum' %}
+    {{ 'theme_cosmetics.css' | asset_url | stylesheet_tag }}
+    {% section 'product-cosmetics-oilserum-content' %}
+  {% elsif product.handle == 'skincare-claypack' %}
+    {{ 'theme_cosmetics.css' | asset_url | stylesheet_tag }}
+    {% section 'product-cosmetics-clay-pack-content' %}
+  {% elsif product.handle == 'skincare-set' %}
+    {{ 'theme_cosmetics.css' | asset_url | stylesheet_tag }}
+    {% section 'product-cosmetics-skincare-set-content' %}
+  {% else %}
+    <div>
+      {% section 'product-recommendations' %}
+    </div>
+    <div class="productBanner">
+      {% render 'content-banner' %}
+    </div>
+  {% endif %}
+</div>

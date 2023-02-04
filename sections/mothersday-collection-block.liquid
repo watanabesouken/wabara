@@ -1,0 +1,40 @@
+<!-- /sections/common-collection-block.liquid -->
+{% include 'common-collection-block' %}
+
+{% schema %}
+{
+  "name": "コレクション埋め込み",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "カスタム項目",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_collection_block",
+      "name": "カスタムブロック",
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "ブロックの見出し"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_text",
+          "label": "ブロックのキャッチコピー"
+        },
+        {
+          "type": "collection",
+          "id": "custom_collection",
+          "label": "埋め込むコレクション",
+          "info": "商品の出力上限は12点です"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

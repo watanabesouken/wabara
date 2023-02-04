@@ -1,0 +1,25 @@
+<section class="webletterComponent">
+  <h2 class="heading nova uppercaseTitle with-line"><span>Letters</span></h2>
+  <p>日々のわばらの様子をお届けする無料メールマガジン「まいにちわばら」が届きます</p>
+  <div class="webletter formComponent">
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <div class="newsletter--form">
+          <div class="note form-success">登録が完了しました！</div>
+        </div>
+      {% else %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="webletterLine primaryLine">
+          <label for="Email" class="visually-hidden">メールアドレス</label>
+          <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="メールアドレス" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+          <button id="Subscribe" type="submit"
+            class="btn newsletter__submit"
+            aria-label="登録する">
+            <span class="newsletter__submit-text--large">登録</span>
+          </button>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+</section>

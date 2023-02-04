@@ -1,0 +1,47 @@
+{% assign order_start_date = product.metafields.my_fields.order_start_date_time.value %}
+{% capture order_start_stamp %}{{ product.metafields.my_fields.order_start_date_time.value | date: "%s" }}{% endcapture %}
+{% assign order_available_date = true %}
+
+<div id="timeRestrict" data-order-start="{{order_start_stamp}}"></div>
+
+<script>
+
+  var now = Date.now(),
+      order_start_date = '{{order_start_date}}',
+      order_start_stamp = new Date(order_start_date),
+      order_available = {{order_available_date}};
+
+  order_start_stamp = order_start_stamp.getTime();
+
+  if(now < order_start_stamp ) {
+    order_available = false;
+    console.log('受注開始前')
+  } else  {
+    order_available = true;
+    console.log('受注中')
+  }
+
+  function elmRemove(elm) {
+    elm.parentNode.removeChild(elm);
+  }
+
+  window.addEventListener("DOMContentLoaded",function(){
+    var submitBtn = document.querySelectorAll('.productDateTarget'),
+        submitWaitBtn = document.querySelectorAll('.productWaitTarget');
+
+    if (order_available === false) {
+      submitWaitBtn.forEach((item) => {
+        item.classList.remove('hide');
+      });
+      submitBtn.forEach((item) => {
+        item.remove();
+      });
+    } else {
+      submitBtn.forEach((item) => {
+        item.classList.remove('hide');
+      });
+    }
+
+  },false)
+
+</script>

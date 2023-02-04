@@ -1,0 +1,24 @@
+<!-- /snippets/common-column-block.liquid -->
+<section class="blockChild">
+  {% if block.settings.content_img != blank %}
+    {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+    <div class="blockChildContent imgSquareFit">
+      <img class="lazyload"
+      src="{{ img_src_url }}"
+      data-src="{{ img_url }}"
+      data-widths="[322, 644, 966]"
+      data-sizes="auto"
+      alt=""
+      data-image>
+    </div>
+  {% endif %}
+  <div class="blockChildContent">
+    <h3 class="blockHeading">{{ block.settings.custom_heading | newline_to_br }}</h3>
+    <div class="blockText">
+      <p>
+        {{ block.settings.custom_text | newline_to_br }}
+      </p>
+    </div>
+  </div>
+</section>

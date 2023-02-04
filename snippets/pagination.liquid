@@ -1,0 +1,27 @@
+<!-- /snippets/pagination.liquid -->
+{%- if paginate.pages > 1 -%}
+  <div class="paginateComponent">
+    <div class="paginateNav nova">
+      {%- if paginate.previous -%}
+        <a class="paginateNavItem" rel="prev" title="前のページ" href="{{ paginate.previous.url | remove: 'view=ajax' }}{{ hash }}">
+          {%- include 'icon' with 'arrow-r' -%}
+        </a>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <a href="{{ part.url | remove: 'view=ajax' }}{{ hash }}" class="paginateNavItem" title="{{ 'general.pagination.go_to_page' | t: page: part.title }}">{{ part.title }}</a>
+        {%- else -%}
+          <span class="paginateNavItem {% if part.title == paginate.current_page %}is-active{% endif %}">{{ part.title }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <a class="paginateNavItem" rel="next" title="次のページ" href="{{ paginate.next.url | remove: 'view=ajax' }}{{ hash }}">
+          {%- include 'icon' with 'arrow-r' -%}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+{%- endif -%}

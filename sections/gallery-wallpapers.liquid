@@ -1,0 +1,47 @@
+<!-- /sections/gallery-wallpapers.liquid -->
+<ul class="wallpapersList">
+  {%- for block in section.blocks -%}
+    <li class="wallpapersItem">
+      <a href="{{block.settings.content_img | img_url: 'master'}}" target="_blank">
+        {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+        <div class="imgSquareFit">
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[322, 644, 966]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "壁紙画像",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "カスタム項目",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_gallery_block",
+      "name": "画像ブロック",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "ブロックの画像"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

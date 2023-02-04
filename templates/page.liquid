@@ -1,0 +1,15 @@
+<div class="staticPage">
+  <section class="">
+    <header class="titleComponent">
+      <h1 class="heading is-primary nova uppercaseTitle with-line"><span>{{page.title}}</span></h1>
+    </header>
+    <div>
+      {{page.content}}
+    </div>
+  </section>
+
+  {% unless template.suffix == 'about' %}
+    {% section 'common-static-footer' %}
+  {% endunless %}
+
+</div>

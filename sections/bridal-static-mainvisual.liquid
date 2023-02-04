@@ -1,0 +1,55 @@
+<!-- /sections/common-static-mainvisual.liquid -->
+{% include 'common-static-mainvisual' %}
+
+{% schema %}
+{
+  "name": "メインビジュアル",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "header",
+      "content": "メインビジュアル設定"
+    },
+    {
+      "type": "checkbox",
+      "id": "mainvisual_video_embed",
+      "label": "動画背景を有効化する",
+      "default": false
+    },
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video URL",
+      "accept": ["vimeo"],
+      "info": "vimeoのみ、Youtube不可"
+    }
+  ],
+  "presets": [
+    {
+      "name": "スライドショー",
+      "category": "画像",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "スライド",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

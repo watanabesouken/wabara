@@ -1,0 +1,15 @@
+<div class="staticPage contactPage">
+  <section class="contactSection">
+    <header class="titleComponent">
+      <h1 class="heading is-primary"><span>{{page.title}}</span></h1>
+    </header>
+    <div class="hubspotWrap">
+      {{page.content}}
+    </div>
+  </section>
+
+  {% unless template.suffix == 'about' %}
+    {% section 'common-static-footer' %}
+  {% endunless %}
+
+</div>

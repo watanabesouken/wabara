@@ -1,0 +1,18 @@
+<!-- /templates/page.wallpapers.liquid -->
+<div class="staticPage galleryPage">
+  <section class="wallpaperSection">
+    <header class="titleComponent">
+      <h1 class="heading is-primary nova uppercaseTitle with-line"><span>WALLPAPERS</span></h1>
+      <p>PCの壁紙としてご利用いただける、<br class="visible-phone">農園の風景を集めました。<br>オンライン会議の背景画像としても<br class="visible-phone">ご活用いただけます。<br>＊WALLPAPERの加工や営利目的の利用、<br class="visible-phone">再配布はご遠慮ください</p>
+    </header>
+
+    <div class="wallpapersWrap">
+      {% section 'gallery-wallpapers' %}
+    </div>
+
+    <div class="backtoLink">
+      <a href="/pages/gallery"><span role="img" aria-label="Back to Menu">{% render 'icon' with 'backtomenu' %}</span></a>
+    </div>
+
+  </section>
+</div>

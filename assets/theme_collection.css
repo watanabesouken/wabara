@@ -1,0 +1,379 @@
+.collectionPage .collectionHeader {
+  width: 100%;
+  height: 250px;
+  margin-top: -92px;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #333333;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+.collectionPage .collectionHeader::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.collectionPage .collectionHeader .collectionText {
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.collectionPage .collectionHeader .collectionText span {
+  display: block;
+  margin: 0 auto;
+}
+.collectionPage .collectionHeader .collectionText .subTitle {
+  padding-bottom: 22px;
+  margin-bottom: 15px;
+}
+.collectionPage .collectionHeader .collectionText .mainTitle {
+  font-size: 13px;
+}
+.collectionPage .collectionHeader .collectionText .heading.with-line::after {
+  background: rgba(255, 255, 255, 0.7);
+}
+.collectionPage .collectionDescription {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.collectionPage .collectionDescription img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.collectionPage .collectionContent {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.collectionPage.is-potroses .collectionSideBar .collectionFilter {
+  margin-top: 0;
+}
+.collectionPage #shopify-section-rosie-collection-block .staticCollectionWrap .collectionBlock:first-child .titleComponent p {
+  color: #ff2a00;
+}
+.collectionPage .collectionSideBar {
+  width: 285px;
+  margin-right: 27px;
+  flex: none;
+}
+.collectionPage .collectionSideBar + .collectionView {
+  flex-grow: 1;
+}
+.collectionPage .collectionSideBar + .collectionView .productListComponent .productList li {
+  margin-right: 20px;
+  width: calc((100% - 60px) / 4);
+}
+.collectionPage .collectionSideBar + .collectionView .productListComponent .productList li:nth-child(4n) {
+  margin-right: 0;
+}
+.collectionPage .collectionSideBar + .collectionView .productListComponent .productInfoWrap {
+  margin-top: 15px;
+}
+.collectionPage .collectionFilter {
+  margin-bottom: 53px;
+}
+.collectionPage .collectionFilter .heading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.collectionPage .collectionFilterColor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+.collectionPage .collectionFilterColor li {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin: 0 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.collectionPage .collectionFilterColor li.active {
+  border: 4px solid #ffffff;
+}
+.collectionPage .collectionFilterColor li.active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.collectionPage .collectionFilterColor li .tagName {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000000;
+  pointer-events: none;
+  transition: all 0.2s ease 0s;
+  transform: translateX(-50%);
+  bottom: 100%;
+  left: 50%;
+  background: #383838;
+  color: white;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  line-height: 12px;
+  white-space: nowrap;
+}
+.collectionPage .collectionFilterColor li .tagName::after {
+  content: "";
+  position: absolute;
+  background: 0px 0px;
+  border: 6px solid transparent;
+  z-index: 1000001;
+  margin-bottom: -11px;
+  bottom: 0;
+  left: calc(50% - 6px) !important;
+  border-top-color: #383838 !important;
+}
+.collectionPage .collectionFilterColor li:hover .tagName {
+  transform: translateX(-50%) translateY(-8px);
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+.collectionPage .collectionFilterColor li.active:hover .tagName {
+  transform: translateX(-50%) translateY(-12px);
+}
+.collectionPage .collectionFilterColor a {
+  display: block;
+  text-indent: -9999px;
+  color: transparent;
+}
+.collectionPage .collectionSideBar .collectionFilter {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  padding: 15px 0 5px;
+  margin-top: 25px;
+}
+.collectionPage .collectionSideBar .collectionFilter .heading {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.collectionPage .collectionSideBar .collectionFilterColor {
+  justify-content: flex-start;
+}
+.collectionPage .collectionSideBar .collectionFilterColor li {
+  margin: 0 5px 13px;
+}
+.collectionPage .collectionSideBar .collectionFilterColor a {
+  display: block;
+  text-indent: -9999px;
+  color: transparent;
+}
+.collectionPage .collectionFilterCategory {
+  font-size: 13px;
+}
+.collectionPage .collectionFilterCategory .heading {
+  margin-bottom: 5px;
+}
+.collectionPage .collectionFilterCategory .collectionFilterBlock {
+  padding: 15px 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.collectionPage .collectionFilterCategory .collectionFilterBlock.for-feature .itemFilter a {
+  padding-left: 30px;
+}
+.collectionPage .collectionFilterCategory .collectionFilterBlock.for-feature .itemFilter .itemFilterIcon {
+  display: none;
+}
+.collectionPage .collectionFilterCategory .itemFilter {
+  position: relative;
+}
+.collectionPage .collectionFilterCategory .itemFilter:not(:last-child) {
+  margin-bottom: 10px;
+}
+.collectionPage .collectionFilterCategory .itemFilter a {
+  position: relative;
+  padding-left: 57px;
+  transition: color 0.3s ease 0s;
+}
+.collectionPage .collectionFilterCategory .itemFilter a::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 10px);
+  transition: background-color 0.3s ease 0s;
+}
+.collectionPage .collectionFilterCategory .itemFilter a::after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: transparent;
+  position: absolute;
+  left: 4px;
+  top: calc(50% - 6px);
+  transition: background-color 0.3s ease 0s;
+}
+.collectionPage .collectionFilterCategory .itemFilter a.active::after, .collectionPage .collectionFilterCategory .itemFilter a:hover::after {
+  background: black;
+}
+.collectionPage .collectionFilterCategory .itemFilter .itemFilterIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: block;
+  left: 30px;
+  top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.collectionPage .collectionFilterCategory .itemFilter .itemFilterIcon img {
+  display: block;
+  height: auto;
+}
+.collectionPage .productListComponent {
+  margin-bottom: 70px;
+}
+.collectionPage .collectionBannerWrap {
+  margin-bottom: 100px;
+}
+.collectionPage .collectionBannerWrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.template-collection .breadcrumbComponent {
+  color: #ffffff;
+}
+.template-collection .breadcrumbComponent a {
+  color: #ffffff;
+}
+.template-collection .breadcrumbComponent svg path {
+  stroke: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .collectionPage .collectionHeader {
+    height: 160px;
+    margin-top: -35px;
+    margin-bottom: 35px;
+  }
+  .collectionPage .collectionHeader .collectionText .subTitle {
+    margin-bottom: 10px;
+  }
+  .collectionPage .collectionHeader .collectionText .mainTitle {
+    font-size: 13px;
+  }
+  .collectionPage.for-catalog .collectionText .heading {
+    font-size: 18px;
+  }
+  .collectionPage .collectionDescription {
+    text-align: left;
+    margin-bottom: 35px;
+  }
+  .collectionPage .collectionContent {
+    display: block;
+  }
+  .collectionPage .collectionSideBar {
+    width: 100%;
+    margin-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 18px;
+    margin-bottom: 30px;
+  }
+  .collectionPage .collectionSideBar + .collectionView .productListComponent .productList li {
+    margin-right: 17px;
+    width: calc((100% - 17px) / 2);
+  }
+  .collectionPage .collectionSideBar + .collectionView .productListComponent .productList li:nth-child(3n) {
+    margin-right: 17px;
+  }
+  .collectionPage .collectionSideBar + .collectionView .productListComponent .productList li:nth-child(4n) {
+    margin-right: 0;
+  }
+  .collectionPage .collectionSideBar + .collectionView .productListComponent .productList li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .collectionPage .fileterShowBlock .fileterShowBtn {
+    height: 47px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .collectionPage .fileterShowBlock span {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .collectionPage .fileterShowBlock span::after {
+    transition: all 0.3s ease;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 1em;
+    height: 100%;
+    top: 0;
+    right: 23px;
+    background: url("common_icon_arrow.svg") no-repeat center center;
+    background-size: 10px auto;
+  }
+  .collectionPage .fileterShowBlock.show span::after {
+    transform: rotate(180deg);
+  }
+  .collectionPage .sidebarContent {
+    display: none;
+  }
+  .collectionPage .collectionFilter {
+    margin-bottom: 30px;
+  }
+  .collectionPage .collectionFilter .heading {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .collectionPage .collectionFilterColor {
+    justify-content: flex-start;
+  }
+  .collectionPage .collectionFilterColor li {
+    margin: 0 10px 10px 0;
+  }
+  .collectionPage .collectionFilterCategory .collectionFilterBlock:last-child {
+    border-bottom: none;
+  }
+  .collectionPage .productListComponent {
+    margin-bottom: 50px;
+  }
+  .collectionPage .collectionBannerWrap {
+    margin-bottom: 50px;
+  }
+
+  .template-collection .breadcrumbComponent {
+    color: #3B3E43;
+  }
+  .template-collection .breadcrumbComponent a {
+    color: #3B3E43;
+  }
+  .template-collection .breadcrumbComponent svg path {
+    stroke: #3B3E43;
+  }
+
+  #shopify-section-rosie-collection-block .staticCollectionWrap .collectionBlock:first-child {
+    padding-top: 0;
+  }
+}

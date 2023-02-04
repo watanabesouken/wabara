@@ -1,0 +1,43 @@
+<!-- /sections/common-column-block.liquid -->
+<div class="staticBlockWrap for-column">
+  {% for block in section.blocks %}
+    {% include 'common-column-block' %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "横並びブロック",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "カスタム項目",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_block",
+      "name": "カスタムブロック",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "ブロックの画像"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_heading",
+          "label": "ブロックの見出し"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_text",
+          "label": "ブロックのテキスト"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

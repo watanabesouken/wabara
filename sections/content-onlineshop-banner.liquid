@@ -1,0 +1,85 @@
+<!-- /sections/content-onlineshop.liquid -->
+<ul class="onlineShopList for-banner{% if section.settings.column_setting == true %} is-oddColumn{% endif %}">
+  {%- for block in section.blocks -%}
+    {% if block.settings.content_banner != blank %}
+      {%- assign img_url = block.settings.content_banner | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.content_banner | img_url: 'small' -%}
+    {% endif %}
+    <li class="onlineShopItem customBanner block--{{ block.id }}">
+      <a href="{{ block.settings.custom_link_url }}">
+        <img class="lazyload"
+        src="{{ img_src_url }}"
+        data-src="{{ img_url }}"
+        data-widths="[740, 900, 1080, 1296]"
+        data-sizes="auto"
+        alt=""
+        data-image>
+        <div class="contentWrap">
+          <dl class="bannerText">
+            <dt class="subTitle">{{ block.settings.custom_link_sub_text }}</dt>
+            <dd class="mainTitle">{{ block.settings.custom_link_text }}</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "Online Shop（汎用バナー）",
+  "settings": [
+    {
+      "type": "header",
+      "content": "列表示の設定"
+    },
+    {
+      "type": "checkbox",
+      "id": "column_setting",
+      "label": "3列表示を有効にする",
+      "info": "デフォルトは2列表示です。奇数の場合はチェックを入れてください",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "Online Shop（汎用バナー）",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_link_panel",
+      "name": "任意ページへの画像リンク",
+      "settings": [
+        {
+          "type": "url",
+          "id": "custom_link_url",
+          "label": "バナーリンク先"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_banner",
+          "label": "バナー内の画像"
+        },
+        {
+          "type": "header",
+          "content": "テキスト"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_sub_text",
+          "label": "サブタイトル"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_text",
+          "label": "タイトル"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

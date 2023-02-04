@@ -1,0 +1,19 @@
+{%- for block in section.blocks -%}
+  {% assign catalog_tag =  block.settings.title | handleize %}
+  {%- assign icon = block.settings.tag_icon %}
+  {%- assign icon_width = block.settings.tag_icon_width %}
+  {% for tag in product.tags %}
+    {% if tag == catalog_tag %}
+      <dd class="itemFilter" data-handle="{{tag}}">
+        <span class="itemFilterIcon">
+          <img class=""
+          src="{{ icon | img_url: 'master' }}"
+          width="{{ icon_width }}"
+          alt=""
+          >
+        </span>
+        <span>{{ catalog_tag }}</span>
+      </dd>
+    {% endif %}
+  {% endfor %}
+{%- endfor -%}

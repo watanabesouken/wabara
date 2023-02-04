@@ -1,0 +1,21 @@
+<!-- /snippets/tabs-banner.liquid -->
+<nav class="tabBannerComponent">
+  <a class="tabBannerComponentChild mothersdayBanner{% if current == 'mothersday' %} current{% endif %}" href="/pages/mothersday">
+    <div class="txtWrap">
+      <h2 class="heading nova uppercaseTitle with-line"><span>5/1〜5/11のお届け</span></h2>
+      <p>母の日期間の商品はこちら</p>
+    </div>
+    <div class="arrowIcon">
+      {% render 'icon' with 'arrow-r' %}
+    </div>
+  </a>
+  <a class="tabBannerComponentChild limitedBanner{% if current == 'other' %} current{% endif %}" href="/pages/limited">
+    <div class="txtWrap">
+      <h2 class="heading nova uppercaseTitle with-line"><span>その他の限定商品</span></h2>
+      <p>薬膳やフレッシュミストなど</p>
+    </div>
+    <div class="arrowIcon">
+      {% render 'icon' with 'arrow-r' %}
+    </div>
+  </a>
+</nav>

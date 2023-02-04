@@ -1,0 +1,51 @@
+<section class="collectionFilter">
+  <h3 class="heading">色で絞り込む</h3>
+  <ul class="collectionFilterColor">
+    {%- for block in section.blocks -%}
+      {% assign tag = block.settings.title %}
+      {% assign tag_color = block.settings.custom_color %}
+      {% if current_tags contains tag %}
+        <li class="active" style="background-color: {{ tag_color }};" data-lh-tooltip="{{ tag }}" data-handle="{{ tag }}">
+          {{ tag | link_to_remove_tag: tag }}
+        </li>
+      {% else %}
+        <li style="background-color: {{ tag_color }};" data-lh-tooltip="{{ tag }}" data-handle="{{ tag }}">
+          {{ tag | link_to_tag: tag }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "カラーフィルター",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "色情報の設定",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_color_setting",
+      "name": "色情報の設定",
+      "settings": [
+        {
+          "type": "color",
+          "id": "custom_color",
+          "label": "Color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "色の名称",
+          "info": "タグの名前と一致させてください。"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

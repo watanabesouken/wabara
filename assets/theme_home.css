@@ -1,0 +1,236 @@
+.home .mainVisual {
+  width: 100%;
+  height: 85vh;
+  margin-bottom: 76px;
+  position: relative;
+}
+.home .mainVisual :focus {
+  outline: none;
+}
+.home .mainVisual .mainvisualContent {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home .mainVisual .mvImg {
+  height: 100%;
+}
+.home .mainVisual .mvImgWrap {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+.home .mainVisual .mvScroll {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.home .mainVisual .mainvisualVideo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.home .mainVisual .mainvisualVideo .mainvisualVideoContent {
+  position: absolute;
+  width: calc(100vh * 1.78);
+  min-width: 100vw;
+  height: 100vh;
+  min-height: calc(100vw / 1.78);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home .mainVisual .mainvisualVideo iframe {
+  width: calc(100vh * 1.78);
+  min-width: 100vw;
+  height: 100vh;
+  min-height: calc(100vw / 1.78);
+  pointer-events: none;
+}
+.home .indexAboutSection {
+  position: relative;
+  width: auto;
+  max-width: 1220px;
+  margin: 0 auto 100px;
+}
+.home .indexAboutSection .aboutTextWrap {
+  position: absolute;
+  right: -80px;
+  bottom: 50px;
+  background: #ffffff;
+  padding: 50px 65px;
+  box-sizing: border-box;
+}
+.home .indexAboutSection .aboutTextWrap p {
+  margin-bottom: 25px;
+}
+.home .indexAboutSection .aboutTextWrap .nova {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+}
+.home .indexAboutSection .aboutImgWrap img {
+  display: block;
+}
+.home .indexAboutSection .heading {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  line-height: 1.8;
+}
+.home .indexAboutSection .borderLink {
+  font-size: 12px;
+  position: absolute;
+  bottom: 55px;
+  right: 65px;
+}
+.home .onlineShopComponent {
+  margin-bottom: 100px;
+}
+.home .indexProductSection {
+  margin-bottom: 70px;
+}
+.home .indexProductSection .titleComponent {
+  margin-bottom: 52px;
+}
+.home .indexJournalSection {
+  margin-bottom: 100px;
+}
+.home .indexJournalSection .titleComponent {
+  margin-bottom: 45px;
+}
+.home .indexJournalSection .articleMoreLink {
+  text-align: center;
+  margin-top: 15px;
+}
+.home .indexWorkshopSection {
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+.home .indexWorkshopSection .titleComponent {
+  margin-bottom: 45px;
+}
+.home .mothersdayBanner {
+  margin-top: -35px;
+  margin-bottom: 100px;
+}
+.home .mothersdayBanner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .home .mainVisual {
+    height: 75vh;
+    margin-bottom: 0px;
+  }
+  .home .mainVisual .mvScroll {
+    bottom: 10px;
+  }
+  .home .titleComponent p {
+    line-height: 1.7;
+  }
+  .home .txtWrap {
+    position: relative;
+    z-index: 2;
+  }
+  .home .indexAboutSection {
+    max-width: inherit;
+    background: url("top_about_bg_sp.jpg") no-repeat center center;
+    background-size: cover;
+    margin: 0 -16px 45px;
+    padding: 40px 0 42px;
+  }
+  .home .indexAboutSection .aboutTextWrap {
+    position: relative;
+    right: inherit;
+    bottom: inherit;
+    background: inherit;
+    padding: 0;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .home .indexAboutSection .aboutTextWrap p {
+    margin-bottom: 18px;
+    line-height: 1.85;
+  }
+  .home .indexAboutSection .aboutTextWrap .nova {
+    margin-bottom: 15px;
+  }
+  .home .indexAboutSection .heading {
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  .home .indexAboutSection .borderLink {
+    position: inherit;
+    bottom: inherit;
+    right: inherit;
+  }
+  .home .aboutImgWrap img {
+    margin: 0 auto;
+  }
+  .home .onlineShopComponent {
+    margin-bottom: 50px;
+  }
+  .home .onlineShopComponent .titleComponent .heading.with-line {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+  }
+  .home .onlineShopComponent .titleComponent .heading.with-line::after {
+    display: none;
+  }
+  .home .indexProductSection {
+    margin-bottom: 35px;
+  }
+  .home .indexProductSection .titleComponent .heading.with-line {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+  }
+  .home .indexProductSection .titleComponent .heading.with-line::after {
+    display: none;
+  }
+  .home .indexProductSection .titleComponent {
+    margin-bottom: 38px;
+  }
+  .home .indexJournalSection {
+    margin-bottom: 50px;
+  }
+  .home .indexJournalSection .titleComponent .heading.with-line {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+  }
+  .home .indexJournalSection .titleComponent .heading.with-line::after {
+    display: none;
+  }
+  .home .indexJournalSection .titleComponent {
+    margin-bottom: 35px;
+  }
+  .home .indexJournalSection .articleMoreLink {
+    margin-top: 0;
+  }
+  .home .indexWorkshopSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .home .indexWorkshopSection .titleComponent {
+    margin-bottom: 40px;
+  }
+  .home .indexWorkshopSection .titleComponent .heading.with-line {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+  }
+  .home .indexWorkshopSection .titleComponent .heading.with-line::after {
+    display: none;
+  }
+  .home .mothersdayBanner {
+    margin: -30px 0 46px;
+    box-sizing: border-box;
+  }
+}

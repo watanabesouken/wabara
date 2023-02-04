@@ -1,0 +1,36 @@
+<section class="collectionPage">
+  <header class="collectionHeader" {% if collection.image != blank %}style="background-image: url({{collection.image | img_url: 'master'}})"{% endif %}>
+    <h1 class="collectionText">
+      <span class="subTitle heading is-secondary with-line">{{ collection.metafields.custom_fields["collection_sub_title"] }}</span>
+      <span class="mainTitle">{{ collection.title }}</span>
+    </h1>
+  </header>
+
+  <div class="contentComponent">
+    <div class="collectionDescription">
+      <p>{{ collection.description }}</p>
+    </div>
+
+    {% section 'filter-tags-color' %}
+
+    {% paginate collection.products by 20 %}
+
+      <div class="productListComponent">
+        <ul class="productList">
+          {% for product in collection.products %}
+            {% include 'products-list' %}
+          {% else %}
+            <p>一致する商品がありません。</p>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {%- include 'pagination' -%}
+    {% endpaginate %}
+  </div>
+
+</section>
+
+<div class="contentComponent">
+  {% render 'content-banner' %}
+</div>

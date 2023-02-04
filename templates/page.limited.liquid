@@ -1,0 +1,29 @@
+<div class="staticPage">
+  <div id="limitedContents">
+    <section class="">
+      <header class="titleComponent">
+        <h1 class="heading is-primary nova uppercaseTitle with-line"><span>限定商品・企画商品</span></h1>
+        <div class="staticTextWrap is-center">
+          <p>毎日同じように見えても、季節は流れ、時はうつろう。<br>この時だけの限定商品や、ご縁をいただいたことで実現した企画商品。</p>
+        </div>
+        {% section 'limited-tabs-banner' %}
+      </header>
+      <div class="staticCollectionWrap">
+        <nav class="ankerNavComponent">
+          <a href="#collectionBlock1"><span>限定商品</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+          <a href="#collectionBlock2"><span>企画商品</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+        </nav>
+      </div>
+      <div class="staticMv staticWrapComponent">
+        {% section 'limited-static-mainvisual' %}
+      </div>
+      <section class="fragranceSection staticSection withBgColor">
+        {% section 'limited-collection-block' %}
+      </section>
+    </section>
+
+  </div>
+
+  {% section 'common-static-footer' %}
+
+</div>

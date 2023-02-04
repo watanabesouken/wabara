@@ -1,0 +1,59 @@
+<section class="collectionPage for-catalog">
+  <header class="collectionHeader" {% if collection.image != blank %}style="background-image: url({{collection.image | img_url: 'master'}})"{% endif %}>
+    <h1 class="collectionText">
+      <span class="heading is-primary">{{ collection.title }}</span>
+    </h1>
+  </header>
+
+  <div class="contentComponent">
+    <div class="collectionDescription">
+      <p>{{ collection.description }}</p>
+    </div>
+
+    <div class="collectionContent">
+
+      <section class="collectionSideBar">
+        <h2 class="heading">わばらを品種ごとに単品購入いただけます。</h2>
+        {% section 'filter-tags-color' %}
+        <div class="fileterShowBlock visible-phone">
+          <div class="fileterShowBtn">
+            <span>さらに絞り込む</span>
+          </div>
+        </div>
+        <div class="sidebarContent collectionFilterCategory" data-size-tags="{{current_tags | size}}">
+          <section class="collectionFilterBlock for-feature">
+            <h3 class="heading">わばらの特徴</h3>
+            {% section 'filter-tags-flowers' %}
+          </section>
+          <section class="collectionFilterBlock for-series">
+            <h3 class="heading">品種シリーズ</h3>
+            {% section 'filter-tags-series' %}
+          </section>
+        </div>
+      </section>
+
+      <div class="collectionView">
+        {% paginate collection.products by 32 %}
+
+          <div class="productListComponent">
+            <ul class="productList">
+              {% for product in collection.products %}
+                {% include 'products-list' %}
+              {% else %}
+                <p>一致する商品がありません。</p>
+              {% endfor %}
+            </ul>
+          </div>
+
+          {%- include 'pagination' -%}
+        {% endpaginate %}
+
+        {% render 'content-banner' %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,306 @@
+<!-- /sections/header.liquid -->
+{%- if template == 'index' and section.settings.enable_transparent_header -%}
+  {%- assign use_transparent_header = true -%}
+{%- endif -%}
+{%- if template contains 'gallery-soundscape-' or template == 'page.cosmetics' or template contains 'giftcard-' or template == 'page.mothersday2022' or page.metafields.custom.transparent_header == true -%}
+  {%- assign use_transparent_header = true -%}
+{%- endif -%}
+
+{%- capture section_settings -%}
+{
+  "navigationStyle": {{ section.settings.navigation_style | json }},
+  "hasTransparentHeader": {% if use_transparent_header %}true{% else %}false{% endif %},
+  "isSticky": {% if section.settings.use_sticky_header %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+{%- capture header_logo -%}
+  <a href="/#home">
+    <span class="headerLogoImg" role="img" aria-label="Wabara">{% render 'svg-logo-wabara' %}</span>
+
+    <span class="headerLogoImgStore" role="img" aria-label="Online Store">{% render 'svg-logo-onlinestore' %}</span>
+  </a>
+{%- endcapture -%}
+
+{%- assign main_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
+{%- assign main_menu = linklists[main_menu_handle] -%}
+
+<header id="commonHeader" class="header {% if use_transparent_header %}is-transparent{% endif %} {% if section.settings.message %} with-announce{% endif %}">
+
+  <!-- PROMO -->
+  {% if section.settings.message %}
+    <style>
+      .announceBar {
+        background-color: {{ section.settings.color_bg }};
+      }
+      .announceBar strong, .announceBar span {
+        color: {{ section.settings.color_text }};
+      }
+    </style>
+    <aside class="announceBar">
+      {% if section.settings.message_link %}
+      <a class = "announceBarLink" href = "{{ section.settings.message_link }}">
+      {% endif %}
+
+      {% if section.settings.message_text  %}
+        <strong>{{ section.settings.message_text }}</strong>
+      {% endif %}
+
+      {% if section.settings.message_text != blank and section.settings.message_detail != blank %}
+        <span class="promo__break">|</span>
+      {% endif %}
+
+      {% if section.settings.message_detail != blank %}
+        <span class="promoMessage">{{ section.settings.message_detail }}<span>
+      {% endif %}
+
+      {% if section.settings.message_link %}
+      </a>
+      {% endif %}
+    </aside>
+  {% endif %}
+
+  <div class="headerContent">
+    {%- if template == 'index' -%}
+      <h1 class="headerLogo">{{ header_logo }}</h1>
+    {%- else -%}
+      <div class="headerLogo">{{ header_logo }}</div>
+    {%- endif -%}
+
+    <div class="cartNav visible-phone">
+      <a href="/cart">
+        <div class="iconWrap {% if cart.item_count > 0 %}itemCount{% endif %}">
+          <span class="is-bk">{% render 'icon' with 'cart' %}</span>
+          <span class="is-wh">{% render 'icon' with 'cart-wh' %}</span>
+        </div>
+        {% if cart.item_count > 0 %}
+        <span class="cartCount nova bold"><span>{{ cart.item_count }}</span></span>
+        {% endif %}
+      </a>
+    </div>
+
+    <input type="checkbox" id="smt-menu-css" class="on-off hidden">
+    <label id="smtGnaviBtn" for="smt-menu-css" class="visible-phone">
+      <span class="menuicon menuicon-animation-1">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </span>
+    </label>
+
+    <nav class="gnav">
+      <ul class="mainNav">
+        <li class="mainNavItem visible-phone">
+          <a class="mainNavItemLink" href="{{shop.url}}/#home">
+            <span class="">HOME</span>
+            <span class="linkSubTitle visible-phone">ホーム</span>
+          </a>
+        </li>
+        {% for link in main_menu.links %}
+          {%- assign downcased_link_title = link.title | downcase | strip -%}
+
+          {%- capture menu_item_dropdown -%}
+            {%- if link.links != blank -%}
+              <div class="dropdownMenu toggleMenu">
+                <ul class="dropdownLinkList" data-title="{{ link.title }}">
+                  {%- for sub_link in link.links -%}
+                    {%- assign DrLinkTitle = sub_link.title | downcase | strip -%}
+                    {%- capture DrLinkSubTitle -%}
+                      {% case DrLinkTitle %}
+                        {% when "飾る" %}
+                          <span>おうちで楽しむ<br class="hidden-phone">和ばら</span>
+                        {% when "育てる" %}
+                          <span class="nowrap">おへやで育てるばら</span>
+                        {% when "贈る" %}
+                          <span>花束・ギフト・<br class="hidden-phone">ギフトカード</span>
+                        {% when "食べる" %}
+                          <span>ばらの生体水・<br class="hidden-phone">花びら茶など</span>
+                        {% when "纏う" %}
+                          <span>スキンケア</span>
+                        {% when "わばら図鑑" %}
+                          <span class="nowrap">品種紹介・<br class="hidden-phone">切り花の単品購入</span>
+                        {% when "特別なわばら" %}
+                          <span>Rose Charlotte Perriand</span>
+                        {% when "限定商品" %}
+                          <span class="nowrap">限定/企画商品・<br class="hidden-phone">フレグランス</span>
+                        {% else %}
+                      {% endcase %}
+                    {%- endcapture -%}
+                    <li class="linklistItem" {% if sub_link.links != blank %}aria-haspopup="true"{% endif %}>
+                      <a href="{{ sub_link.url }}" class="">
+                        <div>
+                          {{ sub_link.title | escape }}
+                          <span class="linkSubTitle">{{DrLinkSubTitle}}</span>
+                        </div>
+                      </a>
+
+                      {%- if sub_link.links != blank -%}
+                        <div class="dropdownSubMenu" aria-hidden="true">
+                          <ul class="dropdownLinkList">
+                            {%- for sub_sub_link in sub_link.links -%}
+                              <li class="linklistItem">
+                                <a href="{{ sub_sub_link.url }}" class="">{{ sub_sub_link.title | escape }}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- capture linkSubtTitle -%}
+            {% case downcased_link_title %}
+              {% when "Online Shop" %}
+                オンラインショップ
+              {% when "shop" %}
+                オンラインショップ
+              {% when "members" %}
+                WABARAメンバーズ
+              {% when "tokyo" %}
+                東京限定 デリバリー商品 / お引き取り予約
+              {% when "about" %}
+                わたしたちのこと
+              {% when "gallery" %}
+                ギャラリー
+              {% when "journal" %}
+                ジャーナル
+              {% when "workshop" %}
+                ワークショップ
+              {% when "faq / contact" %}
+                よくある質問 / お問い合わせ
+              {% else %}
+                {{downcased_link_title}}
+            {% endcase %}
+          {%- endcapture -%}
+
+          <li class="mainNavItem {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
+            {%- if link.links != blank -%}
+              <div class="mainNavItemLink for-online">
+                <span class="">{{- link.title | escape -}}</span>
+                <span class="linkSubTitle visible-phone">{{- linkSubtTitle -}}</span>
+              </div>
+              <input type="checkbox" id="gnav{{ downcased_link_title }}" class="on-off hidden">
+              <label for="gnav{{ downcased_link_title }}" class="dropdownBtn">
+                <span class="dropdownArrow">{% render 'icon' with 'arrow' %}</span>
+              </label>
+            {%- else -%}
+              <a href="{{ link.url }}" class="mainNavItemLink" {% if link.type == "http_link" %}target="_blank"{% endif %}>
+                {{- link.title | escape -}}
+                <span class="linkSubTitle visible-phone">{{- linkSubtTitle -}}</span>
+              </a>
+            {%- endif -%}
+            {{- menu_item_dropdown -}}
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="subNav">
+        <li class="businessNav"><a href="/pages/business">for business</a></li>
+        {% if shop.customer_accounts_enabled %}
+        <li class="accountNav">
+          {% if customer %}
+            <a href="/account">
+              <span class="hidden-phone">
+                <span class="is-bk">{% render 'icon' with 'account' %}</span>
+                <span class="is-wh">{% render 'icon' with 'account-wh' %}</span>
+              </span>
+              <span class="visible-phone">MY ACCOUNT</span>
+            </a>
+          {% else %}
+            <a href="/account/login" id="customer_login_link">
+              <span class="hidden-phone">
+                <span class="is-bk">{% render 'icon' with 'account' %}</span>
+                <span class="is-wh">{% render 'icon' with 'account-wh' %}</span>
+              </span>
+              <span class="visible-phone">Log in</span>
+            </a>
+          {% endif %}
+        </li>
+        {% endif %}
+        <li class="cartNav hidden-phone">
+          <a href="/cart">
+            <div class="iconWrap {% if cart.item_count > 0 %}itemCount{% endif %}">
+              <span class="is-bk">{% render 'icon' with 'cart' %}</span>
+              <span class="is-wh">{% render 'icon' with 'cart-wh' %}</span>
+            </div>
+            {% if cart.item_count > 0 %}
+            <span class="cartCount bold"><span>{{ cart.item_count }}</span></span>
+            {% endif %}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "アナウンスバー"
+    },
+    {
+      "type": "checkbox",
+      "id": "message",
+      "label": "アナウンスバーを表示する"
+    },
+    {
+      "type": "text",
+      "id": "message_text",
+      "label": "見出し",
+      "default":"Announce something here",
+      "info": "モバイルでは非表示になります"
+    },
+    {
+      "type": "text",
+      "id": "message_detail",
+      "label": "本文",
+      "default":"And then add some details here",
+      "info": "文章が長い場合、末尾が省略されて表示されます"
+    },
+    {
+      "type": "url",
+      "id": "message_link",
+      "label": "URL",
+      "info": "アナウンスバーにリンクを設定できます"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "アナウンスバーの背景色",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "アナウンスバーの文字色",
+      "default": "#3D3146"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "navigation_menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Transparent header"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header",
+      "label": "TOPページで透過ヘッダーを有効にする",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

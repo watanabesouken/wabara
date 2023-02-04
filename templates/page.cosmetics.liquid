@@ -1,0 +1,54 @@
+{{ 'theme_cosmetics.css' | asset_url | stylesheet_tag }}
+
+<div class="staticPage">
+  <section class="cosmeticsTop">
+    <div class="cosmeticsTop__mv">
+      <h1 class="mvTtl">Nurturing <br> Natural Beauty.</h1>
+      <p class="mvTxt">WABARA SKINCARE</p>
+    </div>
+
+    {% render 'cosmetics-products-lineup' %}
+
+    <div class="skinCareStory">
+      <h2 class="skinCareStory__ttl">STORY</h2>
+      <ul class="skinCareStory__list">
+        <li class="storyItem">
+          <div class="storyItem__content">
+            <h3 class="itemTtl">シンプルに、ピュアに。<br>WABARAそのものの恵みを届ける。</h3>
+            <ul class="itemTxtList">
+              <li class="itemTxtList__child">野山に咲くような自然な佇まいにこだわって生み出されたWABARA。楚々とした風情のある佇まいの秘密は、微生物の力を活かした滋養たっぷりの土づくりにあります。バラ本来の力を引き出す土壌で育ったWABARAには、たおやかな姿からは想像もつかないたくましさが備わっています。そんなWABARAの恵みをギュッと抽出し、スキンケアを作りました。一本いっぽんのバラの力をそのまま届けたいから、処方もステップも極力シンプルに。バラ農家だからできた、WABARA SKINCAREの誕生です。</li>
+            </ul>
+          </div>
+          <div class="storyItem__img">
+            <img
+            src="{{ 'story_rose_01.png' | asset_img_url }}"
+            data-src="{{ 'story_rose_01.png' | asset_img_url: 'master' }}"
+            data-widths="[375, 750, 1125]"
+            data-sizes="auto"
+            alt="" class="lazyload">
+          </div>
+        </li>
+        <li class="storyItem">
+          <div class="storyItem__img">
+            <img
+            src="{{ 'story_rose_02.png' | asset_img_url }}"
+            data-src="{{ 'story_rose_02.png' | asset_img_url: 'master' }}"
+            data-widths="[375, 750, 1125]"
+            data-sizes="auto"
+            alt="" class="lazyload">
+          </div>
+          <div class="storyItem__content">
+            <h3 class="itemTtl">とれたてのWABARAを農園で加工。<br>ばら農家ならではのフレッシュな原料</h3>
+            <ul class="itemTxtList">
+              <li class="itemTxtList__child">WABARA SKINCAREに使用しているダマスクローズは、さまざまな品種をテスト栽培し、農園がある滋賀県の琵琶湖のほとりの風土に合う品種を厳選したもの。穏やかで上品な香りと、ポリフェノールの豊富さが特長です。あえて雑草を抜かずに無肥料・無農薬のワイルドな環境で育て底力を引き出し、収穫してすぐにファームで加工。ガクを取り除いた花びらだけを釜に入れ、低温真空抽出法で「生体水」と乾燥した花びらに分離します。抽出温度が45℃以下と低温なため熱に弱い成分を損なわず、真空状態で加工することで酸化を抑えて抽出できます。素材に自信があるから、余分なものは足しません。</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cosmeticsTop__bottomMv">
+      <iframe src="https://player.vimeo.com/video/644607564?h=5e30f9f2fd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="3840" height="2160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="wabara skin care"></iframe>
+    </div>
+  </section>
+</div>

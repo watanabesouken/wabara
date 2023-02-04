@@ -1,0 +1,93 @@
+<!-- /sections/content-onlineshop.liquid -->
+<ul class="onlineShopList for-collection">
+  {%- for block in section.blocks -%}
+    {% if block.settings.content_img != blank %}
+      {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+    {% endif %}
+    {% if block.settings.content_img_sp != blank %}
+      {%- assign img_mobile_url = block.settings.content_img_sp | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_mobile_src_url = block.settings.content_img_sp | img_url: '828x' -%}
+    {% endif %}
+    <li class="onlineShopItem customCollection block--{{ block.id }}">
+      <a href="{{ block.settings.custom_link_url }}">
+        <div class="hidden-phone">
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="visible-phone">
+          <img class="lazyload"
+          src="{{ img_mobile_src_url }}"
+          data-src="{{ img_mobile_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="contentWrap">
+          <dl class="collectionText">
+            <dt class="subTitle heading is-secondary with-line">{{ block.settings.custom_link_text }}</dt>
+            <dd class="mainTitle">{{ block.settings.custom_link_sub_text }}</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "Online Shop（縦長メインバナー）",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "Online Shop（メインバナー）",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_link_panel",
+      "name": "任意ページへの画像リンク",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "url",
+          "id": "custom_link_url",
+          "label": "バナーリンク先"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "バナー内の画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img_sp",
+          "label": "バナー内の画像（モバイル表示用）"
+        },
+        {
+          "type": "header",
+          "content": "テキスト"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_text",
+          "label": "タイトル"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_sub_text",
+          "label": "サブタイトル"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

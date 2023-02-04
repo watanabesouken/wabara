@@ -1,0 +1,91 @@
+{% comment %}
+  Determine whether there are social links
+{% endcomment %}
+{% assign footer_social_enable = false %}
+{% if
+  settings.social_twitter_link != blank
+  or settings.social_facebook_link != blank
+  or settings.social_note_link != blank
+  or settings.social_line_link != blank
+  or settings.social_instagram_link != blank
+%}
+  {% assign footer_social_enable = true %}
+{% endif %}
+
+{% unless template == 'cart' or template.directory == 'customers' or template == 'page.cosmetics' or product.type == 'OIL SERUM' %}
+  {% render 'footer-webletter' %}
+{% endunless %}
+
+<footer class="footer">
+  <nav class="footerNav">
+    <ul class="footerMainNav">
+      {% for link in linklists.footer.links %}
+        {% assign child_list_handle = link.title | handleize %}
+        {% if linklists[child_list_handle].links != blank %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          [{% for childlink in linklists[child_list_handle].links %}
+            <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+          {% endfor %}]
+        {% else %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+  </nav>
+  <div class="footerSubNav">
+    <span class="payment-methods">
+      {% for type in shop.enabled_payment_types %}
+        {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+      {% endfor %}
+    </span>
+    <div class="footerAside">
+      <small class="footerCopyRight">&copy; ROSE UNIVERSE CO., LTD.</small>
+      {% if footer_social_enable %}
+        <ul class="footerSnsNav social-icons">
+          {% if settings.social_instagram_link != blank %}
+            <li>
+              <a href="{{ settings.social_instagram_link | escape }}" target="_blank" rel="noopener noreferrer">
+                {% render 'icon' with 'instagram' %}
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_facebook_link != blank %}
+            <li>
+              <a href="{{ settings.social_facebook_link | escape }}" target="_blank" rel="noopener noreferrer">
+                {% render 'icon' with 'facebook' %}
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_twitter_link != blank %}
+            <li>
+              <a href="{{ settings.social_twitter_link | escape }}" target="_blank" rel="noopener noreferrer">
+                {% render 'icon' with 'twitter' %}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+
+
+{% schema %}
+{
+  "name": "フッター",
+  "settings": [
+    {
+      "type": "header",
+      "content": "メニュー"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_link_list",
+      "label": "フッターメニュー",
+      "default": "footer"
+    }
+  ]
+}
+{% endschema %}

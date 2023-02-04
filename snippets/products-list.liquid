@@ -1,0 +1,62 @@
+<!-- /snippets/products-list.liquid -->
+
+{%- assign featured_image = product.featured_media.preview_image %}
+{%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+{%- if deliverFilter == "mothersday" -%}
+  {% assign filterTarget = false %}
+  {%- for option in product.options_with_values -%}
+    {%- if option.name contains 'お届け日' -%}
+      {% assign filterTarget = true %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<li class="{% unless product.available %}soldOut {% endunless %}{% if filterTarget == true %}filterTarget{% endif %}">
+  <a href="{{ product.url | within: collection }}">
+    <div class="productImgWrap">
+      <img class="lazyload"
+        data-src="{{ img_url }}"
+        data-widths="[285, 570, 855]"
+        data-aspectratio="{{ featured_image.aspect_ratio }}"
+        data-sizes="auto"
+        alt="{{ featured_image.alt | escape }}"
+        data-image>
+        {% unless product.available %}
+        <span class="productSold">売り切れ</span>
+        {% endunless %}
+    </div>
+    <div class="productInfoWrap">
+      <span class="productVendor">{{ product.vendor }}</span>
+      <span class="productTitle">{{ product.title }}</span>
+      <p class="productPrice">
+        <span class="nova">{{ product.price | money }}</span>
+        <span class="taxText">（税込）</span>
+        {% unless product.has_only_default_variant %}
+          {% for option in product.options_with_values %}
+            {% if option.name contains 'お花の本数' %}
+              {% for value in option.values limit:1 %}
+                <span class="nova">/ {{ value | escape }}</span>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
+      </p>
+      {%- if deliverFilter == "mothersday" -%}
+
+        {%- if filterTarget == true -%}
+          <dl class="deliverAvailList">
+            {% for option in product.options_with_values %}
+              {% for value in option.values %}
+                {% if product.variants[forloop.index0].available  %}
+                  <dd class="deliverFilterDate" data-optionindex="option{{forloop.index0 | plus:2}}">{{ value | escape }}</dd>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </dl>
+        {%- endif -%}
+      {%- endif -%}
+
+    </div>
+  </a>
+</li>

@@ -1,0 +1,109 @@
+<!-- /sections/article-gallery-soundscape.liquid -->
+{%- assign video_url = section.settings.video_url -%}
+<div class="articlePage soundscapePage">
+  <article class="articleComponent">
+    <h1 class="visibility-hidden"><span>{{ article.title }}</span></h1>
+    {% unless article.image == blank %}
+      <div class="soundscapeMvWrapper">
+        {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img class="lazyload soundscapeMv"
+            src="{{ article.image | img_url: '300x300' }}"
+            data-src="{{ img_url }}"
+            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+            data-aspectratio="{{ article.image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ article.title | escape }}">
+      </div><!-- / .soundscapeMvWrapper -->
+    {% endunless %}
+
+    <div class="soundscapeNavWrapper">
+      <nav>
+        <div class="soundscapeNav">
+          <ul>
+            {% if video_url %}
+            <li>
+              <a id="jsPlayer" class="navListen">
+                <span id="jsPlayerIcon" class="navIcon listen"><img src="{{ 'gallery_soundscape_icon_listen.svg' | asset_url }}"></span>
+                <span id="jsPlayerTxt">再生する</span>
+              </a>
+            </li>
+              {%- assign navReadClass = 'navRead' -%}
+            {% else %}
+              {%- assign navReadClass = 'navRead navReadOnly' -%}
+            {% endif %}
+            <li>
+              <a id="jsModalOpen" class="{{ navReadClass }}">
+                <span class="navIcon read"><img src="{{ 'gallery_soundscape_icon_read.svg' | asset_url }}"></span>
+                <span>読む</span>
+              </a>
+            </li>
+          </ul>
+        </div><!-- / .soundscapeNav -->
+      </nav>
+      <div class="backToMenu">
+        <a href="/pages/gallery">
+          <picture>
+            <source media="(min-width: 768px)" type="image/svg+xml" srcset="{{ " common_icon_backtomenu_wh.svg" | asset_url
+              }}">
+            <source media="(max-width: 767px)" type="image/svg+xml" srcset="{{ " common_icon_backtomenu_wh_sp.svg" |
+              asset_url }}">
+            <img src="{{ " common_icon_backtomenu_wh.svg" | asset_url }}" alt="Back to Menu">
+          </picture>
+        </a>
+      </div><!-- / .backToMenu -->
+    </div><!-- / .soundscapeNavWrapper -->
+
+    <div class="soundscapeModal jsHidden" id="jsModalMask">
+      <div class="modalContent" id="jsModalContent">
+        {% unless article.content == blank %}
+        <div class="modalText">
+          {{ article.content }}
+        </div>
+        {% endunless %}
+
+        <div class="modalNav">
+          <div class="modalShare">
+            <h3 class="nova">SHARE</h3>
+            {% include 'social-sharing-article', share_title: article.title, share_permalink: article.url, share_image:
+            featured_image %}
+          </div><!-- / .modalShare -->
+          <div class="modalClose">
+            <div class="closeBtn" id="jsModalClose">
+              <img src="{{ 'gallery_soundscape_icon_close.svg' | asset_url }}">
+              <span>閉じる</span>
+            </div>
+          </div><!-- / .modalClose -->
+        </div><!-- / .modalNav -->
+
+      </div><!-- / .modalContent -->
+    </div><!-- / .soundscapeModal -->
+
+    {% if video_url %}
+    <div class="soundscapeVideo visibility-hidden">
+      <iframe
+        id="video"
+        src="https://player.vimeo.com/video/{{ video_url.id }}?loop=0&muted=0"
+        width="640" height="360" frameborder="0"
+        allow="autoplay">
+      </iframe>
+    </div><!-- / .soundscapeVideo -->
+    {% endif %}
+  </article>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "動画URL",
+  "settings": [
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video URL",
+      "accept": ["vimeo"],
+      "info": "vimeoのみ、Youtube不可"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+{%- if recommendations.performed -%}
+
+  {%- if recommendations.products_count > 0 -%}
+  <section class="recommendProduct">
+    <header class="titleComponent">
+      <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Recommends</span></h2>
+      <p>こちらの商品もおすすめ</p>
+    </header>
+    <div class="productListComponent for-collection">
+      <ul class="productList">
+        {%- for product in recommendations.products limit:4 -%}
+        {%- assign featured_image = product.featured_media.preview_image %}
+        {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- include 'products-list' -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+  {%- endif -%}
+
+{%- else  -%}
+  <div data-base-url="{{ routes.product_recommendations_url }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" data-section-type="product-recommendations"></div>
+{%- endif -%}

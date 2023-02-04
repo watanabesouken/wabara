@@ -1,0 +1,105 @@
+<!-- /sections/index-mainvisual.liquid -->
+{% capture randomImg %}
+  {% for block in section.blocks %}
+    {% if block.settings.image != blank %}
+      {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.image | img_url: '2040x' -%}
+    {% endif %}
+
+    {% if block.settings.image_mobile != blank %}
+      {%- assign img_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_mobile_src_url = block.settings.image_mobile | img_url: '828x' -%}
+    {% endif %}
+
+    {% if block.settings.image_mobile != blank %}
+      <div class="mvImg hide">
+        <div class="mvImgWrap hidden-phone" style="background-image: url({{ img_src_url }})">
+        </div>
+        <div class="mvImgWrap visible-phone" style="background-image: url({{ img_mobile_src_url }})">
+        </div>
+      </div>
+    {% else %}
+      <div class="mvImg hide">
+        <div class="mvImgWrap" style="background-image: url({{ img_src_url }})">
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+<div id="mainVisual" class="mainVisual">
+  {%- if section.settings.mainvisual_video_embed -%}
+    {% assign video_url = section.settings.video_url %}
+    <div class="mainvisualVideo">
+      <div class="mainvisualVideoContent">
+        <iframe src="https://player.vimeo.com/video/{{ video_url.id }}?autoplay=1&loop=1&muted=1" width="640" height="360" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+      </div>
+    </div>
+  {%- else -%}
+  <div id="mainvisualContent" class="mainvisualContent" data-random-length="{{ section.blocks.size }}">
+    {{ randomImg }}
+  </div>
+  {%- endif -%}
+
+  <div class="mvScroll">{% render 'icon' with 'scroll' %}</div>
+
+</div>
+
+{% schema %}
+{
+  "name": "メインビジュアル",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "メインビジュアル設定"
+    },
+    {
+      "type": "checkbox",
+      "id": "mainvisual_video_embed",
+      "label": "動画背景を有効化する",
+      "default": false
+    },
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video URL",
+      "accept": ["vimeo"],
+      "info": "vimeoのみ、Youtube不可"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ローディング画面ランダム画像",
+      "category": "画像",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "ランダム画像",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "モバイル用画像",
+          "info": "モバイル表示時に異なる画像を表示します。"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

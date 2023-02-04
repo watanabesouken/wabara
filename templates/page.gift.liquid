@@ -1,0 +1,46 @@
+<div class="staticPage collectionPage">
+  <div id="giftContents">
+    {% section 'gift-collection-mainvisual' %}
+
+    <section class="">
+      <header class="titleComponent">
+        <h2 class="heading is-secondary nova uppercaseTitle with-line"><span>WABARA GIFT PRODUCTS</span></h2>
+        <div class="staticTextWrap is-center">
+          <p>お花、生体水、花びら茶<br>お花があるシーンを彩るわばらのギフト商品</p>
+        </div>
+        {% if settings.mothersday_bannser == true %}
+          <div class="mothersdayBanner">
+            <a href="/pages/mothersday2022">
+              <img
+                srcset="
+                  {{ 'mothersday_banner_top_sp.jpg' | asset_img_url: '767x' }} 767w,
+                  {{ 'mothersday_banner_top_pc.jpg' | asset_img_url: 'master' }} 1218w"
+                sizes="(max-width: 767px) 50vw, 100vw"
+                src="{{ mothersday_banner_top_pc.jpg | asset_img_url }}"
+                alt="HAPPY MOTHER'S DAY 2022年母の日特集はこちら"
+                width="1218"
+                loading="lazy"
+              >
+            </a>
+          </div>
+        {% endif %}
+      </header>
+
+      <div class="staticCollectionWrap">
+        <nav class="ankerNavComponent">
+          <a href="#collectionBlock1"><span>和ばらの花束</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+          <a href="#collectionBlock2"><span>ギフトセット</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+          <a href="#collectionBlock3"><span>eギフトカード</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+        </nav>
+      </div>
+
+      <section class="staticSection">
+        {% section 'gift-collection-block' %}
+      </section>
+    </section>
+
+  </div>
+
+  {% section 'common-static-footer' %}
+
+</div>

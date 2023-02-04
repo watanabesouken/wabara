@@ -1,0 +1,153 @@
+{{ 'theme_giftcard.css' | asset_url | stylesheet_tag }}
+
+<div class="staticPage visualLpPage for-tokyo">
+  <div class="visualLpMv">
+    <header class="mvTitle nova">
+      <h1 class="mvHeading">
+        <span class="characterWrap"><span>WABARA</span></span><br>
+        <span class="characterWrap"><span>LABORATORY</span></span><br>
+        <span class="characterWrap with-spanbr"><span>TOKYO/</span><span>AOYAMA</span></span>
+      </h1>
+      <p class="mvTxt"><span>東京・青山にWABARAのアトリエができました
+      </span></p>
+    </header>
+  </div>
+  
+  <section class="visualLpSection for-about">
+    <div class="contentWidth">
+      <div class="flexComponent">
+        <header class="lpContentHeading">
+          <h2 class="nova">WABARA LABORATORY TOKYOとは？</h2>
+        </header>
+        <div class="lpContentDetail">
+          <p>東京・青山にて、ご予約制でWABARAのお引き取り、プロダクトの体験をすることのできるアトリエです。</p>
+          <hr>
+          <nav class="ankerNavComponent">
+            <a href="#serviceSection"><span>サービス内容</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+            <a href="#featuresSection"><span>オンラインSHOPとの違い</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="serviceSection" class="visualLpSection for-service">
+    <div class="contentWidth">
+      <div class="flexComponent">
+        <header class="lpContentTitle">
+          <h2 class="nova">SERVICES</h2>
+          <p>サービス内容</p>
+        </header>
+        <div class="lpContentDetail">
+          <section class="lpContentSection">
+            <h3 class="countedNumHeading">
+              <span class="countedNumTxt nova">SERVICE</span><span class="countedNum nova">1</span><span class="heading is-secondary">アトリエで商品を引き取る</span>
+            </h3>
+            <p>商品一覧から購入した商品について、指定の日時にご来所いただき、商品をお渡しします。</p>
+            <div class="imgWrap">
+              <img src="{{ 'deliver_service_icon_1.png' | asset_img_url }}" srcset="{{ 'deliver_service_icon_1.png' | asset_img_url: 'master' }} 232w, {{ 'deliver_service_icon_1.png' | asset_img_url: 'master' }} 590w" alt="" loading="lazy" sizes="(min-width: 768px) 295px, 232px" alt="">
+            </div>
+            <dl class="acordionComponent">
+              <div class="acordionItem">
+                <dt class="acordionItemHead"><span>引き取り可能日時</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></dt>
+                <dd class="acordionItemBody">平日　13:00 ~ 20:00 / 土・日　11:00 ~ 18:00<br>定休日：毎週火・水曜日
+                </dd>
+              </div>
+              <div class="acordionItem">
+                <dt class="acordionItemHead"><span>対象商品</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></dt>
+                <dd class="acordionItemBody">
+                  <ul class="simpleListComponent">
+                    <li>和ばらの花束</li>
+                    <li>スキンケア商品</li>
+                    <li>ボトルティー、生体水、花びら茶</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <a href="/products/wabaralaboratorytokyo" class="serviceBannerLink">
+              <div class="serviceBanner">
+                <span>アトリエで商品を引き取る／体験する<span class="arrowIcon">{% render 'icon' with 'arrow-r' %}</span></span>
+              </div>
+              <img src="{{ 'deliver_service_banner_1.jpg' | asset_img_url }}" srcset="{{ 'deliver_service_banner_1.jpg' | asset_img_url: 'master' }}" alt="" loading="lazy" alt="">
+            </a>
+          </section>
+          <section class="lpContentSection">
+            <h3 class="countedNumHeading">
+              <span class="countedNumTxt nova">SERVICE</span><span class="countedNum nova">2</span><span class="heading is-secondary">東京一部地域デリバリーサービス</span>
+            </h3>
+            <p>商品一覧から購入した商品について、指定日時に指定場所までお届けいたします。カフェやレストランもOK！</p>
+            <div class="imgWrap">
+              <img src="{{ 'deliver_service_icon_2.png' | asset_img_url }}" srcset="{{ 'deliver_service_icon_2.png' | asset_img_url: 'master' }} 273w, {{ 'deliver_service_icon_2.png' | asset_img_url: 'master' }} 694w" alt="" loading="lazy" sizes="(min-width: 768px) 347px, 273px" alt="">
+            </div>
+            <dl class="acordionComponent">
+              <div class="acordionItem">
+                <dt class="acordionItemHead"><span>デリバリースケジュール</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></dt>
+                <dd class="acordionItemBody">
+                  <p>平日　14:00 ~ 20:00 / 土・日　10:00 ~ 18:00<br>定休日：毎週火・水曜日</p>
+                  <h4>お届け時間：</h4>
+                  <p>デリバリースケジュールの時間帯の中から、お好きなお届け時間帯（１時間）が選択可能です（各商品ページにて選択）<br>＊万一到着が遅れる場合は、配達員よりご連絡いたします</p>
+                  <h4>＜ご注意＞</h4>
+                  <p>到着後１０分程度はお待ちいたしますが、ご連絡が取れない場合は置き配または持戻りとなります。<br>不在票による再配達、お届け時間の変更等はできません。不在によりお受け取りができなかった場合も返金はございません。<br>お受け取りは1時間ごとにご指定が可能です。必ずお受け取り可能なお時間でご注文ください。</p>
+                </dd>
+              </div>
+              <div class="acordionItem">
+                <dt class="acordionItemHead"><span>お届け可能地域</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></dt>
+                <dd class="acordionItemBody">
+                  <p>※エリアにより追加料金が発生する場合があります。<br>商品のオプション選択時に、お届け先エリアを選択してください。</p>
+                  <p>送料無料エリア：港区、渋谷区、新宿区、目黒区、中央区、千代田区、文京区、豊島区、中野区</p>
+                  <p>+¥330エリア：世田谷区、杉並区、品川区、台東区、江東区、墨田区、荒川区<br>+¥880エリア：板橋区、練馬区、北区、大田区</p>
+                  <p>送料無料エリアは近隣エリアのため、自転車、バイク、軽四輪のいずれかでの配達となり、送料プラスエリアは、原則、バイクまたは軽四輪でのお届けとなります。（配達距離が近い場合は、自転車の場合があります）</p>
+                  <p>プラス料金エリアでも、配達会社様と連携し、お花になるべくストレスのかからない形でお届けいたします。</p>
+                  <h4>お届け時間外の配達や定休日の配達について：</h4>
+                  <p>特別な希望がある場合は別途お問い合わせフォームよりご連絡ください。</p>
+                  <p>TOKYO DELIVERY SERVICEでは、特別な仕様の花束やギフトについても対応可能です。<br>ウエディングブーケなど特別な仕様をご希望の場合は、別途お問い合わせフォームよりご連絡ください。</p>
+                </dd>
+              </div>
+              <div class="acordionItem">
+                <dt class="acordionItemHead"><span>対象商品</span><span class="arrowIcon">{% render 'icon' with 'arrow' %}</span></dt>
+                <dd class="acordionItemBody">
+                  <ul class="simpleListComponent">
+                    <li>和ばらの花束</li>
+                    <li>スキンケア商品</li>
+                    <li>ボトルティー、生体水、花びら茶</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <a href="/pages/tokyodelivery" class="serviceBannerLink">
+              <div class="serviceBanner">
+                <span>デリバリーサービスの商品をみる<span class="arrowIcon">{% render 'icon' with 'arrow-r' %}</span></span>
+              </div>
+              <img src="{{ 'deliver_service_banner_2.jpg' | asset_img_url }}" srcset="{{ 'deliver_service_banner_2.jpg' | asset_img_url: 'master' }}" alt="" loading="lazy" alt="">
+            </a>
+          </section>    
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featuresSection" class="visualLpSection for-features">
+    <div class="contentWidth">
+      <div class="flexComponent">
+        <header class="lpContentTitle">
+          <h2 class="nova">FEATURES</h2>
+          <p>オンラインSHOPとの違い</p>
+        </header>
+        <section class="lpContentDetail">
+          <p>通常のオンラインSHOPでのお買い物では、滋賀の農園からお客様指定の配達先へ宅配便で商品が配達されます。<br>そのほとんどは、鮮度もよく綺麗な状態でお届けができておりますが、まれに輸送途中に落下や衝撃によるおはなの傷み、寒い時期/クール便の利用によるお花の凍結、交通機関の乱れによる遅延のリスクなどがございます。</p>
+          <div class="imgWrap">
+            <img src="{{ 'deliver_feature_icon_1.png' | asset_img_url }}" srcset="{{ 'deliver_feature_icon_1.png' | asset_img_url: 'master' }} 312w, {{ 'deliver_feature_icon_1.png' | asset_img_url: 'master' }} 656w" alt="" loading="lazy" sizes="(min-width: 768px) 328px, 312px" alt="">
+            <img src="{{ 'deliver_feature_icon_2.png' | asset_img_url }}" srcset="{{ 'deliver_feature_icon_2.png' | asset_img_url: 'master' }} 312w, {{ 'deliver_feature_icon_2.png' | asset_img_url: 'master' }} 656w" alt="" loading="lazy" sizes="(min-width: 768px) 328px, 312px" alt="">
+          </div>
+          <p>WABARA LABORATORY TOKYOの場合には東京に滋賀から届いた荷物をFarmのスタッフが一度確認し、東京で束ねてお渡しもしくはお届けいたしますので、お渡しの間際までお花の状態を確認できる点が安心です。<br>ただしデリバリーの場合には、再配達ができかねるため、サプライズでのお届けや事前のご在宅の確認ができない場合、夏場のお届けなどはヤマトの宅配便をお薦めしてしております。</p>
+          <div class="imgWrap">
+            <img src="{{ 'deliver_feature_icon_3.png' | asset_img_url }}" srcset="{{ 'deliver_feature_icon_3.png' | asset_img_url: 'master' }} 334w, {{ 'deliver_feature_icon_3.png' | asset_img_url: 'master' }} 692w" alt="" loading="lazy" sizes="(min-width: 768px) 346px, 334px" alt="">
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  {% section 'common-static-footer' %}
+</div>
+

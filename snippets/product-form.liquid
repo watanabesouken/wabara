@@ -1,0 +1,169 @@
+<!-- /snippets/product-form.liquid -->
+{% assign variantImageSetting = false %}
+{% for variant in product.variants %}
+  {% if variant.image != blank %}
+    {% assign variantImageSetting = true %}
+    {% break %}
+  {% else %}
+    {% assign variantImageSetting = false %}
+  {% endif %}
+{% endfor %}
+
+{% assign mothersdayProduct = false %}
+{% if product.tags contains "母の日の花束" %}
+  {% assign mothersdayProduct = true %}
+{% endif %}
+
+<div class="modalWrap{% if variantImageSetting == true %} with-variantImg{% endif %}">
+<div class="optionsContent {% if mothersdayProduct %}mothersday{% endif %}">
+  <section>
+    <h3 class="heading">オプションを選び<br class="visible-phone">カートに追加してください</h3>
+    {% unless mothersdayProduct %}
+      <div id="infiniteoptions-container"></div>
+    {% endunless %}
+  </section>
+
+  {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+      <div class="radio-wrapper js product-form__item">
+        <label class="single-option-radio__label"
+          for="ProductSelect-option-{{ forloop.index0 }}">
+          {{ option.name | escape }}
+        </label>
+        <fieldset class="productVariantSelect single-option-radio"
+          id="ProductSelect-option-{{ forloop.index0 }}">
+          {% assign option_index = forloop.index %}
+          <ul class="productVariantList">
+            {% for value in option.values %}
+              {% assign variant_label_state = true %}
+              {% if product.options.size == 1 %}
+                {% unless product.variants[forloop.index0].available  %}
+                  {% assign variant_label_state = false %}
+                {% endunless %}
+              {% endif %}
+              <li>
+                <input type="radio"
+                  {% if option.selected_value == value %} checked="checked"{% endif %}
+                  {% unless variant_label_state %} disabled="disabled"{% endunless %}
+                  value="{{ value | escape }}"
+                  data-index="option{{ option_index }}"
+                  name="option{{ option.position }}"
+                  class="productVariantRadio single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
+                  id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+                <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" class="productVariantLabel {% unless variant_label_state %} disabled{% endunless %}">{{ value | escape }}</label>
+              </li>
+            {% endfor %}
+          </ul>
+        </fieldset>
+        {% if option.name contains 'お花の本数' %}
+          <div class="productBouquetSample">
+            <span>＊本数の目安</span>
+            <ul class="bouquetSampleList">
+              <li>
+                <img
+                  src="{{ 'product_bouquet_number_5.jpg' | asset_img_url: 'master' }}"
+                  alt="" class="">
+                <p>5本</p>
+              </li>
+              <li>
+                <img
+                  src="{{ 'product_bouquet_number_10.jpg' | asset_img_url: 'master' }}"
+                  alt="" class="">
+                <p>10本</p>
+              </li>
+              <li>
+                <img
+                  src="{{ 'product_bouquet_number_20.jpg' | asset_img_url: 'master' }}"
+                  alt="" class="">
+                <p>20本</p>
+              </li>
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if forloop.first == true and variantImageSetting == true %}
+        <div id="ProductMediaGroup-{{ section.id }}" class="product-single__media-group-wrapper" data-product-single-media-group-wrapper>
+          <div class="product-single__media-group" data-product-single-media-group>
+            {%- for media in product.media -%}
+              {%- assign featured = false -%}
+              {%- if media == featured_media -%}
+                {%- assign featured = true -%}
+              {%- endif -%}
+              <div class="product-single__media-flex-wrapper" data-product-single-media-flex-wrapper>
+                <div class="product-single__media-flex">
+                  {% capture media_id %}{{ section.id }}-{{ media.id }}{% endcapture %}
+                  {% capture img_id_class %}product-single__media-{{ media_id }}{% endcapture %}
+                  {% capture wrapper_id %}ProductMediaWrapper-{{ media_id }}{% endcapture %}
+
+                  <div id="{{ wrapper_id }}" class="product-single__media-wrapper {% unless  featured %} hide{% endunless %}"
+                  data-product-single-media-wrapper
+                  data-media-id="{{ media_id }}"
+                  tabindex="-1">
+                    <div class="product-single__media">
+                      {% assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                      <img class="mfp-image lazyload {{ img_id_class }}"
+                        src="{{ media | img_url: '300x300' }}"
+                        data-src="{{ img_url }}"
+                        data-widths="[180, 360, 590, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                        data-sizes="auto"
+                        data-media-id="{{ media.id }}"
+                        alt="">
+                    </div>
+                    <noscript>
+                      <img class="product-single__media" src="{{ media | img_url: 'master' }}"
+                        alt="">
+                    </noscript>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+
+  {% if mothersdayProduct %}
+    <div id="infiniteoptions-container"></div>
+  {% endif %}
+
+  {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+  <div id="customVariantSelect" class="productVariantInfo{% if product.has_only_default_variant %} hide{% endif %}">
+    <select form="AddToCartForm" name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants no-js">
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <option {% if variant == product.selected_or_first_available_variant %}
+            selected="selected" {% endif %}
+            data-sku="{{ variant.sku }}"
+            value="{{ variant.id }}">
+            {{ variant.title }} / {{ variant.price | money }}
+          </option>
+        {% else %}
+          <option disabled="disabled">
+            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+     <div data-anygift="marker"></div>
+  {% endform %}
+  
+  <div class="btnWrap">
+    <p id="customVariantSelectTxt" class="customVariantSelectTxt"></p>
+    <div class="product-single__add-to-cart">
+      <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn is-primary with-bg btn--add-to-cart"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+        <span class="available">
+          <span>{% render 'icon' with 'cartplus' %}</span>
+          <span>この内容でカートに追加</span>
+        </span>
+        <span class="soldout">売り切れ</span>
+      </button>
+    </div>
+    <button type="button" id="modalClose" class="btn modalCloseBtn">カートに追加せず、閉じる</button>
+  </div>
+
+</div>
+</div>

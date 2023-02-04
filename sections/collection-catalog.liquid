@@ -1,0 +1,247 @@
+<div>
+
+
+  <div class="sidebarContent collectionFilterCategory" data-size-tags="{{current_tags | size}}">
+
+    <section class="collectionFilterBlock">
+      <h3 class="heading">カテゴリー</h3>
+      <ul class="collectionFilterList">
+
+        {% assign tag =  '切り花' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '園芸苗' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+      </ul>
+
+    </section>
+
+    <section class="collectionFilterBlock">
+      <h3 class="heading">切り花の特徴</h3>
+      <ul>
+        {% assign tag =  '一輪' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '房咲き' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '特徴的な香り' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '花持ちが良い' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+      </ul>
+
+    </section>
+
+    <section class="collectionFilterBlock">
+      <h3 class="heading">園芸苗の特徴</h3>
+      <ul>
+        {% assign tag =  '育てやすい' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+        {% assign tag =  'たくさん花がつく' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+        {% assign tag =  '特徴的な香り' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+      </ul>
+    </section>
+    <section class="collectionFilterBlock">
+      <h3 class="heading">品種シリーズ</h3>
+      <ul>
+        {% assign tag =  '美咲' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '友禅' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'ひな' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '雅' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'つむぎ' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'かおりかざり' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'てまり' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  '葵' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'つきのにわ' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'CharlottePerriand' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+
+        {% assign tag =  'その他' | handleize %}
+        <li class="itemFilter" data-handle="{{tag}}">
+          {% if current_tags contains tag %}
+            {{  tag |  link_to_remove_tag:  tag  | replace_first: '>',' class="active" >' }}
+          {% else %}
+            {{  tag | link_to_add_tag:  tag  | replace_first: '>',' class="" >'}}
+          {% endif %}
+        </li>
+      </ul>
+    </section>
+    {% assign current_tags = current_tags_temp %}
+  </div>
+
+</div>
+{% schema %}
+{
+  "name": "わばら図鑑フィルター",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "絞り込みカテゴリーの設定",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_color_setting",
+      "name": "絞り込み項目",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "tag_icon",
+          "label": "アイコン画像"
+        },
+        {
+          "type": "text",
+          "id": "tag_value",
+          "label": "絞り込み項目",
+          "info": "対象とするタグを記入してください。"
+        },
+        {
+          "type": "text",
+          "id": "tag_title",
+          "label": "絞り込み項目のタイトル",
+          "info": "タグと異なるタイトルを表示する場合は入力してください。未入力の場合、タグがそのまま表示されます。"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

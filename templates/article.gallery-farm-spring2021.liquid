@@ -1,0 +1,14 @@
+<!-- templates/article.liquid -->
+<div class="articlePage">
+  <article class="articleComponent">
+    <header class="articleHeader galleryHeader">
+      <h1 class="heading is-primary nova uppercaseTitle with-line"><span>{{ article.title }}</span></h1>
+    </header>
+    <div class="articleGallery">
+      {% section 'article-gallery-farm-spring2021.liquid' %}
+    </div>
+  </article>
+  <div class="backToMenu">
+    <a href="/pages/gallery"><img src="{{ "common_icon_backtomenu.svg" | asset_url }}" alt="Back to Menu"></a>
+  </div>
+</div>

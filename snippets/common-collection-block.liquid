@@ -1,0 +1,41 @@
+<!-- /snippets/common-collection-block.liquid -->
+<div class="staticCollectionWrap">
+  {%- for block in section.blocks -%}
+    <section class="collectionBlock" id="collectionBlock{{ forloop.index }}">
+      {% if block.settings.custom_text != blank %}
+        <header class="titleComponent">
+          <h3 class="heading is-secondary nova uppercaseTitle with-line"><span>{{ block.settings.custom_heading }}</span></h3>
+          <p>
+            {{ block.settings.custom_text | newline_to_br }}
+          </p>
+        </header>
+      {% else %}
+        <header class="titleComponent">
+          <h3 class="heading is-secondary nova uppercaseTitle"><span>{{ block.settings.custom_heading }}</span></h3>
+        </header>
+      {% endif %}
+      {% if block.settings.custom_collection != blank %}
+        <div class="productListComponent">
+          <ul class="productList">
+            {% for product in collections[block.settings.custom_collection].products limit:32 %}
+              {% include 'products-list' %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% else %}
+        {%- if banner == "giftCard" -%}
+          <div class="collectionBannerWrap">
+            <a href="/pages/giftcard-sender">
+              <div class="hidden-phone">
+                <img src="{{ 'common_banner_giftcard_pc.jpg' | asset_img_url }}" data-src="{{ 'common_banner_giftcard_pc.jpg' | asset_img_url: 'master' }}" data-widths="[1106, 2212, 3318]" alt="" width="1106" height="" class="lazyload">
+              </div>
+              <div class="visible-phone">
+                <img src="{{ 'common_banner_giftcard_sp.jpg' | asset_img_url }}" data-src="{{ 'common_banner_giftcard_sp.jpg' | asset_img_url: 'master' }}" data-widths="[335, 670, 1005]" alt="" width="335" height="" class="lazyload">
+              </div>
+            </a>
+          </div>
+        {%- endif -%}
+      {% endif %}
+    </section>
+  {% endfor %}
+</div>

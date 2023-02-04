@@ -1,0 +1,100 @@
+<!-- /sections/faq-contents.liquid -->
+
+<section id="section-{{ section.id }}">
+
+  <ul class="faqContentNav">
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_category' %}
+        <li>
+          <a href="#faqCategory{{forloop.index}}">{{block.settings.faq_category_title}}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div id="faqContentList">
+    {%- for block in section.blocks -%}
+
+      {% if block.type == 'faq_category' %}
+
+        {% assign category = block.settings.faq_category_title %}
+        <h2 id="faqCategory{{forloop.index}}" class="faqCategory heading"><span>{{ category }}</span></h2>
+
+      {% else %}
+
+      <div class="faqContentWrap">
+        {% if block.type == 'faq_article' %}
+          {% assign article = articles[block.settings.faq_article_content] %}
+          {% assign faqTitle = article.title %}
+          {% assign faqContent = article.content %}
+        {% elsif block.type == 'faq_txt' %}
+          {% assign faqTitle = block.settings.faq_txt_title %}
+          {% assign faqContent = block.settings.faq_txt_content %}
+        {%- endif -%}
+        <section>
+          <h3 class="heading faqTitle">
+            <span>{{ faqTitle }}</span>
+            <span class="arrowIcon">{% include 'icon' with 'arrow' %}</span>
+          </h3>
+          <div class="faqContent">
+            <div>{{ faqContent | newline_to_br }}</div>
+          </div>
+        </section>
+      </div>
+
+      {%- endif -%}
+
+    {%- endfor -%}
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "FAQコンテンツ内容",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "faq_category",
+      "name": "FAQカテゴリ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_category_title",
+          "label": "FAQカテゴリー名称"
+        }
+      ]
+    },
+    {
+      "type": "faq_txt",
+      "name": "FAQコンテンツ（テキスト）",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_txt_title",
+          "label": "FAQタイトル"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_txt_content",
+          "label": "FAQ内容"
+        }
+      ]
+    },
+    {
+      "type": "faq_article",
+      "name": "FAQコンテンツ（ブログ記事）",
+      "settings": [
+        {
+          "type": "article",
+          "id": "faq_article_content",
+          "label": "FAQ内容",
+          "info": "ブログ記事のタイトルを見出し、内容をテキストとして表示します。選択したブログ記事のURLに日本語が含まれていると登録できません。英数字URLに修正してください"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

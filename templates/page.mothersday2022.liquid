@@ -1,0 +1,174 @@
+{{ 'theme_giftcard.css' | asset_url | stylesheet_tag }}
+
+<div class="staticPage">
+  <section class="giftCard for-mothersday">
+    <header class="giftCard__mv">
+      <h1 class="mvTtl">WABARA <br> MOTHER’S <br class="visible-phone">DAY<br class="hidden-phone">GIFT</h1>
+    </header>
+
+    <section class="giftCard__concept">
+      <div class="contentWidth">
+        <div class="conceptWrapper">
+          <h2 class="conceptTtl">1年間の感謝を伝える日を<br>WABARAとともに</h2>
+          <div class="conceptList">
+            <p>WABARAの母の日商品のご案内です。<br>ばらの収穫状況に応じて、商品ごとに数量を限定して販売しているため、商品のお届け可能日に応じて、商品をご選択していただけるようにいたしました。</p>
+            <p class="announceTxt"><span>※2022年度の母の日キャンペーンは終了いたしました。</span><br>
+            ギフト関連商品は<a href="/pages/gift">こちら</a>をご確認ください</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__concept for-guide staticSection withBgColor">
+      <div class="contentWidth">
+        <div class="conceptWrapper">
+          <h3 class="conceptTtl">母の日商品のご購入について</h3>
+          <div class="conceptList">
+            <dl class="conceptDetailList">
+              <div>
+                <dt>日付ごとの商品の有無を確認する</dt>
+                <dd>ばらの収穫状況に応じて、お届け日ごとにお選びいただける商品が異なります。以下の商品一覧で、日付ごとに在庫のある商品をご確認ください。<span>※表示されない商品は売り切れとなりますので、ご了承ください。</span></dd>
+              </div>
+              <div>
+                <dt>商品を選択し、カート画面にて配送日時を選択する</dt>
+                <dd>商品を選び、商品ページで、商品をカートに追加してください。<br>カート画面にて、改めてお届け日時の選択をお願いいたします。<br><span>※本ページでの日付の選択はお届け日時を決定するものではありません。</span></dd>
+              </div>
+              <div>
+                <dt>決済する</dt>
+                <dd>通常のお買い物同様、決済をお済ませください。</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="staticSection">
+      <div class="staticCollectionWrap">
+        <section class="collectionBlock">
+          <header class="titleComponent">
+            <h2 class="heading nova uppercaseTitle with-line"><span>GIFT</span></h2>
+            <p class="subTitle">母の日の商品</p>
+            <p class="announceTxt"><span>※2022年度の母の日キャンペーンは終了いたしました。</span><br>
+            ギフト関連商品は<a href="/pages/gift">こちら</a>をご確認ください</p>
+          </header>
+          <div class="productListComponent">
+            <div class="productDeliverFilter">
+              <h3 class="heading">日毎に商品有無を確認いただけます</h3>
+              <p>ばらの収穫量に応じて、商品ごとに数量を限定して販売しています。<br>以下の日付ボタンをクリックすると日付ごとに在庫のある商品をご確認いただけます。</p>
+              <fieldset class="productVariantSelect single-option-radio" id="filterDateSelect">
+                <ul class="productVariantList">
+                  {%- assign deliverArray = "すべての日程, 5/1（日）, 5/2（月）, 5/3（火）, 5/4（水）, 5/5（木）, 5/6（金）, 5/7（土）, 5/8（日）, 5/9（月）, 5/10（火）" | split: ", " -%}
+                  {%- for day in deliverArray -%}
+                    {% assign option_index = forloop.index %}
+                    <li>
+                      <input type="radio"
+                        {% if forloop.first == true %}checked="checked" lazypreload{% endif %}
+                        value="option{{ option_index }}"
+                        data-index="option{{ option_index }}"
+                        name="deliverFilterRadio"
+                        class="productVariantRadio"
+                        id="option{{ option_index }}">
+                      <label for="option{{ option_index }}" class="productVariantLabel">{{ day }}</label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </fieldset>
+            </div>
+            <ul class="productList" id="mothersDayCollection">
+              {% for product in collections["2022-mothersday"].products %}
+                {% include 'products-list' deliverFilter: "mothersday" %}
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="giftCard__qa staticSection withBgColor">
+      <div class="contentWidth">
+        <div class="qaWrapper">
+          <div class="qaTtl">
+            <h2 class="enTtl">FAQ</h2>
+            <p class="jaTtl">よくある質問</p>
+          </div>
+
+          <ul class="accordionList" id="accordionList">
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>5/1~5/10の指定で、こちらの商品以外のお届けはできますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">5/1~5/10のお届けは、大変申し訳ございませんが通常商品の販売はございません。<br>ご希望の商品がある方は上記期間以外でご注文をお願いいたします。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>メッセージカードはつけられますか？ 用意したものを同梱して送ることは可能ですか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">母の日用のカードのご用意はございません。「THANK YOU」というカードのご用意でしたら可能です。注文画面にてお選びくださいませ。カスタムメッセージの代筆等は行っておりませんのでご了承くださいませ。<br>また、発送が大変混み合う時期のため、入れ間違いを防ぐためお客様のご用意させたメッセージカードをご一緒に送ることはできかねますのでご了承ください。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>5/1~5/10のお届けで、母の日以外の用途で使用したいのですが可能ですか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">通常のラッピングでお届けとなりますので、こちらの商品もご用途に合わせてご利用いただけます。メッセージカードは以下のご用意をしております。</p>
+                <ul>
+                  <li>1:HAPPY BIRTHDAY</li>
+                  <li>2:THANK YOU</li>
+                  <li>3:CONGTATULATIONS</li>
+                </ul>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>品種の指定はできますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">品種のご指定はできかねます。5/1~5/10のお届け以外でしたら、単品購入や品種のご指定が可能な商品もございます。<br>ご注文メモ欄に記載をいただきましてもご対応はできかねますのでご了承くださいませ。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>東京デリバリーでのお届けは可能ですか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">5/1~5/10は東京デリバリーはお休みしております。<br>スタッフが滋賀のFarmにて農作業をしておりますので、ご了承くださいませ。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>届け先が異なる２件へ発送したいのですが、一緒に購入することは可能ですか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">お届け先が異なる場合には、おひとつずつお手続きをお願いいたします。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>連名で届けたい場合、依頼主の欄はどのように記載したら良いですか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">連名をご希望の場合には、ご注文の際にご依頼主様のお名前に連名での記載をお願いいたします。こちらはお届け先様に届く際の配送伝票に記載されるお名前となります。</p>
+                <p class="qaContent__txt">ご依頼主欄に文字数が入らない場合には、ご注文メモ欄に記載をお願いいたします。お届けの際の伝票のメモ欄に記載いただいた内容を入れてお届けいたします。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</div>
+
+<script src="{{ 'theme_giftcard.js' | asset_url }}" defer="defer"></script>

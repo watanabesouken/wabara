@@ -1,0 +1,37 @@
+
+{% capture mv_slider %}
+  {%- for block in section.blocks -%}
+
+    {% if block.settings.image != blank %}
+      {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.image | img_url: '2040x' -%}
+    {% endif %}
+
+    <div class="heroSlide">
+      <div class="heroImgWrap" style="background-image: url({{ img_src_url }})">
+      </div>
+    </div>
+  {%- endfor -%}
+{% endcapture %}
+
+<div class="mainvisual">
+  {%- if section.settings.mainvisual_video_embed -%}
+    {% assign video_url = section.settings.video_url %}
+    <div class="mainvisualVideo">
+      <div class="mainvisualVideoContent">
+        <iframe src="https://player.vimeo.com/video/{{ video_url.id }}?autoplay=1&loop=1&muted=1" width="640" height="360" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+      </div>
+    </div>
+  {%- else -%}
+  {% assign sliderID = 'heroSlider' %}
+  {% for block in section.blocks %}
+    {% if forloop.length == 1 %}
+      {% assign sliderID = 'heroVisual' %}
+    {% endif %}
+  {% endfor %}
+  <div id="{{sliderID}}" class="mainvisualContent">
+    {{ mv_slider }}
+  </div>
+  {%- endif -%}
+
+</div>

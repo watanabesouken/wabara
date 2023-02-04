@@ -1,0 +1,47 @@
+<div class="staticPage">
+  <div id="businessContents">
+    <section class="">
+      <header class="titleComponent">
+        <h1 class="heading is-primary nova uppercaseTitle"><span>{{ page.title }}</span></h1>
+      </header>
+      <div class="staticMv staticWrapComponent">
+        {% section 'business-static-mainvisual' %}
+      </div>
+      <div class="titleComponent">
+        <h2 class="heading is-secondary nova uppercaseTitle with-line"><span>WABARAのビジネスサービス</span></h2>
+        <div class="staticTextWrap is-center">
+          <p>卸販売や法人向けの贈り花取りまとめサービス、イベント時のノベルティ作成。<br>デモンストレーション、空間ディスプレイ、ワークショップ開催など幅広く承っております。</p>
+        </div>
+      </div>
+      <section class="businessSection staticSection withBgColor">
+        <h2 class="heading staticSectionHeading nova uppercaseTitle"><span>OUR SERVICE</span></h2>
+        <div class="staticTextWrap is-center">
+          <p>法人・個人事業主向けサービス</p>
+        </div>
+        {% section 'business-column-block' %}
+      </section>
+
+      <section class="businessSection staticSection">
+        <header class="titleComponent">
+          <h2 class="heading staticSectionHeading nova uppercaseTitle with-line"><span>法人サービスに関する<br class="visible-phone">お問い合わせ</span></h2>
+        </header>
+        <div class="staticTextWrap is-center">
+          <p>上記サービス、および上記以外のサービスについても可能な限りご対応させていただきます。<br>お問い合わせは下記のフォームよりお願いいたします。</p>
+          <a href="https://forms.gle/E4mewcHa48v99t4QA" target="_blank">お花・ドライフラワーの卸販売のお取引申請はこちら</a>
+        </div>
+        <div class="hubspotWrap ">
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "7573947",
+              formId: "5ad387ec-1e8f-48ab-8239-917940c1c118"
+          });
+          </script>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  {% section 'common-static-footer' %}
+
+</div>

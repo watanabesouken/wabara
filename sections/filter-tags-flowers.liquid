@@ -1,0 +1,72 @@
+{% if template contains 'collection' %}
+  {% include 'catalog-filter-tags' %}
+{% elsif template contains 'product' %}
+  {% assign tagMatch =  false %}
+
+  {% for tag in product.tags %}
+    {%- for block in section.blocks -%}
+      {% assign catalog_tag =  block.settings.title | handleize %}
+      {% if tag == catalog_tag %}
+        {% assign tagMatch =  true %}
+        {% break %}
+      {% else %}
+        {% assign tagMatch =  false %}
+      {% endif %}
+    {%- endfor -%}
+
+    {% if tag == catalog_tag %}
+      {% break %}
+    {% endif %}
+
+  {% endfor %}
+
+  {% if tagMatch ==  true %}
+    <dl class="productFilterList for-feature">
+      <dt>わばらの特徴</dt>
+      {% include 'product-filter-tags' %}
+    </dl>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "わばらの特徴一覧",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "切り花の特徴に属するタグ一覧",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_tag_setting",
+      "name": "切り花の特徴に属するタグ情報",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "tag_icon",
+          "label": "アイコン画像"
+        },
+        {
+          "type": "range",
+          "id": "tag_icon_width",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "アイコン画像サイズ（横幅）",
+          "default": 20
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "タグの名称",
+          "info": "対象とするタグを記入してください。"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

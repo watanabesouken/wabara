@@ -1,0 +1,36 @@
+<!-- /templates/customers/activate_account.liquid -->
+<div class="accountPage centeringForm">
+
+  <h1 class="accountHeading">アカウントの有効化</h1>
+  <p class="noteTxt">{{ 'customer.activate_account.subtext' | t }}</p>
+
+  <div class="formComponent">
+    {% form 'activate_customer_password' %}
+
+      {%- if form.errors -%}
+        <div class="form-message form-message--error">
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <div class="primaryLine">
+        <input type="password" value="" name="customer[password]" id="CustomerPassword" placeholder="{{ 'customer.activate_account.password' | t }}">
+      </div>
+
+      <div class="primaryLine">
+        <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" placeholder="{{ 'customer.activate_account.password_confirm' | t }}">
+      </div>
+
+      <div class="submitBtn">
+        <input type="submit" class="btn is-dark" value="{{ 'customer.activate_account.submit' | t }}">
+      </div>
+
+      <aside class="loginAside">
+        <span><input type="submit" class="btn is-text" name="decline" value="{{ 'customer.activate_account.cancel' | t }}"></span>
+      </aside>
+
+    {% endform %}
+
+  </div>
+
+</div>

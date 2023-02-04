@@ -1,0 +1,1359 @@
+@charset "UTF-8";
+.giftCard {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+}
+.giftCard .contentWidth {
+  max-width: 948px;
+  margin: auto;
+}
+.giftCard__mv {
+  height: 800px;
+  position: relative;
+}
+.giftCard__mv .mvTtl {
+  position: absolute;
+  bottom: 150px;
+  left: calc(50% - 30px);
+  font-size: 67px;
+  line-height: 1.3;
+  letter-spacing: 25.46px;
+  color: #fff;
+}
+.giftCard__mv .mvTxt {
+  position: absolute;
+  bottom: 60px;
+  left: calc(50% - 30px);
+  font-size: 32px;
+  line-height: 2.75;
+  letter-spacing: 2.4px;
+  color: #fff;
+}
+.giftCard__concept {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.for-sender .giftCard__concept {
+  padding-top: 160px;
+  padding-bottom: 142px;
+}
+.for-recipient .giftCard__concept {
+  padding-top: 160px;
+  padding-bottom: 30px;
+}
+.giftCard__concept .conceptWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.giftCard__concept .conceptWrapper .conceptTtl {
+  font-size: 22px;
+  line-height: 1.7;
+}
+.giftCard__concept .conceptWrapper .conceptList {
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 505px;
+}
+.giftCard__concept .conceptWrapper .conceptList .linkWrap {
+  text-align: right;
+}
+.giftCard__concept .conceptWrapper .conceptList .linkWrap a {
+  text-decoration: underline;
+}
+.giftCard__concept .conceptWrapper .conceptList p:not(:last-child) {
+  margin-bottom: 1.9em;
+}
+.giftCard__about {
+  background-color: #f7f7f7;
+  padding-top: 144px;
+  padding-bottom: 131px;
+}
+.giftCard__about .aboutWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.giftCard__about .aboutWrapper .aboutContent {
+  width: 52.9%;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentImg img {
+  width: 100%;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentTxt {
+  margin-top: 80px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList {
+  margin-top: 60px;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem {
+  margin-top: 61px;
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem .itemTtl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem .itemTtl::before {
+  content: "";
+  display: inline-block;
+  background-color: #fff;
+  width: 19px;
+  height: 19px;
+  margin-right: 10px;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem .itemTtl::after {
+  content: url(common_icon_check.svg);
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem .itemTxt {
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 29px;
+}
+.giftCard__about .aboutWrapper .aboutContent .contentList .listItem:nth-of-type(1) {
+  margin-top: 0;
+}
+.for-sender .giftCard__cases {
+  padding-top: 131px;
+  padding-bottom: 135px;
+}
+.for-recipient .giftCard__cases {
+  padding-bottom: 70px;
+}
+.giftCard__cases .caseWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.giftCard__cases .caseWrapper .casesContent {
+  width: 500px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTxt {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab {
+  position: relative;
+  width: 100%;
+  margin-top: 53px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #000;
+  z-index: 1;
+  top: 46px;
+  left: 0;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabItem {
+  width: calc((100% - 36px) / 5);
+  font-size: 16px;
+  height: 46px;
+  line-height: 46px;
+  font-weight: 600;
+  background-color: #e8e8e8;
+  text-align: center;
+  display: block;
+  float: left;
+  flex-wrap: nowrap;
+  color: #000;
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabItem:not(:last-of-type) {
+  margin-right: 9px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabItem:hover {
+  opacity: 0.9;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab input[name=tabItem] {
+  display: none;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: none;
+  padding-top: 55px;
+  margin-bottom: 50px;
+  overflow: hidden;
+  clear: both;
+  text-align: center;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern {
+  margin-top: 60px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentTtl {
+  font-size: 19px;
+  line-height: 1.4;
+  text-align: left;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentTxt {
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: left;
+  margin-top: 10px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentImg {
+  transition: 0.5s ease;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentImg:hover {
+  opacity: 0.9;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentImg img {
+  width: 100%;
+  display: block;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .btn.with-bg {
+  margin-top: 20px;
+  font-size: 16px;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern:nth-of-type(1) {
+  margin-top: 0;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab #aTab:checked ~ #aContent,
+.giftCard__cases .caseWrapper .casesContent .casesTab #bTab:checked ~ #bContent,
+.giftCard__cases .caseWrapper .casesContent .casesTab #cTab:checked ~ #cContent,
+.giftCard__cases .caseWrapper .casesContent .casesTab #dTab:checked ~ #dContent,
+.giftCard__cases .caseWrapper .casesContent .casesTab #eTab:checked ~ #eContent {
+  display: block;
+}
+.giftCard__cases .caseWrapper .casesContent .casesTab input:checked + .tabItem {
+  background-color: #000;
+  color: #fff;
+}
+.giftCard__purchase {
+  background-color: #f7f7f7;
+  padding-top: 113px;
+  padding-bottom: 163px;
+}
+.giftCard__purchase .purchaseTtl {
+  text-align: center;
+}
+.giftCard__purchase .purchaseTtl .enTtl::after {
+  margin: auto;
+}
+.giftCard__purchase .purchaseContent .contentTtl {
+  text-align: center;
+  margin-top: 58px;
+}
+.giftCard__purchase .purchaseContent .contentTtl__en {
+  font-size: 16px;
+  letter-spacing: 8px;
+  line-height: 2.8;
+  font-weight: 600;
+}
+.giftCard__purchase .purchaseContent .contentTtl__ja {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 19px;
+  letter-spacing: 3.8px;
+  line-height: 1.4;
+}
+.giftCard__purchase .purchaseContent .purchaseTab {
+  position: relative;
+  max-width: 782px;
+  margin: auto;
+  margin-top: 53px;
+}
+.giftCard__purchase .purchaseContent .purchaseTab::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #000;
+  z-index: 1;
+  top: 46px;
+  left: 0;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2 {
+  width: 19.4%;
+  font-size: 16px;
+  height: 46px;
+  line-height: 46px;
+  font-weight: 600;
+  background-color: #e8e8e8;
+  text-align: center;
+  display: block;
+  float: left;
+  flex-wrap: nowrap;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2:not(:last-of-type) {
+  margin-right: 8.2px;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(2) {
+  width: 14.1%;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(3) {
+  width: 19.9%;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(4) {
+  width: 23%;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabItem2:hover {
+  opacity: 0.9;
+}
+.giftCard__purchase .purchaseContent .purchaseTab input[name=tabItem2] {
+  display: none;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent {
+  display: none;
+  overflow: hidden;
+  clear: both;
+  background-color: #fff;
+  padding: 70px 0;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg {
+  padding: 0 152px;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg img {
+  width: 100%;
+  display: block;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg .sampleLink {
+  display: block;
+  text-align: right;
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg .sampleLink__content {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.2;
+  transition: 0.5s ease;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg .sampleLink__content::after {
+  content: "";
+  font-size: 12px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 8.5px;
+  background-color: #707070;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg .sampleLink__content:hover {
+  opacity: 0.9;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 48px;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList__item {
+  width: 18.5%;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList__item .itemLink {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #8aa7a0;
+  color: #fff;
+  transition: 0.5s ease;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList__item .itemLink:hover {
+  opacity: 0.9;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList {
+  margin: auto;
+  margin-top: 63px;
+  max-width: 500px;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList__item {
+  font-size: 14px;
+  line-height: 1.9;
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList__item::before {
+  content: "※";
+  display: inline-block;
+}
+.giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList__item a {
+  text-decoration: underline;
+}
+.giftCard__purchase .purchaseContent .purchaseTab #fTab:checked ~ #fContent,
+.giftCard__purchase .purchaseContent .purchaseTab #gTab:checked ~ #gContent,
+.giftCard__purchase .purchaseContent .purchaseTab #hTab:checked ~ #hContent,
+.giftCard__purchase .purchaseContent .purchaseTab #iTab:checked ~ #iContent,
+.giftCard__purchase .purchaseContent .purchaseTab #jTab:checked ~ #jContent {
+  display: block;
+}
+.giftCard__purchase .purchaseContent .purchaseTab input:checked + .tabItem2 {
+  background-color: #000;
+  color: #fff;
+}
+.giftCard__guide {
+  padding-top: 93px;
+}
+.for-recipient .giftCard__guide {
+  padding-bottom: 130px;
+}
+.giftCard__guide .guideWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.giftCard__guide .guideWrapper .guideList {
+  width: 52.8%;
+}
+.giftCard__guide .guideWrapper .guideList__item {
+  margin-top: 65px;
+}
+.giftCard__guide .guideWrapper .guideList__item:nth-of-type(1) {
+  margin-top: 0;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemTtl {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 8px;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemTxt {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 30px;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemTxt span {
+  color: #FF0000;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemTxt .itemLink {
+  text-decoration: underline;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemImg {
+  margin-top: 40px;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemImg img {
+  width: 100%;
+  display: block;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemImg + p {
+  margin-top: 30px;
+}
+.giftCard__guide .guideWrapper .guideList__item .itemImg .visible-phone, .giftCard__guide .guideWrapper .guideList__item .itemImg .with-border {
+  border: 1px solid #E0E0E0;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  margin-top: 32px;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent__txt {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent__linktxt {
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 27px;
+  margin-bottom: 0;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent__linktxt::before {
+  content: "▼";
+  display: inline-block;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent__link {
+  display: block;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.giftCard__guide .guideWrapper .guideList__item .eGiftContent__link .isSp {
+  display: block;
+}
+.giftCard__qa {
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+.giftCard__qa .qaWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.giftCard__qa .qaWrapper .accordionList {
+  width: 52.9%;
+}
+.giftCard__qa .qaWrapper .accordionList__item {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl span {
+  padding-right: 15px;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl .arrowIcon {
+  margin-right: 10px;
+  padding-right: 0;
+  transition: all 0.3s ease;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl .arrowIcon::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-bottom: solid 1px #000;
+  border-right: solid 1px #000;
+  transform: rotate(45deg);
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl.is-open {
+  border-bottom: none;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaTtl.is-open .arrowIcon {
+  transform: rotate(-180deg);
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaContent {
+  display: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  padding-right: 30px;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaContent a {
+  text-decoration: underline;
+}
+.giftCard__qa .qaWrapper .accordionList__item .qaContent .itemImg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.giftCard__qa .qaWrapper .accordionList__item:nth-of-type(1) .qaTtl {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.giftCard .aboutTtl .enTtl,
+.giftCard .casesTtl .enTtl,
+.giftCard .purchaseTtl .enTtl,
+.giftCard .guideTtl .enTtl,
+.giftCard .qaTtl .enTtl {
+  font-size: 45px;
+  line-height: 1.1;
+  letter-spacing: 22.5px;
+  font-weight: 600;
+}
+.giftCard .aboutTtl .enTtl::after,
+.giftCard .casesTtl .enTtl::after,
+.giftCard .purchaseTtl .enTtl::after,
+.giftCard .guideTtl .enTtl::after,
+.giftCard .qaTtl .enTtl::after {
+  content: "";
+  display: block;
+  width: 27px;
+  height: 1px;
+  background-color: #707070;
+  margin-top: 22.5px;
+}
+.giftCard .aboutTtl .jaTtl,
+.giftCard .casesTtl .jaTtl,
+.giftCard .purchaseTtl .jaTtl,
+.giftCard .guideTtl .jaTtl,
+.giftCard .qaTtl .jaTtl {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: 3.8px;
+  margin-top: 32.5px;
+}
+.giftCard .isSp {
+  display: none;
+}
+.giftCard.for-sender .giftCard__mv {
+  background: url("giftcard_mv_sender_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.giftCard.for-recipient .giftCard__mv {
+  background: url("giftcard_mv_recipient_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.giftCard.for-mothersday .announceTxt span {
+  color: #FF0000;
+}
+.giftCard.for-mothersday .announceTxt a {
+  text-decoration: underline;
+}
+.giftCard.for-mothersday .giftCard__mv {
+  background: url("mothersday_mv_bg_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.giftCard.for-mothersday .giftCard__mv .mvTtl {
+  left: inherit;
+  right: 85px;
+  bottom: 109px;
+}
+.giftCard.for-mothersday .giftCard__concept {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList {
+  counter-reset: mothersDayList;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList > div {
+  margin-bottom: 30px;
+  padding-left: 1.7em;
+  position: relative;
+  counter-increment: mothersDayList;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList dt {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList dt::before {
+  content: counter(mothersDayList) ".";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  font-size: 17px;
+  font-family: proxima-nova, sans-serif;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList dd {
+  font-size: 14px;
+}
+.giftCard.for-mothersday .giftCard__concept .conceptDetailList dd span {
+  font-size: 13px;
+  display: block;
+}
+.giftCard.for-mothersday .giftCard__qa.withBgColor {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+.giftCard.for-mothersday .collectionBlock {
+  margin-bottom: 50px;
+}
+.giftCard.for-mothersday .collectionBlock .titleComponent {
+  padding-top: 50px;
+  margin-bottom: 70px;
+}
+.giftCard.for-mothersday .collectionBlock .titleComponent .heading span {
+  font-size: 45px;
+  letter-spacing: 0.5em;
+  padding-left: 0.4em;
+}
+.giftCard.for-mothersday .collectionBlock .titleComponent .subTitle {
+  font-size: 19px;
+  letter-spacing: 0.2em;
+}
+.giftCard.for-mothersday .collectionBlock .announceTxt {
+  text-align: center;
+}
+.giftCard.for-mothersday .productListComponent {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.giftCard.for-mothersday .productListComponent .productDeliverFilter {
+  width: 260px;
+  margin-right: 50px;
+  flex: none;
+}
+.giftCard.for-mothersday .productListComponent .productDeliverFilter .heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.giftCard.for-mothersday .productListComponent .productList {
+  margin-left: -13px;
+  margin-right: -13px;
+}
+.giftCard.for-mothersday .productListComponent .productList li {
+  margin-left: 13px;
+  margin-right: 13px;
+  width: calc((100% - 78px) / 3);
+}
+.giftCard.for-mothersday .productListComponent .productList li:nth-child(4n) {
+  margin-right: 13px;
+}
+.giftCard.for-mothersday .productListComponent .deliverAvailList {
+  display: none;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect {
+  letter-spacing: 0;
+  border: none;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantLabel {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 9px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  line-height: 1;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect li:first-child {
+  width: 100%;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect li:not(:first-child) {
+  width: calc((100% - 9px) / 2);
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantRadio {
+  display: none;
+}
+.giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantRadio:checked + .productVariantLabel {
+  border-color: #8AA7A0;
+  background: #8AA7A0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.giftCardDesign {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  padding: 45px 40px 40px 70px;
+  background: url("giftcard_mv_pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+.giftCardDesign.for-mothersDay {
+  background: url("giftcard_mv_mothersday_pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+.giftCardDesign.for-thankyou {
+  background: url("giftcard_mv_thankyou_pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+.giftCardDesign.for-birthday {
+  background: url("giftcard_mv_birthday_pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+.giftCardDesign.for-congrat {
+  background: url("giftcard_mv_congraturation_pc.jpg") no-repeat center center;
+  background-size: cover;
+}
+.giftCardDesign.for-congrat .giftCardHeader .giftCardTitle {
+  letter-spacing: 0.1em;
+}
+.giftCardDesign .giftCardHeader .giftCardHeaderLogo {
+  line-height: 1;
+  text-align: center;
+  width: 160px;
+  display: block;
+}
+.giftCardDesign .giftCardHeader .giftCardHeaderLogo img, .giftCardDesign .giftCardHeader .giftCardHeaderLogo span, .giftCardDesign .giftCardHeader .giftCardHeaderLogo svg {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.giftCardDesign .giftCardHeader .giftCardHeaderLogo svg path {
+  fill: #ffffff;
+}
+.giftCardDesign .giftCardHeader .giftCardHeaderLogo .headerLogoImg {
+  margin-bottom: 10px;
+}
+.giftCardDesign .giftCardHeader .giftCardTitleWrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: calc(100vh - 290px);
+}
+.giftCardDesign .giftCardHeader .giftCardTitle {
+  font-size: 58px;
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: 0.38em;
+}
+.giftCardDesign .giftCardHeader .giftCardTitle span {
+  display: block;
+}
+.giftCardDesign .giftCardInfo {
+  position: absolute;
+  bottom: 36px;
+  right: 40px;
+  background: rgba(255, 255, 255, 0.89);
+  padding: 45px;
+  width: 446px;
+  box-sizing: border-box;
+}
+.giftCardDesign .giftCardInfo .giftCardTitle {
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: 0.38em;
+  text-align: center;
+}
+.giftCardDesign .giftCardInfo .giftCardPrice {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.giftCardDesign .giftCardInfo .giftCardPrice .nova {
+  font-size: 25px;
+  letter-spacing: 0.075em;
+}
+.giftCardDesign .giftCardInfo .giftCardCode {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.giftCardDesign .giftCardInfo .giftCardCode dt {
+  font-size: 17px;
+  letter-spacing: 0.075em;
+  color: rgba(0, 0, 0, 0.31);
+}
+.giftCardDesign .giftCardInfo .giftCardCode .giftCardCodeNumber {
+  font-size: 20px;
+  letter-spacing: 0.075em;
+  border: none;
+  font-weight: 500;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 12px;
+  background: transparent;
+  width: 100%;
+  text-align: center;
+}
+.giftCardDesign .giftCardInfo .giftCardCode .giftCardNumCopy p {
+  font-size: 12px;
+}
+.giftCardDesign .giftCardInfo .codeCopyBtn {
+  background: #000000;
+  color: #ffffff;
+  padding: 0;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: bold;
+  width: 155px;
+  height: 25px;
+  margin: 0 auto;
+}
+.giftCardDesign .giftCardInfo .giftCardAside {
+  font-size: 16px;
+  opacity: 0.6;
+  text-align: center;
+  letter-spacing: 0.07;
+}
+.giftCardDesign .giftCardInfo .giftCardAside span {
+  display: inline-block;
+}
+.giftCardDesign .giftCardInfo .giftCardAside span:first-child {
+  padding-right: 20px;
+}
+.giftCardDesign .giftCardGuide {
+  position: absolute;
+  bottom: 36px;
+  left: 70px;
+  color: #ffffff;
+  width: 370px;
+}
+.giftCardDesign .giftCardGuide .btn {
+  height: 46px;
+  font-size: 16px;
+  background: #000000;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+.giftCardDesign .giftCardGuide .txtLink {
+  color: #ffffff;
+}
+.giftCardDesign .giftCardGuide .txtLink span {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 767px) {
+  .giftCard__mv {
+    height: 88.5vh;
+    background-position: center;
+  }
+  .giftCard__mv .mvTtl {
+    top: 50%;
+    left: 0;
+    right: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    text-align: right;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 13.68px;
+    max-height: 118px;
+  }
+  .giftCard__mv .mvTtl .isSp {
+    display: block;
+  }
+  .giftCard__mv .mvTxt {
+    bottom: 30px;
+    right: 22px;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 1.3px;
+    text-align: right;
+  }
+  .for-sender .giftCard__concept {
+    padding: 50px 15px;
+  }
+  .for-recipient .giftCard__concept {
+    padding: 50px 15px 10px;
+  }
+  .giftCard__concept .conceptWrapper {
+    flex-direction: column;
+  }
+  .giftCard__concept .conceptWrapper .conceptTtl {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .giftCard__concept .conceptWrapper .conceptList {
+    margin-top: 48px;
+  }
+  .giftCard__about {
+    padding: 50px 15px;
+  }
+  .giftCard__about .aboutWrapper {
+    flex-direction: column;
+  }
+  .giftCard__about .aboutWrapper .aboutContent {
+    width: 100%;
+    margin-top: 24px;
+  }
+  .giftCard__about .aboutWrapper .aboutContent .contentTxt {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  .giftCard__about .aboutWrapper .aboutContent .contentList {
+    margin-top: 33px;
+  }
+  .giftCard__about .aboutWrapper .aboutContent .contentList .listItem {
+    margin-top: 38px;
+  }
+  .giftCard__about .aboutWrapper .aboutContent .contentList .listItem .itemTtl {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .for-sender .giftCard__cases {
+    padding: 50px 15px;
+  }
+  .for-recipient .giftCard__cases {
+    padding: 50px 15px;
+  }
+  .giftCard__cases .caseWrapper {
+    flex-direction: column;
+  }
+  .giftCard__cases .caseWrapper .casesContent {
+    width: 100%;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTxt {
+    margin-top: 40px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab {
+    margin-top: 30px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab::before {
+    top: 44px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab .tabItem {
+    width: calc((100% - 24px) / 5);
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab .tabItem:not(:last-of-type) {
+    margin-right: 6px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab .tabContent {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern {
+    margin-top: 35px;
+  }
+  .giftCard__cases .caseWrapper .casesContent .casesTab .tabContent__pattern .contentTtl {
+    font-size: 18px;
+  }
+  .giftCard__purchase {
+    padding: 50px 15px;
+    padding-bottom: 80px;
+  }
+  .giftCard__purchase .purchaseContent .contentTtl {
+    margin-top: 46px;
+  }
+  .giftCard__purchase .purchaseContent .contentTtl:nth-last-of-type(1) {
+    margin-top: 25.5px;
+  }
+  .giftCard__purchase .purchaseContent .contentTtl__en {
+    font-size: 14px;
+    letter-spacing: 7px;
+    line-height: 3.5;
+  }
+  .giftCard__purchase .purchaseContent .contentTtl__ja {
+    font-size: 15px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab::before {
+    display: none;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2 {
+    width: 48.9%;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    margin-top: 7px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(2n + 1) {
+    margin-right: 7px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(2) {
+    width: 48.9%;
+    margin-top: 0;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(3) {
+    width: 48.9%;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabItem2:nth-of-type(4) {
+    width: 48.9%;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent {
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message {
+    margin-top: 10px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg {
+    padding: 0;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .contentImg .sampleLink {
+    margin-top: 0;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList {
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 7px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList__item {
+    width: 48.9%;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .priceLinkList__item .itemLink {
+    height: 44px;
+    line-height: 44px;
+    font-size: 15px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList {
+    margin-top: 45px;
+  }
+  .giftCard__purchase .purchaseContent .purchaseTab .tabContent__message .supplementList__item {
+    font-size: 13px;
+  }
+  .for-sender .giftCard__guide {
+    padding: 52px 15px 0;
+  }
+  .for-recipient .giftCard__guide {
+    padding: 52px 15px 0;
+  }
+  .giftCard__guide .guideWrapper {
+    flex-direction: column;
+  }
+  .giftCard__guide .guideWrapper .guideList {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .giftCard__guide .guideWrapper .guideList__item {
+    margin-top: 50px;
+  }
+  .giftCard__guide .guideWrapper .guideList__item .itemTtl {
+    font-size: 15px;
+    letter-spacing: 7.54px;
+  }
+  .giftCard__guide .guideWrapper .guideList__item .itemTxt {
+    margin-top: 25px;
+  }
+  .giftCard__guide .guideWrapper .guideList__item .itemImg img + img {
+    margin-top: 25px;
+  }
+  .giftCard__guide .guideWrapper .guideList__item .eGiftContent__link {
+    word-break: break-all;
+  }
+  .giftCard__qa {
+    padding: 60px 15px;
+  }
+  .giftCard__qa .qaWrapper {
+    flex-direction: column;
+  }
+  .giftCard__qa .qaWrapper .accordionList {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .giftCard__qa .qaWrapper .accordionList__item .qaTtl {
+    padding: 16.5px 0;
+  }
+  .giftCard__qa .qaWrapper .accordionList__item .qaTtl .arrowIcon {
+    margin-right: 5px;
+  }
+  .giftCard__qa .qaWrapper .accordionList__item .qaTtl .arrowIcon::after {
+    width: 4px;
+    height: 4px;
+  }
+  .giftCard__qa .qaWrapper .accordionList__item .qaContent {
+    padding-bottom: 16.5px;
+    padding-right: 20px;
+  }
+  .giftCard .aboutTtl .enTtl,
+.giftCard .casesTtl .enTtl,
+.giftCard .purchaseTtl .enTtl,
+.giftCard .guideTtl .enTtl,
+.giftCard .qaTtl .enTtl {
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: 13px;
+  }
+  .giftCard .aboutTtl .enTtl::after,
+.giftCard .casesTtl .enTtl::after,
+.giftCard .purchaseTtl .enTtl::after,
+.giftCard .guideTtl .enTtl::after,
+.giftCard .qaTtl .enTtl::after {
+    width: 16px;
+  }
+  .giftCard .aboutTtl .jaTtl,
+.giftCard .casesTtl .jaTtl,
+.giftCard .purchaseTtl .jaTtl,
+.giftCard .guideTtl .jaTtl,
+.giftCard .qaTtl .jaTtl {
+    font-size: 14px;
+    line-height: 1.9;
+    letter-spacing: 2.8px;
+    margin-top: 20px;
+  }
+  .giftCard.for-sender .giftCard__mv {
+    background: url("giftcard_mv_sender_sp.jpg");
+    background-size: cover;
+  }
+  .giftCard.for-recipient .giftCard__mv {
+    background: url("giftcard_mv_recipient_sp.jpg");
+    background-size: cover;
+  }
+  .giftCard.for-mothersday .giftCard__mv {
+    background: url("mothersday_mv_bg_sp.jpg");
+    background-size: cover;
+    overflow: hidden;
+  }
+  .giftCard.for-mothersday .giftCard__mv .mvTtl {
+    left: inherit;
+    right: 0;
+    bottom: inherit;
+    text-align: left;
+  }
+  .giftCard.for-mothersday .giftCard__concept {
+    padding: 50px 15px;
+  }
+  .giftCard.for-mothersday .giftCard__qa.withBgColor {
+    padding: 60px 15px;
+  }
+  .giftCard.for-mothersday .collectionBlock .titleComponent {
+    padding-top: 5px;
+    margin-bottom: 45px;
+  }
+  .giftCard.for-mothersday .collectionBlock .titleComponent .heading {
+    padding-bottom: 8px;
+  }
+  .giftCard.for-mothersday .collectionBlock .titleComponent .heading::after {
+    display: block;
+    width: 18px;
+    margin-top: 18px;
+  }
+  .giftCard.for-mothersday .collectionBlock .titleComponent .heading span {
+    font-size: 26px;
+    padding-left: 0.4em;
+  }
+  .giftCard.for-mothersday .collectionBlock .titleComponent p {
+    font-size: 14px;
+  }
+  .giftCard.for-mothersday .productListComponent {
+    display: block;
+  }
+  .giftCard.for-mothersday .productListComponent .productDeliverFilter {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .giftCard.for-mothersday .productListComponent .productDeliverFilter .heading {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .giftCard.for-mothersday .productListComponent .productList {
+    margin-left: -8.5px;
+    margin-right: -8.5px;
+    width: calc(100% + 17px);
+  }
+  .giftCard.for-mothersday .productListComponent .productList li {
+    margin-left: 8.5px;
+    margin-right: 8.5px;
+    width: calc((100% - 34px) / 2);
+    margin-bottom: 15px;
+  }
+  .giftCard.for-mothersday .productListComponent .productList li:nth-child(2n) {
+    margin-right: 8.5px;
+  }
+  .giftCard.for-mothersday .productListComponent .productList li:nth-child(4n) {
+    margin-right: 8.5px;
+  }
+  .giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantList {
+    justify-content: flex-start;
+  }
+  .giftCard.for-mothersday .productListComponent .productVariantSelect .productVariantLabel {
+    font-size: 13px;
+    padding: 15px 0;
+    width: 100%;
+  }
+  .giftCard.for-mothersday .productListComponent .productVariantSelect li:not(:first-child) {
+    width: calc((100% - 27px) / 4);
+    margin-right: 9px;
+  }
+  .giftCard.for-mothersday .productListComponent .productVariantSelect li:nth-child(4n+1) {
+    margin-right: 0;
+  }
+
+  .giftCardDesign {
+    padding: 20px 22px 50px;
+    background: #EFEFEF url("giftcard_mv_sp.jpg") no-repeat top center;
+    background-size: contain;
+  }
+  .giftCardDesign.for-mothersDay {
+    background: #EFEFEF url("giftcard_mv_mothersday_sp.jpg") no-repeat top center;
+    background-size: contain;
+  }
+  .giftCardDesign.for-thankyou {
+    background: url("giftcard_mv_thankyou_sp.jpg") no-repeat top center;
+    background-size: contain;
+  }
+  .giftCardDesign.for-birthday {
+    background: url("giftcard_mv_birthday_sp.jpg") no-repeat top center;
+    background-size: contain;
+  }
+  .giftCardDesign.for-congrat {
+    background: url("giftcard_mv_congraturation_sp.jpg") no-repeat top center;
+    background-size: contain;
+  }
+  .giftCardDesign.for-congrat .giftCardHeader .giftCardTitleWrap {
+    justify-content: center;
+    width: 100vw;
+    margin-left: -22px;
+  }
+  .giftCardDesign.for-congrat .giftCardHeader .giftCardTitle {
+    font-size: 31px;
+    padding-left: 0;
+  }
+  .giftCardDesign .main {
+    padding-top: 0 !important;
+  }
+  .giftCardDesign .giftCardHeader .giftCardHeaderLogo {
+    margin: 0 auto;
+    width: 122px;
+  }
+  .giftCardDesign .giftCardHeader .giftCardTitleWrap {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 375px;
+  }
+  .giftCardDesign .giftCardHeader .giftCardTitle {
+    font-size: 36px;
+    text-align: center;
+    padding-left: 10px;
+    line-height: 1.2;
+  }
+  .giftCardDesign .giftCardHeader .giftCardTitle span {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  .giftCardDesign .giftCardInfo {
+    position: relative;
+    bottom: inherit;
+    right: inherit;
+    padding: 30px 30px 22px 30px;
+    margin: 0 0 30px;
+    background: #ffffff;
+    width: 100%;
+  }
+  .giftCardDesign .giftCardInfo .giftCardTitle {
+    font-size: 18px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardPrice {
+    margin-bottom: 20px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardPrice .nova {
+    font-size: 18px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardCode dt {
+    font-size: 12px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardCode .giftCardCodeNumber {
+    font-size: 16px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardCode .giftCardNumCopy p {
+    font-size: 12px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardAside {
+    font-size: 15px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardAside span:first-child {
+    padding-right: 0px;
+  }
+  .giftCardDesign .giftCardInfo .giftCardAside span:nth-child(2) {
+    padding-left: 10px;
+  }
+  .giftCardDesign .giftCardGuide {
+    position: relative;
+    bottom: inherit;
+    left: inherit;
+    width: 100%;
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+  }
+  .giftCardDesign .giftCardGuide p {
+    text-align: left;
+  }
+  .giftCardDesign .giftCardGuide .btn {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .giftCardDesign .giftCardGuide .txtLink {
+    color: #000000;
+  }
+  .giftCardDesign .giftCardGuide .txtLink span {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+.breadcrumbComponent {
+  display: none;
+}

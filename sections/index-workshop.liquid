@@ -1,0 +1,42 @@
+<!-- /sections/index-products.liquid -->
+<section class="indexWorkshopSection">
+  <header class="titleComponent">
+    <h2 class="heading is-primary nova uppercaseTitle with-line"><span>Workshop</span></h2>
+    <p>農園のイベント、ばらの育て方のワークショップ</p>
+  </header>
+  <div class="comingSpringComponent">
+    <span role="img" aria-label="Coming in Spirng">
+      {% render 'svg-comingspring' %}
+    </span>
+  </div>
+  {% comment %}
+  <div class="productListComponent">
+    <ul class="productList">
+      {% for product in collections[section.settings.home_featured_products].products limit:4 %}
+        {% include 'products-list' %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endcomment %}
+</section>
+
+{% schema %}
+{
+  "name": "WorkShop",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "ワークショップ一覧",
+      "settings": {
+      }
+    }
+  ],
+  "settings": [
+    {
+      "type": "collection",
+      "id": "home_featured_products",
+      "label": "コレクション"
+    }
+  ]
+}
+{% endschema %}

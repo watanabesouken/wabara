@@ -1,0 +1,65 @@
+<!-- /snippets/breadcrumbs.liquid -->
+
+{% unless template == 'index' %}
+<nav class="breadcrumbComponent" role="navigation" aria-label="breadcrumbs">
+  <a href="/" title="ホーム">ホーム</a>
+  <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+  {% if template contains 'page' %}
+    {% if template.suffix == 'cutroses' or template.suffix == 'edibleroses' or template.suffix == 'gift' or template.suffix == 'fragrance' or template.suffix contains 'limited' or template.suffix contains 'rosie' %}
+      <a href="/collections/" title="Shop">SHOP</a>
+      <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    {% endif %}
+    <span>{{ page.title }}</span>
+  {% elsif template == 'list-collections' %}
+    <span>SHOP</span>
+  {% elsif template contains 'product' %}
+    <a href="/collections/" title="Shop">SHOP</a>
+    <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    {% if collection.url %}
+      {{ collection.title | link_to: collection.url }}
+      <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    {% endif %}
+    <span>{{ product.title }}</span>
+  {% elsif template contains 'collection' and collection.handle %}
+    <a href="/collections/" title="Shop">SHOP</a>
+    <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {{ collection.title | link_to: url }}
+      <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+      <span>{{ collection.title }}</span>
+    {% endif %}
+  {% elsif template == 'collection' %}
+    <a href="/collections/" title="Shop">SHOP</a>
+    <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {{ collection.title | link_to: url }}
+      <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+      <span>{{ collection.title }}</span>
+    {% endif %}
+  {% elsif template == 'blog' %}
+    {% if current_tags %}
+      {{ 'Journal' | link_to: blog.url }}
+      <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+    <span>Journal</span>
+    {% endif %}
+  {% elsif template contains 'gallery-' %}
+    <a href="/pages/gallery" title="Gallery">GALLERY</a>
+    <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    <span>{{ page_title }}</span>
+  {% elsif template == 'article' %}
+    {{ 'Journal' | link_to: blog.url }}
+    <span aria-hidden="true" class="breadcrumbsArrow">{% render 'icon' with 'arrow-r' %}</span>
+    <span>{{ article.title }}</span>
+  {% else %}
+   <span>{{ page_title }}</span>
+  {% endif %}
+</nav>
+{% endunless %}

@@ -1,0 +1,501 @@
+@charset "UTF-8";
+.blogPage .titleComponent {
+  margin-bottom: 100px;
+}
+.blogPage .tagList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.blogPage .tagList li {
+  padding: 12px;
+}
+.blogPage .tagList li.active span {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #000000;
+}
+
+.articlePage {
+  width: auto;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.articlePage .articlePager {
+  text-transform: uppercase;
+  margin: 70px 0 60px;
+}
+.articlePage .articlePager ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.articlePage .articlePager li {
+  min-width: 50px;
+  margin: 0 20px;
+}
+.articlePage .articlePager li .arrowIcon {
+  display: inline-block;
+}
+.articlePage .articlePager li .arrowIcon svg {
+  display: block;
+  width: 5px;
+  height: 10px;
+}
+.articlePage .articlePager li.prev .arrowIcon {
+  margin-right: 5px;
+  transform: rotate(-180deg);
+}
+.articlePage .articlePager li.next .arrowIcon {
+  margin-left: 5px;
+}
+.articlePage .articleGallery .galleryImg .itemVideo {
+  position: relative;
+  width: 750px;
+  height: 422px;
+  overflow: hidden;
+  margin: 0 -25px 100px;
+}
+.articlePage .articleGallery .galleryImg .itemVideo:hover {
+  opacity: 0.8;
+}
+.articlePage .articleGallery .galleryImg .itemVideo .itemVideoContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+.articlePage .articleGallery .galleryImg .itemVideo .itemVideoClick {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+.articlePage .articleGallery .galleryImg .itemVideo .itemVideoClick .itemVideoClickArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.articlePage .articleGallery .galleryImg .itemImg {
+  margin-bottom: 100px;
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+.articlePage .articleGallery .galleryImg .itemImg img {
+  width: 100%;
+}
+.articlePage .articleGallery .galleryText {
+  margin-top: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+.articlePage .articleGallery .galleryText section {
+  flex-basis: 50%;
+}
+.articlePage .articleGallery .galleryText section h2 {
+  font-size: 19px;
+  margin-bottom: 50px;
+}
+.articlePage.soundscapePage, .articlePage.soundscapePage * {
+  box-sizing: border-box;
+}
+.articlePage.soundscapePage {
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+.articlePage.soundscapePage .soundscapeMvWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.articlePage.soundscapePage .soundscapeMvWrapper .soundscapeMv {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+.articlePage.soundscapePage .soundscapeModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent {
+  max-height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalText {
+  font-size: 14px;
+  line-height: 26px;
+  margin-bottom: calc( ( 26px - 14px ) / -2 );
+  margin-top: 200px;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalShare {
+  margin-top: 104px;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalShare h3 {
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.55px;
+  margin-bottom: 3px;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalShare .socialShareComponent {
+  flex-direction: row-reverse;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalShare .socialShareComponent li a svg {
+  fill: #fff;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalClose {
+  display: inline-block;
+  margin-top: 34px;
+  margin-bottom: 200px;
+  line-height: 1;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalClose .closeBtn {
+  position: relative;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalClose .closeBtn:hover {
+  opacity: 0.8;
+}
+.articlePage.soundscapePage .soundscapeModal .modalContent .modalClose .closeBtn span {
+  display: block;
+  margin-top: 12.5px;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+}
+.articlePage.soundscapePage #jsModalOpen, .articlePage.soundscapePage #jsModalClose {
+  cursor: pointer;
+}
+.articlePage.soundscapePage #jsModalMask, .articlePage.soundscapePage #jsModalContent {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.4s ease-out;
+}
+.articlePage.soundscapePage #jsModalMask.jsHidden, .articlePage.soundscapePage #jsModalContent.jsHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 210px;
+  background: transparent linear-gradient(180deg, #00000000 0%, #0000005A 100%) 0% 0% no-repeat padding-box;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav {
+  position: absolute;
+  right: 33px;
+  bottom: 24px;
+  min-height: 39px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li {
+  position: relative;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.65px;
+  color: #FFFFFF;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li + li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  content: "";
+  background: #FFFFFF;
+  opacity: 0.7;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a {
+  display: table;
+  padding: 0 8px;
+  color: #FFFFFF;
+  height: 100%;
+  line-height: 39px;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navListen {
+  padding: 0 11.4px 0 17px;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navRead {
+  padding: 0 16px 0 14.6px;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navRead.navReadOnly {
+  padding-left: 18px;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon {
+  position: relative;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon img {
+  vertical-align: middle;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon.listen img {
+  margin: -5px 7px 0 0;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon.listen.pause::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(12px * 1.414);
+  height: calc(12px * 1.414);
+  top: 0;
+  left: 0;
+  border-top: 1px solid #fff;
+  transform: rotate(45deg) translate(-25%, 50%);
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon.read img {
+  margin: -4px 7px 0 0;
+}
+.articlePage.soundscapePage .soundscapeNavWrapper .backToMenu {
+  position: absolute;
+  bottom: 24px;
+  left: 34px;
+  margin: 0;
+  line-height: 1;
+}
+.articlePage.soundscapePage .soundscapeVideo {
+  opacity: 0;
+}
+.articlePage.soundscapePage #jsPlayer {
+  cursor: pointer;
+}
+.articlePage .backToMenu {
+  text-align: center;
+  margin: 160px auto 91px auto;
+}
+
+.vbox-content {
+  padding: 0;
+}
+.vbox-content .vbox-figlio {
+  box-shadow: none;
+}
+
+.vbox-title {
+  color: #FFFFFF;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+}
+
+.vbox-close {
+  position: fixed;
+  overflow: visible;
+  visibility: hidden;
+  width: 40px;
+  height: 40px;
+  top: calc( 100vh - 85px );
+  right: 50%;
+  transform: translateX(50%);
+}
+.vbox-close::before, .vbox-close::after {
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  width: 40px;
+  border-bottom: 2px solid #999999;
+}
+.vbox-close::before {
+  transform: translateX(-50%) rotate(-45deg);
+}
+.vbox-close::after {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.vbox-next, .vbox-prev {
+  position: fixed;
+  top: 50%;
+}
+.vbox-next span, .vbox-prev span {
+  width: 25px;
+  height: 25px;
+}
+
+.vbox-next {
+  right: 114px;
+}
+
+.vbox-prev {
+  left: 114px;
+}
+
+@media (max-width: 767px) {
+  .blogPage .titleComponent {
+    margin-bottom: 40px;
+  }
+  .blogPage .tagList {
+    margin-bottom: 16px;
+  }
+
+  .articlePage {
+    margin: 0 16px;
+  }
+  .articlePage .articlePager {
+    margin: 40px 0 30px;
+    font-size: 12px;
+  }
+  .articlePage .articlePager li {
+    min-width: 42px;
+  }
+  .articlePage .articlePager li .arrowIcon {
+    display: inline-block;
+  }
+  .articlePage .articlePager li .arrowIcon svg {
+    width: 4px;
+    height: 9px;
+  }
+  .articlePage .articleHeader.galleryHeader {
+    margin: 5px 0 55px 0;
+  }
+  .articlePage .articleGallery {
+    margin: 0 calc( 25px - 16px );
+  }
+  .articlePage .articleGallery .galleryImg .itemVideo {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+    padding: 0 0 56.25%;
+    overflow: hidden;
+    margin: 0 0 45px;
+  }
+  .articlePage .articleGallery .galleryImg .itemVideo .itemVideoContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+  .articlePage .articleGallery .galleryImg .itemImg {
+    width: calc(100% - 32px * 2);
+    margin: 0 auto 45px auto;
+  }
+  .articlePage .articleGallery .galleryImg .itemImg img {
+    width: 100%;
+  }
+  .articlePage .articleGallery .galleryText {
+    margin-top: 100px;
+    display: block;
+  }
+  .articlePage .articleGallery .galleryText section {
+    font-size: 13px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 91px;
+  }
+  .articlePage .articleGallery .galleryText section h2 {
+    font-size: 18px;
+    margin-bottom: 37px;
+  }
+  .articlePage.soundscapePage {
+    margin: 0;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav {
+    right: 14px;
+    bottom: 13px;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li {
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a {
+    position: relative;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navListen {
+    padding: 0 8.4px 0 14px;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navRead {
+    padding: 0 14px 0 12.6px;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li a.navRead.navReadOnly {
+    padding-left: 16px;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon.listen img {
+    margin: -5px 7px 0 0;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .soundscapeNav ul li .navIcon.read img {
+    margin: -4px 7px 0 0;
+  }
+  .articlePage.soundscapePage .soundscapeNavWrapper .backToMenu {
+    bottom: 29px;
+    left: 23px;
+  }
+  .articlePage.soundscapePage .soundscapeModal .modalContent {
+    margin: 0;
+    padding: 75px 25px 0 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .articlePage.soundscapePage .soundscapeModal .modalContent .modalText {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+  }
+  .articlePage.soundscapePage .soundscapeModal .modalContent .modalNav {
+    padding-bottom: 48px;
+  }
+  .articlePage.soundscapePage .soundscapeModal .modalContent .modalClose {
+    margin-bottom: 0;
+  }
+  .articlePage .backToMenu {
+    margin: 107px auto 54px auto;
+  }
+
+  .vbox-title {
+    font-size: 10px;
+  }
+
+  .vbox-close {
+    top: calc( 100vh - 85px );
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .vbox-next, .vbox-prev {
+    top: calc( 100vh - 70px );
+  }
+
+  .vbox-next {
+    right: 25px;
+  }
+
+  .vbox-prev {
+    left: 25px;
+  }
+}

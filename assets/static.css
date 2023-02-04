@@ -1,0 +1,1470 @@
+.staticPage .staticPageHeaderBg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.staticPage .staticWrapComponent {
+  width: auto;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.staticPage .staticMv {
+  margin-top: 75px;
+  margin-bottom: 90px;
+}
+.staticPage .staticMv .mainvisual {
+  width: 100%;
+  height: 738px;
+  overflow: hidden;
+  position: relative;
+}
+.staticPage .staticMv .mainvisual :focus {
+  outline: none;
+}
+.staticPage .staticMv .mainvisual .heroSlide, .staticPage .staticMv .mainvisual .mainvisualContent {
+  width: 100%;
+  height: 738px;
+  position: relative;
+}
+.staticPage .staticMv .mainvisual .heroImgWrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.staticPage .staticMv .mainvisual .heroImgWrap img {
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.staticPage .staticMv .mainvisual .mainvisualVideo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.staticPage .staticMv .mainvisual .mainvisualVideo .mainvisualVideoContent {
+  position: absolute;
+  width: calc(100vh * 1.78);
+  min-width: 100vw;
+  height: 100vh;
+  min-height: calc(100vw / 1.78);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.staticPage .staticMv .mainvisual .mainvisualVideo iframe {
+  width: calc(100vh * 1.78);
+  min-width: 100vw;
+  height: 100vh;
+  min-height: calc(100vw / 1.78);
+  pointer-events: none;
+}
+.staticPage .staticSection.withBgColor {
+  background-color: #F8F8F8;
+  padding: 70px 0 0;
+}
+.staticPage .staticSection.withBgColor + .staticSection {
+  padding-top: 70px;
+}
+.staticPage .staticSection .staticWrapComponent {
+  padding-bottom: 50px;
+}
+.staticPage .staticSection a {
+  text-decoration: underline;
+}
+.staticPage .staticSectionHeading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.staticPage .staticTextWrap {
+  margin-bottom: 70px;
+  line-height: 2.2;
+}
+.staticPage .staticTextWrap.is-center {
+  text-align: center;
+}
+.staticPage .staticTextWrap p:not(:last-child) {
+  margin-bottom: 2.2em;
+}
+.staticPage .staticTextWrap.mb0 {
+  margin-bottom: 0;
+}
+.staticPage .staticBlockWrap {
+  width: auto;
+  max-width: 1105px;
+  margin: 0 auto;
+}
+.staticPage .staticBlockWrap .blockChild {
+  line-height: 1.9;
+}
+.staticPage .staticBlockWrap .blockChild img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.staticPage .staticBlockWrap .blockChild .blockHeading {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.staticPage .staticBlockWrap.for-column {
+  display: flex;
+  flex-wrap: wrap;
+}
+.staticPage .staticBlockWrap.for-column .blockChild {
+  width: calc((100% - 140px) / 3);
+  margin-right: 70px;
+  margin-bottom: 60px;
+}
+.staticPage .staticBlockWrap.for-column .blockChild:nth-child(3n) {
+  margin-right: 0;
+}
+.staticPage .staticBlockWrap.for-column .blockChild .blockHeading {
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+.staticPage .staticBlockWrap.for-column .imgSquareFit {
+  height: 215px;
+}
+.staticPage .staticBlockWrap.for-row {
+  margin: 90px auto;
+}
+.staticPage .staticBlockWrap.for-row .blockChild {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.staticPage .staticBlockWrap.for-row .blockChild:not(:last-child) {
+  margin-bottom: 70px;
+}
+.staticPage .staticBlockWrap.for-row .blockChild .blockHeading {
+  margin-bottom: 40px;
+}
+.staticPage .staticBlockWrap.for-row .blockChildContent {
+  width: 530px;
+}
+.staticPage .staticBlockWrap.for-row .imgSquareFit {
+  height: 353px;
+}
+.staticPage .staticCollectionWrap {
+  width: auto;
+  max-width: 1105px;
+  margin: 0 auto;
+}
+.staticPage .staticCollectionWrap .titleComponent {
+  padding-top: 0;
+  margin-bottom: 40px;
+}
+.staticPage .staticCollectionWrap a {
+  text-decoration: none;
+}
+.staticPage .withBgColor .staticCollectionWrap .collectionBlock {
+  padding: 10px 0 50px;
+}
+.staticPage .withBgColor .staticCollectionWrap .productListComponent {
+  margin-bottom: 0;
+}
+.staticPage .charlotteSection hr {
+  opacity: 0.5;
+  margin-bottom: 40px;
+}
+.staticPage .charlotteSection .staticWrapComponent {
+  max-width: 800px;
+}
+.staticPage .hubspotWrap {
+  width: 800px;
+  margin: 0 auto 90px;
+}
+.staticPage .companyAddress {
+  margin: 50px 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.staticPage .companyAddress .googleMap {
+  width: calc(100% - 300px);
+}
+.staticPage .companyAddress .googleMap iframe {
+  width: 100%;
+  -webkit-filter: grayscale(99%);
+  filter: grayscale(99%);
+}
+.staticPage .companyAddress .companyAddressTxt {
+  width: 270px;
+  flex: none;
+  margin-left: 30px;
+}
+.staticPage .contactSection .contactTxt {
+  margin-bottom: 80px;
+}
+.staticPage .contactSection .hubspotWrap {
+  margin-top: 60px;
+}
+.staticPage .staticPageFooter .wabaraIntroduction {
+  background: #F8F8F8;
+  padding: 90px 0;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .staticWrapComponent {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .childBlock {
+  width: 530px;
+  text-align: center;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .childBlock img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .childBlock p:not(:last-child) {
+  margin-bottom: 1.9em;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .heading {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.staticPage .staticPageFooter .wabaraIntroduction .txtWrap {
+  margin-bottom: 45px;
+}
+.staticPage #rosieDescription .titleComponent .heading {
+  letter-spacing: 0.05em;
+}
+.staticPage #giftContents .titleComponent .uppercaseTitle {
+  text-transform: none;
+}
+.staticPage .mothersdayBanner {
+  max-width: 1105px;
+  margin: 0 auto 100px;
+}
+.staticPage .mothersdayBanner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.aboutPage {
+  margin-bottom: 70px;
+}
+.aboutPage .titleComponent {
+  margin-bottom: 80px;
+}
+.aboutPage .ankerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.aboutPage .ankerNav a {
+  padding: 15px;
+}
+.aboutPage .wabaraSection {
+  padding-top: 110px;
+  margin-bottom: 130px;
+}
+.aboutPage .wabaraSection .aboutLogo {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.aboutPage .wabaraSection .aboutLogo img {
+  display: block;
+  width: 186px;
+  height: auto;
+  margin: 0 auto;
+}
+.aboutPage .wabaraSection .aboutPortrait {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 110px;
+}
+.aboutPage .wabaraSection .aboutPortrait .aboutPortraitChild > .heading {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.aboutPage .wabaraSection .aboutPortrait .aboutPortraitName {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 45px;
+}
+.aboutPage .wabaraSection .aboutPortrait .aboutPortraitName .name {
+  display: block;
+  text-align: center;
+}
+.aboutPage .wabaraSection .aboutPortrait .aboutPortraitName .name.nova {
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.25em;
+}
+.aboutPage .wabaraSection .aboutPortraitChild {
+  width: 364px;
+}
+.aboutPage .farmSection {
+  margin-bottom: 110px;
+}
+.aboutPage .farmSection .heading.is-primary {
+  margin-bottom: 40px;
+}
+.aboutPage .farmSection .heading:not(.nova) {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 55px;
+}
+.aboutPage .toHomeSection {
+  background: #F8F8F8;
+  padding-top: 110px;
+  padding-bottom: 60px;
+}
+.aboutPage .toHomeSection .toHomeHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.aboutPage .toHomeBlockWrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  max-width: 1105px;
+  margin: 0 auto;
+}
+.aboutPage .toHomeBlockWrap .toHomeBlock {
+  width: calc((100% - 140px) / 3);
+  margin-right: 70px;
+  margin-bottom: 60px;
+  line-height: 1.9;
+}
+.aboutPage .toHomeBlockWrap .toHomeBlock:nth-child(3n) {
+  margin-right: 0;
+}
+.aboutPage .toHomeBlockWrap .toHomeBlock img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.aboutPage .toHomeBlockWrap .toHomeBlock .toHomeBlockHeading {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 45px;
+  font-size: 18px;
+}
+.aboutPage .historySection {
+  margin-top: 110px;
+  margin-bottom: 150px;
+}
+.aboutPage .historySection .heading {
+  margin-bottom: 50px;
+}
+.aboutPage .historySection .historyList {
+  width: auto;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.aboutPage .historySection .historyList > div {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 14px;
+}
+.aboutPage .historySection .historyList > div dt {
+  width: 34px;
+  margin-right: 28px;
+  letter-spacing: 0.1em;
+}
+.aboutPage .worldSection header {
+  margin-bottom: 40px;
+}
+.aboutPage .worldSection header .heading {
+  margin-bottom: 40px;
+}
+.aboutPage .worldSection img {
+  display: block;
+}
+.aboutPage .worldSection .aboutWorldList {
+  width: auto;
+  max-width: 575px;
+  margin: 60px auto 0;
+}
+.aboutPage .worldSection .aboutWorldList li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.aboutPage .worldSection .aboutWorldList li:not(:last-child) {
+  margin-bottom: 50px;
+}
+.aboutPage .worldSection .aboutWorldList .aboutWorldThumbnail {
+  width: 130px;
+  height: 130px;
+  margin-right: 25px;
+  flex: none;
+}
+.aboutPage .worldSection .aboutWorldList .heading {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.aboutPage .worldSection .aboutWorldList .arrowLink {
+  display: block;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.workshopPage {
+  margin-bottom: 50px;
+}
+.workshopPage .titleComponent {
+  margin-bottom: 80px;
+}
+.workshopPage .staticPageHeaderBg {
+  margin-bottom: 70px;
+}
+
+.galleryPage {
+  margin: 0 auto;
+  max-width: 1089px;
+}
+.galleryPage .mainvisualVideoContent {
+  width: 100%;
+  height: 613px;
+}
+.galleryPage .mainvisualVideoContent iframe {
+  width: 100%;
+  height: 100%;
+}
+.galleryPage .comingsoon {
+  margin: 68px auto 75px;
+  text-align: center;
+}
+.galleryPage .comingsoon svg {
+  width: 254px;
+  height: auto;
+}
+.galleryPage .gallerySection .titleComponent {
+  margin-bottom: 80px;
+}
+.galleryPage .galleryWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 94px;
+  margin-bottom: calc( 120px - 60px );
+  min-height: 330px;
+}
+.galleryPage .blogSection {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.galleryPage .blogSectionChild:nth-child(1) {
+  margin-right: 90px;
+}
+.galleryPage .galleryItem {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.galleryPage .galleryItem .titleComponent {
+  margin-bottom: 40px;
+}
+.galleryPage .galleryItem .titleComponent .heading.with-line {
+  padding-bottom: 23px;
+}
+.galleryPage .galleryItem .titleComponent .heading.with-line::after {
+  margin: 0;
+}
+.galleryPage .galleryItem .titleComponent .heading.with-line .heading.is-primary {
+  font-size: 18px;
+}
+.galleryPage .galleryItem .titleComponent .lead {
+  font-size: 13px;
+  margin: 0;
+}
+.galleryPage .galleryItem .titleComponent span {
+  text-align: left;
+  display: block;
+  margin: 0 0 10px 0;
+}
+.galleryPage .galleryItem .blogList, .galleryPage .galleryItem .downloadList {
+  text-align: left;
+  font-size: 14px;
+}
+.galleryPage .galleryItem .blogList .heading.uppercaseTitle, .galleryPage .galleryItem .downloadList .heading.uppercaseTitle {
+  font-weight: normal;
+  letter-spacing: 0;
+  text-align: left;
+}
+.galleryPage .wallpaperSection .titleComponent {
+  margin-bottom: 100px;
+}
+.galleryPage .wallpapersWrap {
+  width: auto;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.galleryPage .wallpapersWrap .wallpapersList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.galleryPage .wallpapersWrap .wallpapersItem {
+  width: 389px;
+  height: 255px;
+  margin-bottom: 70px;
+}
+.galleryPage .wallpapersWrap .wallpapersItem:nth-child(odd) {
+  margin-right: 72px;
+}
+.galleryPage .wallpapersWrap .wallpapersItem a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.galleryPage .backtoLink {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+.galleryPage .backtoLink a {
+  padding: 15px;
+}
+
+.faqPage {
+  padding-bottom: 60px;
+}
+.faqPage .faqSection {
+  margin-bottom: 130px;
+}
+.faqPage .faqSection .titleComponent {
+  margin-bottom: 100px;
+}
+.faqPage .contactSection .titleComponent {
+  margin-bottom: 70px;
+}
+.faqPage .faqContentNav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.faqPage .faqContentNav a {
+  padding: 12px;
+}
+.faqPage .faqCategory {
+  line-height: 1;
+  margin: 70px 0 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+.faqPage .faqCategory + .faqContentWrap .faqTitle {
+  border-top: 1px solid #E5E5E5;
+}
+.faqPage .faqContentWrap {
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.faqPage .faqTitle {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 55px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.faqPage .faqTitle.is-open .arrowIcon {
+  transform: rotate(-180deg);
+}
+.faqPage .arrowIcon {
+  width: 10px;
+  height: auto;
+  margin-bottom: 2px;
+  transition: all 0.3s ease;
+}
+.faqPage .arrowIcon svg {
+  width: 100%;
+  height: auto;
+}
+.faqPage .faqContent {
+  display: none;
+  padding: 10px 15px 20px;
+  line-height: 1.9;
+}
+.faqPage .contactNavItem {
+  width: 100%;
+  height: 146px;
+  overflow: hidden;
+  position: relative;
+}
+.faqPage .contactNavItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+.faqPage .contactNavItem a {
+  display: block;
+}
+.faqPage .contactNavItem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.faqPage .contactNavItem .contentWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.visualLpPage .visualLpMv {
+  height: 800px;
+  position: relative;
+}
+.visualLpPage .visualLpMv::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+}
+.visualLpPage .visualLpMv .mvTitle {
+  position: absolute;
+  left: inherit;
+  right: 59px;
+  bottom: 50px;
+  color: #fff;
+  text-align: right;
+}
+.visualLpPage .visualLpMv .mvHeading {
+  font-size: 67px;
+  line-height: 1.3;
+  letter-spacing: 0.2em;
+  overflow: hidden;
+}
+.visualLpPage .visualLpMv .mvHeading .characterWrap {
+  margin-right: -5px;
+  position: relative;
+  display: inline-block;
+}
+.visualLpPage .visualLpMv .mvHeading .characterWrap span {
+  position: relative;
+  z-index: 2;
+  padding-left: 8px;
+}
+.visualLpPage .visualLpMv .mvHeading .characterWrap::before {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  content: "";
+  display: block;
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 66px;
+  z-index: 1;
+}
+.visualLpPage .visualLpMv .mvTxt {
+  font-size: 18px;
+}
+.visualLpPage .visualLpMv .mvTxt span {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0 6px;
+}
+.visualLpPage .visualLpSection .contentWidth {
+  max-width: 967px;
+  margin: auto;
+}
+.visualLpPage .visualLpSection .lpContentTitle .nova {
+  font-size: 45px;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+.visualLpPage .visualLpSection .lpContentTitle .nova::after {
+  content: "";
+  display: block;
+  width: 27px;
+  height: 1px;
+  background-color: #707070;
+  margin: 22px 0 26px;
+}
+.visualLpPage .visualLpSection .lpContentTitle p {
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
+}
+.visualLpPage .visualLpSection .lpContentDetail {
+  width: 100%;
+  max-width: 513px;
+}
+.visualLpPage .visualLpSection .countedNumHeading {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: 1.2;
+}
+.visualLpPage .visualLpSection .countedNumHeading .countedNumTxt {
+  font-size: 10px;
+  padding-right: 10px;
+  letter-spacing: 0.2em;
+}
+.visualLpPage .visualLpSection .countedNumHeading .countedNum {
+  font-size: 45px;
+  padding-right: 22px;
+}
+.visualLpPage .visualLpSection .imgWrap img {
+  display: block;
+  max-width: 100%;
+}
+.visualLpPage .flexComponent {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.visualLpPage.for-tokyo .visualLpMv {
+  background: url("deliver_mv_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-about {
+  padding: 120px 0 190px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-about hr {
+  border: none;
+  border-bottom: 1px solid rgba(112, 112, 112, 0.2);
+  margin: 25px 0;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-about p {
+  font-size: 15px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-about .lpContentHeading {
+  font-size: 22px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service {
+  padding-bottom: 100px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .imgWrap {
+  margin-bottom: 30px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .lpContentSection + .lpContentSection {
+  margin-top: 85px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink {
+  position: relative;
+  display: block;
+  margin-top: 28px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink span {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink .arrowIcon svg {
+  width: 6px;
+  height: auto;
+  margin-left: 15px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink .arrowIcon svg path {
+  stroke: #ffffff;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink .serviceBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 28, 28, 0.5);
+}
+.visualLpPage.for-tokyo .visualLpSection.for-features {
+  padding-bottom: 90px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-features .lpContentDetail p {
+  margin-bottom: 50px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-features .imgWrap img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-features .imgWrap img + img {
+  margin-top: 35px;
+}
+.visualLpPage.for-tokyo .visualLpSection.for-features .imgWrap:not(:last-child) {
+  margin-bottom: 75px;
+}
+
+@media (max-width: 767px) {
+  .staticPage {
+    line-height: 1.9;
+  }
+  .staticPage .staticWrapComponent {
+    padding: 0 16px;
+  }
+  .staticPage .staticMv {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .staticPage .staticMv .mainvisual {
+    width: 100%;
+    height: 250px;
+  }
+  .staticPage .staticMv .mainvisual .heroSlide, .staticPage .staticMv .mainvisual .mainvisualContent {
+    height: 250px;
+  }
+  .staticPage .staticMv .mainvisual .mainvisualVideo .mainvisualVideoContent {
+    position: absolute;
+    width: calc(100vh * 1.78);
+    min-width: 100vw;
+    height: 100vh;
+    min-height: calc(100vw / 1.78);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .staticPage .staticMv .mainvisual .mainvisualVideo iframe {
+    width: calc(100vh * 1.78);
+    min-width: 100vw;
+    height: 100vh;
+    min-height: calc(100vw / 1.78);
+    pointer-events: none;
+  }
+  .staticPage .staticSection .titleComponent {
+    padding: 0 16px;
+    max-width: 290px;
+    margin: 0 auto;
+  }
+  .staticPage .staticSection .titleComponent .heading.with-line {
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .staticPage .staticSection.withBgColor {
+    padding: 50px 0 0;
+  }
+  .staticPage .staticSection.withBgColor + .staticSection {
+    padding-top: 0;
+  }
+  .staticPage .staticSection.withBgColor + .staticSection > .staticSectionHeading {
+    padding-top: 50px;
+  }
+  .staticPage .staticSection.withBgColor + .staticSection .staticBlockWrap {
+    padding-top: 50px;
+  }
+  .staticPage .staticSection.withBgColor .staticCollectionWrap {
+    padding-bottom: 35px;
+  }
+  .staticPage .staticSection .staticWrapComponent {
+    padding-bottom: 50px;
+  }
+  .staticPage .staticSectionHeading {
+    font-size: 16px;
+  }
+  .staticPage .staticTextWrap {
+    max-width: 290px;
+    padding: 0 16px;
+    margin: 0 auto 40px;
+    line-height: 1.9;
+  }
+  .staticPage .staticTextWrap.is-center {
+    text-align: left;
+  }
+  .staticPage .staticTextWrap p:not(:last-child) {
+    margin-bottom: 1.9em;
+  }
+  .staticPage .staticBlockWrap {
+    padding: 0 16px;
+  }
+  .staticPage .staticBlockWrap.for-column {
+    display: block;
+  }
+  .staticPage .staticBlockWrap.for-column .blockChild {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-bottom: 40px;
+  }
+  .staticPage .staticBlockWrap.for-column .blockChild:nth-child(3n) {
+    margin-right: 0;
+  }
+  .staticPage .staticBlockWrap.for-row {
+    margin: 50px auto;
+  }
+  .staticPage .staticBlockWrap.for-row .blockChild {
+    display: block;
+  }
+  .staticPage .staticBlockWrap.for-row .blockChild:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .staticPage .staticBlockWrap.for-row .blockChildContent {
+    width: 100%;
+  }
+  .staticPage .staticBlockWrap.for-row .imgSquareFit {
+    height: 228px;
+    margin-bottom: 35px;
+  }
+  .staticPage .staticCollectionWrap {
+    padding: 0 16px;
+  }
+  .staticPage .staticCollectionWrap .collectionBlock {
+    padding: 45px 0 0;
+  }
+  .staticPage .staticCollectionWrap .collectionBlock + .collectionBlock {
+    padding-top: 0;
+  }
+  .staticPage .staticCollectionWrap .collectionBlock .titleComponent {
+    max-width: inherit;
+    padding: 0;
+  }
+  .staticPage .staticCollectionWrap .titleComponent {
+    margin-bottom: 30px;
+  }
+  .staticPage .staticCollectionWrap .titleComponent .heading.with-line {
+    margin-bottom: 10px;
+  }
+  .staticPage .withBgColor .staticCollectionWrap .collectionBlock {
+    padding: 20px 0 0;
+  }
+  .staticPage .hubspotWrap {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin: 0 auto 50px;
+  }
+  .staticPage .companyAddress {
+    margin: 40px 0;
+    display: block;
+  }
+  .staticPage .companyAddress .googleMap {
+    width: 100%;
+  }
+  .staticPage .companyAddress .companyAddressTxt {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction {
+    padding: 50px 0;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction .staticWrapComponent {
+    display: block;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction .childBlock {
+    width: 270px;
+    margin: 0 auto;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction .childBlock:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction .heading {
+    margin-bottom: 35px;
+  }
+  .staticPage .staticPageFooter .wabaraIntroduction .txtWrap {
+    margin-bottom: 35px;
+  }
+  .staticPage .titleComponent .heading.with-line {
+    padding-bottom: 0;
+  }
+  .staticPage .titleComponent .heading.with-line::after {
+    display: none;
+  }
+  .staticPage #cutrosesContents .titleComponent .staticTextWrap {
+    margin-bottom: 0;
+  }
+  .staticPage #giftContents .titleComponent .staticTextWrap {
+    margin-bottom: 0;
+  }
+  .staticPage #membersContents .membersDescription {
+    margin-bottom: 0;
+  }
+  .staticPage #deliverContents .titleComponent {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .staticPage #deliverContents #deliverStory .staticTextWrap {
+    margin-bottom: 0;
+  }
+  .staticPage #fragranceContents .heading.is-primary {
+    margin-bottom: 30px;
+  }
+  .staticPage #charlotteContents .heading.is-primary {
+    line-height: 1.5;
+  }
+  .staticPage #limitedContents .heading.is-primary {
+    margin-bottom: 30px;
+  }
+  .staticPage #limitedContents .staticCollectionWrap .collectionBlock:first-child {
+    padding-top: 0;
+  }
+  .staticPage #companyContents .heading.is-primary {
+    line-height: 1.5;
+  }
+  .staticPage #businessContents .businessSection .titleComponent {
+    padding-top: 40px;
+  }
+  .staticPage .contactSection .contactTxt {
+    margin-bottom: 30px;
+  }
+  .staticPage .contactSection .hubspotWrap {
+    margin-top: 35px;
+  }
+  .staticPage .mothersdayBanner {
+    margin: 25px auto 0;
+    padding: 0 16px;
+  }
+
+  .aboutPage {
+    margin-bottom: 50px;
+  }
+  .aboutPage .titleComponent {
+    margin-bottom: 30px;
+  }
+  .aboutPage .ankerNav {
+    margin-bottom: 25px;
+  }
+  .aboutPage .ankerNav a {
+    padding: 12px;
+    font-size: 10px;
+  }
+  .aboutPage .wabaraSection {
+    padding: 50px 16px 0;
+    margin-bottom: 55px;
+  }
+  .aboutPage .wabaraSection .aboutLogo {
+    margin-bottom: 50px;
+  }
+  .aboutPage .wabaraSection .aboutLogo img {
+    width: 110px;
+  }
+  .aboutPage .wabaraSection .aboutPortrait {
+    margin-top: 70px;
+    display: block;
+  }
+  .aboutPage .wabaraSection .aboutPortrait .aboutPortraitChild > .heading {
+    font-size: 17px;
+  }
+  .aboutPage .wabaraSection .aboutPortrait .aboutPortraitName {
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
+  .aboutPage .wabaraSection .aboutPortrait .aboutPortraitName .name.nova {
+    font-size: 10px;
+  }
+  .aboutPage .wabaraSection .aboutPortraitChild {
+    display: block;
+    width: auto;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .aboutPage .wabaraSection .aboutPortraitChild:not(:last-child) {
+    margin-bottom: 50px;
+  }
+  .aboutPage .farmSection {
+    margin-bottom: 55px;
+  }
+  .aboutPage .farmSection .heading.is-primary {
+    margin-bottom: 30px;
+  }
+  .aboutPage .farmSection .heading:not(.nova) {
+    font-size: 15px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .aboutPage .farmSection p {
+    padding: 0 16px;
+  }
+  .aboutPage .toHomeSection {
+    padding-top: 55px;
+    padding-bottom: 30px;
+  }
+  .aboutPage .toHomeSection .toHomeHeader {
+    margin-bottom: 35px;
+  }
+  .aboutPage .toHomeSection .toHomeHeader p {
+    font-size: 14px;
+  }
+  .aboutPage .toHomeBlockWrap .toHomeBlock {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .aboutPage .toHomeBlockWrap .toHomeBlock .toHomeBlockHeading {
+    margin-top: 35px;
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+  .aboutPage .historySection {
+    margin-top: 55px;
+    margin-bottom: 60px;
+  }
+  .aboutPage .historySection .heading {
+    margin-bottom: 30px;
+  }
+  .aboutPage .historySection .historyList {
+    padding: 0 16px;
+  }
+  .aboutPage .historySection .historyList > div {
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+  .aboutPage .worldSection {
+    padding: 0 16px;
+  }
+  .aboutPage .worldSection header {
+    margin-bottom: 20px;
+  }
+  .aboutPage .worldSection header .heading {
+    margin-bottom: 30px;
+  }
+  .aboutPage .worldSection .aboutWorldList {
+    margin: 20px auto 0;
+  }
+  .aboutPage .worldSection .aboutWorldList li .aboutWorldThumbnail {
+    margin-right: 20px;
+    flex: none;
+    width: 87px;
+    height: 87px;
+  }
+  .aboutPage .worldSection .aboutWorldList li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .aboutPage .worldSection .aboutWorldList .heading {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .aboutPage .worldSection .aboutWorldList .arrowLink {
+    margin-bottom: 10px;
+  }
+  .aboutPage .worldSection .aboutWorldList p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .workshopPage {
+    margin-bottom: 40px;
+  }
+  .workshopPage .titleComponent {
+    margin-bottom: 50px;
+  }
+  .workshopPage .staticPageHeaderBg {
+    margin-bottom: 40px;
+  }
+
+  .galleryPage {
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .galleryPage .mainvisualVideoContent {
+    height: calc((100vw - 32px) * 0.56);
+  }
+  .galleryPage .comingsoon {
+    margin: 33px auto;
+  }
+  .galleryPage .comingsoon svg {
+    width: 194px;
+    height: auto;
+  }
+  .galleryPage .gallerySection .titleComponent {
+    margin-bottom: 45px;
+  }
+  .galleryPage .gallerySection .titleComponent .heading {
+    margin-bottom: 10px;
+  }
+  .galleryPage .galleryWrap {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .galleryPage .blogSection {
+    flex-basis: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  .galleryPage .blogSectionChild {
+    flex-basis: 50%;
+  }
+  .galleryPage .blogSectionChild:nth-child(1) {
+    margin-right: 30px;
+  }
+  .galleryPage .galleryItem {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+  .galleryPage .galleryItem .titleComponent {
+    margin-bottom: 30px;
+  }
+  .galleryPage .galleryItem .titleComponent span {
+    text-align: left;
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .galleryPage .galleryItem .titleComponent .heading.with-line {
+    position: relative;
+    line-height: 1;
+    padding-bottom: 23px;
+    margin-bottom: 10px;
+  }
+  .galleryPage .galleryItem .titleComponent .heading.with-line::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #707070;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .galleryPage .galleryItem .titleComponent .heading.with-line .heading.is-primary {
+    font-size: 18px;
+  }
+  .galleryPage .galleryItem .titleComponent .lead {
+    font-size: 11px;
+  }
+  .galleryPage .galleryItem .blogList, .galleryPage .galleryItem .downloadList {
+    text-align: left;
+    font-size: 14px;
+  }
+  .galleryPage .galleryItem .blogList .heading.uppercaseTitle, .galleryPage .galleryItem .downloadList .heading.uppercaseTitle {
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: left;
+  }
+  .galleryPage .wallpaperSection .titleComponent {
+    margin-bottom: 58px;
+  }
+  .galleryPage .wallpapersWrap .wallpapersList {
+    display: block;
+  }
+  .galleryPage .wallpapersWrap .wallpapersItem {
+    width: 230px;
+    height: 150px;
+    margin: 0 auto 35px;
+  }
+  .galleryPage .wallpapersWrap .wallpapersItem:nth-child(odd) {
+    margin-right: auto;
+  }
+  .galleryPage .backtoLink {
+    margin-top: 65px;
+    margin-bottom: 35px;
+  }
+
+  .faqPage {
+    padding-bottom: 45px;
+  }
+  .faqPage .heading.with-line {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+  }
+  .faqPage .heading.with-line::after {
+    display: none;
+  }
+  .faqPage .faqSection {
+    margin-bottom: 80px;
+  }
+  .faqPage .faqSection .titleComponent {
+    margin-bottom: 40px;
+  }
+  .faqPage .contactSection .titleComponent {
+    margin-bottom: 35px;
+  }
+  .faqPage .faqContentNav {
+    flex-wrap: wrap;
+  }
+  .faqPage .faqContentNav a {
+    padding: 8px;
+  }
+  .faqPage .faqCategory {
+    line-height: 1;
+    margin: 45px 0 30px;
+    font-size: 15px;
+  }
+  .faqPage .faqContentWrap {
+    font-size: 13px;
+  }
+  .faqPage .faqTitle {
+    min-height: 45px;
+  }
+  .faqPage .faqContent {
+    padding: 10px 15px 20px;
+  }
+  .faqPage .contactNavItem .contentWrap {
+    font-size: 14px;
+  }
+
+  .contactPage .titleComponent .heading.is-primary {
+    font-size: 18px;
+  }
+
+  .visualLpPage .visualLpMv {
+    height: 88.5vh;
+    background-position: center;
+  }
+  .visualLpPage .visualLpMv .mvTitle {
+    right: 20px;
+    bottom: 45px;
+  }
+  .visualLpPage .visualLpMv .mvHeading {
+    font-size: 39px;
+    letter-spacing: 0.2em;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap {
+    margin-right: -5px;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap span {
+    padding-left: 8px;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap::before {
+    top: 5px;
+    height: 38px;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap.with-spanbr::before {
+    display: none;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap.with-spanbr span {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+  }
+  .visualLpPage .visualLpMv .mvHeading .characterWrap.with-spanbr span::before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: "";
+    display: block;
+    background: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    height: 38px;
+    z-index: -1;
+  }
+  .visualLpPage .visualLpMv .mvTxt {
+    font-size: 12px;
+  }
+  .visualLpPage .visualLpMv .mvTxt span {
+    padding: 0 6px;
+  }
+  .visualLpPage .visualLpSection .contentWidth {
+    max-width: inherit;
+    padding: 0 16px;
+  }
+  .visualLpPage .visualLpSection .lpContentTitle {
+    margin-bottom: 30px;
+  }
+  .visualLpPage .visualLpSection .lpContentTitle .nova {
+    font-size: 26px;
+  }
+  .visualLpPage .visualLpSection .lpContentTitle .nova::after {
+    width: 18px;
+    margin: 15px 0 14px;
+  }
+  .visualLpPage .visualLpSection .lpContentTitle p {
+    font-size: 14px;
+  }
+  .visualLpPage .visualLpSection .lpContentDetail {
+    max-width: inherit;
+  }
+  .visualLpPage .visualLpSection .countedNumHeading {
+    position: relative;
+    padding-top: 12px;
+    margin-bottom: 15px;
+  }
+  .visualLpPage .visualLpSection .countedNumHeading .countedNumTxt {
+    font-size: 10px;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .visualLpPage .visualLpSection .countedNumHeading .countedNum {
+    font-size: 35px;
+    padding-right: 18px;
+  }
+  .visualLpPage .visualLpSection .countedNumHeading .heading {
+    font-size: 18px;
+  }
+  .visualLpPage .flexComponent {
+    display: block;
+  }
+  .visualLpPage.for-tokyo .visualLpMv {
+    background: url("deliver_mv_sp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-about {
+    padding: 50px 0;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-about p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-about hr {
+    margin: 18px 0 23px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-about .lpContentHeading {
+    font-size: 18px;
+    margin-bottom: 35px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service {
+    font-size: 14px;
+    padding-bottom: 60px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service p:not(:last-child) {
+    margin-bottom: 17px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service .imgWrap {
+    margin-bottom: 17px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service .lpContentSection + .lpContentSection {
+    margin-top: 55px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink {
+    margin-top: 20px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink span {
+    font-size: 15px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-service .serviceBannerLink .arrowIcon svg {
+    width: 6px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-features {
+    font-size: 14px;
+    padding-bottom: 60px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-features .lpContentDetail p {
+    margin-bottom: 30px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-features .imgWrap img + img {
+    margin-top: 35px;
+  }
+  .visualLpPage.for-tokyo .visualLpSection.for-features .imgWrap:not(:last-child) {
+    margin-bottom: 35px;
+  }
+}

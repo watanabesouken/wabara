@@ -1,0 +1,29 @@
+<!-- /sections/common-static-footer.liquid -->
+<footer class="staticPageFooter">
+  <section class="wabaraIntroduction">
+    <div class="staticWrapComponent">
+      <div class="childBlock">
+        <img
+          src="{{ 'common_static_footer_rose.jpg' | asset_img_url }}"
+          data-src="{{ 'common_static_footer_rose.jpg' | asset_img_url: 'master' }}"
+          data-widths="[360, 720, 1080]"
+          data-sizes="auto"
+          alt="" class="lazyload">
+      </div>
+      <div class="childBlock">
+        <h3 class="heading">WABARA | 和ばら</h3>
+        <div class="txtWrap">
+          <p>和とは「調和」<br>和み、和らげ、和を結ぶ<br>周りを引き立て、自らも存在する<br></p>
+          <p>ばら作家、國枝啓司の生み出す<br>日本から発信するばらの形</p>
+        </div>
+        <a class="borderLink" href="/collections/wabararose-catalog"><span>わばら図鑑</span></a>
+      </div>
+    </div>
+  </section>
+  <div class="home">
+    {% render 'common-static-farm' %}
+    <div class="contentComponent">
+      {% render 'common-static-instagram' %}
+    </div>
+  </div>
+</footer>

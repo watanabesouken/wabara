@@ -1,0 +1,68 @@
+<!-- /sections/index-loading.liquid -->
+
+<div id="loadingImg" data-random-length="{{ section.blocks.size }}">
+  {% for block in section.blocks %}
+    {% if block.settings.image != blank %}
+      {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.image | img_url: '2040x' -%}
+    {% endif %}
+    {% if block.settings.image_mobile != blank %}
+      {%- assign img_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_mobile_src_url = block.settings.image_mobile | img_url: '828x' -%}
+    {% endif %}
+    <div class="randomImg hide">
+      {% if block.settings.image_mobile != blank %}
+        <div class="randomImgWrap hidden-phone" style="background-image: url({{ img_src_url }})">
+        </div>
+        <div class="randomImgWrap visible-phone" style="background-image: url({{ img_mobile_src_url }})">
+        </div>
+      {% else %}
+        <div class="randomImgWrap" style="background-image: url({{ img_src_url }})">
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "ローディング画面ランダム画像",
+  "max_blocks": 20,
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "ローディング画面ランダム画像",
+      "category": "画像",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "ランダム画像",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "モバイル用画像",
+          "info": "モバイル表示時に異なる画像を表示します。"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

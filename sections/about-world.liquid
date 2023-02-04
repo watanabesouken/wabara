@@ -1,0 +1,74 @@
+<!-- /sections/about-to_home.liquid -->
+<ul class="aboutWorldList">
+  {%- for block in section.blocks -%}
+  <li>
+    {% if block.settings.content_img != blank %}
+      {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+      <div class="aboutWorldThumbnail imgSquareFit">
+        <img class="lazyload"
+        src="{{ img_src_url }}"
+        data-src="{{ img_url }}"
+        data-widths="[500, 1000, 1500]"
+        data-sizes="auto"
+        alt=""
+        data-image>
+      </div>
+    {% endif %}
+    <div>
+      <h3 class="heading">{{ block.settings.custom_heading }}</h3>
+      {% if block.settings.custom_link_url != blank %}
+        <a href="{{ block.settings.custom_link_url }}" class="arrowLink"><span>{{ block.settings.custom_link_text }}</span></a>
+      {% endif %}
+      <p>{{ block.settings.custom_text | newline_to_br }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "TO THE WORLD",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "カスタム項目",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_world_block",
+      "name": "カスタムブロック",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "ブロックの画像"
+        },
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "ブロックの見出し"
+        },
+        {
+          "type": "url",
+          "id": "custom_link_url",
+          "label": "リンク先"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_text",
+          "label": "リンク先テキスト"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_text",
+          "label": "ブロックのテキスト"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

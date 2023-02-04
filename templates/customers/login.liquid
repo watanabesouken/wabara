@@ -1,0 +1,118 @@
+<!-- /templates/customers/login.liquid -->
+<div class="accountPage centeringForm">
+  <div class="form-message form-message--success hide" id="ResetSuccess" tabindex="-1">
+    {{ 'customer.recover_password.success' | t }}
+  </div>
+
+  <div id="CustomerLoginForm" class="formComponent">
+    <h1 class="accountHeading">ログイン</h1>
+
+    {% form 'customer_login', novalidate: 'novalidate' %}
+
+      {%- if form.errors -%}
+        <div class="form-message form-message--error">
+          <h2 class="h3 form-message__title " tabindex="-1" data-form-status>{{ 'contact.form.error_heading' | t }}</h2>
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <div class="primaryLine">
+        <label for="CustomerEmail" class="labelTxt">{{ 'customer.login.email' | t }}</label>
+        <input
+          type="email"
+          name="customer[email]"
+          id="CustomerEmail"
+          autocomplete="email"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder=""
+          {%- if form.errors contains 'form' -%}
+            class="input--error"
+            aria-invalid="true"
+          {%- endif -%}
+          >
+      </div>
+
+      {% if form.password_needed %}
+      <div class="primaryLine">
+        <label for="CustomerPassword" class="labelTxt">{{ 'customer.login.password' | t }}</label>
+        <input
+          type="password"
+          value=""
+          name="customer[password]"
+          id="CustomerPassword"
+          placeholder=""
+          {%- if form.errors contains 'form' -%}
+            class="input--error"
+            aria-invalid="true"
+          {%- endif -%}
+        >
+      </div>
+      {% endif %}
+
+      <div class="submitBtn">
+        <input type="submit" class="btn is-primary with-bg" value="ログイン">
+      </div>
+
+      <aside class="loginAside">
+        {% if form.password_needed %}
+          <span><a href="#recover" id="RecoverPassword">パスワードを忘れた場合</a></span>
+        {% endif %}
+        <span class="customer_register_link">{{ 'layout.customer.create_account' | t | customer_register_link }}</span>
+      </aside>
+
+    {% endform %}
+  </div>
+
+  <div id="RecoverPasswordForm" class="formComponent hide">
+
+    <h2 id="RecoverHeading" class="accountHeading">パスワードをリセット</h2>
+    <p>パスワードをリセットするためのメールをお送りします。</p>
+
+    {% form 'recover_customer_password' %}
+
+      {% comment %}
+        Add a hidden span to indicate the form was submitted succesfully.
+      {% endcomment %}
+      {% if form.posted_successfully? %}
+        <span class="hide reset-password-success"></span>
+      {% endif %}
+
+      <div class="primaryLine">
+        <input
+          type="email"
+          value=""
+          name="email"
+          id="RecoverEmail"
+          class="input-full{% if form.errors %} input--error{% endif %}"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="{{ 'customer.login.email' | t }}"
+          {% if form.errors %}
+            aria-invalid="true"
+            aria-describedby="RecoverEmail-email-error"
+          {%- endif -%}
+          >
+        {%- if form.errors -%}
+          <span id="RecoverEmail-email-error" class="input-error-message">
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+            {% include 'icon-error' %}
+            <span>{{ form.errors.messages['form'] }}</span>
+          </span>
+        {%- endif -%}
+      </div>
+
+      <div class="submitBtn">
+        <input type="submit" class="btn is-primary with-bg" value="送信">
+      </div>
+
+      <aside class="loginAside">
+        <a href="#LoginHeading" id="HideRecoverPasswordLink">
+          <span>{{ 'customer.recover_password.cancel' | t }}</span></a>
+      </aside>
+
+    {% endform %}
+
+  </div>
+
+</div>

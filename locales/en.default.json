@@ -1,0 +1,47 @@
+{
+  "general": {
+    "404": {
+      "title": "Not found",
+      "subtext_html": "The page you were looking for does not exist"
+    },
+    "accessibility": {
+      "refresh_page": "Choosing a selection results in a full page refresh.",
+      "selection_help": "Press the space key then arrow keys to make a selection.",
+      "unit_price_separator": "per"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    }
+  },
+  "products": {
+    "general": {
+      "save_html": "Save<br \/>{{ saved_amount }}",
+      "collection_return": "Back to {{ collection }}",
+      "sale_price": "Sale price",
+      "regular_price": "Regular price",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "unit_price": "Unit price"
+    },
+    "product": {
+      "sold_out": "Sold Out",
+      "sold_out_html": "Sold<br \/> Out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "add_to_cart": "Add to Cart",
+      "full_details": "Full details",
+      "view_in_space": "View in your space",
+      "view_in_space_label": "View in your space, loads item in augmented reality window",
+      "slide_label": "Slide {{ slide_number }} of {{ slide_max }}.",
+      "gallery_thumbnail_alt": "Load image into Gallery viewer, {{ imageAlt }}",
+      "video_thumbnail_alt": "Load and play video in Gallery viewer, {{ imageAlt }}",
+      "model_thumbnail_alt": "Load 3D model into Gallery viewer, {{ imageAlt }}"
+    },
+    "zoom": {
+      "next": "Next (Right arrow key)",
+      "prev": "Previous (Left arrow key)",
+      "close": "Close (Esc)"
+    }
+  }
+}

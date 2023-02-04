@@ -1,0 +1,26 @@
+<div class="staticPage">
+  <section id="companyContents" class="">
+    <header class="titleComponent">
+      <h1 class="heading is-primary nova uppercaseTitle"><span>{{ page.title }}</span></h1>
+    </header>
+    <div class="staticMv staticWrapComponent">
+      {% section 'company-static-mainvisual' %}
+    </div>
+    <section class="contentSubComponent">
+      <header class="titleComponent">
+        <h2 class="heading is-primary nova uppercaseTitle with-line"><span>ROSE UNIVERSE CO., LTD.</span></h2>
+        <div class="staticTextWrap is-center">
+          <h3 class="bold">根源性・普遍性・純度</h3>
+          <p>人類の有史以来変わらない、花の根源的な魅力を追求する</p>
+        </div>
+      </header>
+      <section class="companySection staticSection">
+        <div class="stripHtml">
+          {{page.content}}
+        </div>
+      </section>
+    </section>
+
+  </section>
+
+</div>

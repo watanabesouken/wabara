@@ -1,0 +1,28 @@
+<div class="staticPage collectionPage">
+  <div id="membersContents">
+    <section class="">
+      <header class="titleComponent">
+        <h1 class="heading is-primary nova uppercaseTitle"><span>{{page.title}}</span></h1>
+      </header>
+      <div class="staticMv staticWrapComponent">
+        {% section 'members-static-mainvisual' %}
+      </div>
+      <div class="staticTextWrap is-center membersDescription">
+        {{page.content}}
+      </div>
+
+      {% section 'members-collection-block' %}
+
+      <section class="membersSection staticSection withBgColor">
+        <h2 class="heading staticSectionHeading nova uppercaseTitle"><span>NEXT DELIVERY ORDER FOR MEMBERS</span></h2>
+        <div class="staticTextWrap is-center mb0">
+          <p>メンバーズの方専用の２回目以降のお届け日予約フォーム</p>
+        </div>
+        {% section 'members-collection-sub-block' %}
+      </section>
+
+    </section>
+  </div>
+  {% section 'common-static-footer' %}
+
+</div>

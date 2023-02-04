@@ -1,0 +1,41 @@
+<!-- /sections/about-history.liquid -->
+<dl class="historyList">
+  {%- for block in section.blocks -%}
+    <div>
+      <dt class="nova">{{ block.settings.custom_year }}</dt>
+      <dd>{{ block.settings.custom_text }}</dd>
+    </div>
+  {% endfor %}
+</dl>
+
+{% schema %}
+{
+  "name": "HISTORY",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "HISTORY",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_history_block",
+      "name": "HISTORY項目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_year",
+          "label": "年"
+        },
+        {
+          "type": "text",
+          "id": "custom_text",
+          "label": "テキスト"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

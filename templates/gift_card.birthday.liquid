@@ -1,0 +1,121 @@
+{% layout none %}
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer></script>
+
+    <!-- Basic page needs ============================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value, shop: shop.name }}</title>
+    <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+
+    <!-- Helpers ========================================== -->
+    <link rel="canonical" href="{{ canonical_url }}">
+    {% if settings.favicon %}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+    {% endif %}
+
+    {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros | strip_html -%}
+
+    <!-- Header hook for plugins ========================== -->
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    {{ content_for_header }}
+
+    <!-- CSS & Font ======================================== -->
+    <link rel="stylesheet" href="https://use.typekit.net/fgz4thz.css">
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'theme_giftcard.css' | asset_url | stylesheet_tag }}
+  </head>
+
+  <body class="giftCardDesign for-birthday">
+
+    <header class="giftCardHeader">
+      <a href="https://www.wabararose.com" class="giftCardHeaderLogo">
+        <span class="headerLogoImg" role="img" aria-label="Wabara">{% render 'svg-logo-wabara' %}</span>
+      </a>
+      <div class="giftCardTitleWrap">
+        <h1 class="giftCardTitle nova">
+          <span>HAPPY</span><span>BIRTHDAY</span>
+        </h1>
+      </div>
+    </header>
+
+    <main role="main" class="main">
+
+      <section class="giftCardInfo">
+        <h2 class="giftCardTitle nova">WABARA<br>eGIFT CARD</h2>
+        <div class="giftCardPrice">
+          <p class="nova">
+            {% if settings.currency_code_enabled %}
+              {{ gift_card.initial_value | money_with_currency }}
+            {% else %}
+              {{ gift_card.initial_value | money }}
+            {% endif %}
+          </p>
+          {%- if gift_card.enabled == false or gift_card.expired -%}
+            <p>ギフトカードの利用期限が切れています。</p>
+          {%- endif -%}
+          {% if settings.currency_code_enabled %}
+            {%- assign gift_card_balance = gift_card.balance | money_with_currency -%}
+          {% else %}
+            {%- assign gift_card_balance = gift_card.balance | money -%}
+          {% endif %}
+        </div>
+        <dl class="giftCardCode nova">
+          <dt>GIFT CORD</dt>
+          <dd>
+            <input
+              type="text"
+              class="gift-card__number nova giftCardCodeNumber"
+              value="{{ gift_card.code | format_code }}"
+              aria-label="ギフトカードコード"
+              readonly
+            >
+            <div class="gift-card__copy-code giftCardNumCopy">
+              <button class="btn gift-card__copy-link codeCopyBtn">コードをコピーする</button>
+              <span class="gift-card__copy-success form__message" role="status"></span>
+              <template>
+                <p>コードは正常にコピーされました</p>
+              </template>
+            </div>
+          </dd>
+        </dl>
+        <p class="giftCardAside nova">
+          <span>残高：{{ gift_card_balance }}</span>
+          {% if gift_card.expires_on != blank %}
+            <span>有効期限：{{ gift_card.expires_on | date: '%Y.%m.%d' }}</span>
+          {% endif %}
+        </p>
+      </section>
+
+      <div class="giftCardGuide">
+        <p>WABARAオンラインストアでご利用いただけるギフトカードをお届けします。プリペイド式でご利用が可能です。</p>
+        <a href="{{ shop.url }}" class="btn is-secondary"><span class="nova">WABARAオンラインストアへ</span></a>
+        <a href="https://www.wabararose.com/pages/giftcard-recipient" class="txtLink"><span>eギフトカードの利用方法を確認する</span></a>
+      </div>
+
+    </main>
+
+  </body>
+</html>
+
+<script>
+  var template = document.getElementsByTagName("template")[0];
+  var clonedTemplate = template.content.cloneNode(true);
+  var isMessageDisplayed = false
+  document
+  .querySelector('.gift-card__copy-link')
+  .addEventListener('click', () => {
+    navigator.clipboard.writeText(document.querySelector('.gift-card__number').value).then(function () {
+      if (!isMessageDisplayed) {
+        document.querySelector('.gift-card__copy-success').appendChild(clonedTemplate);
+        isMessageDisplayed = true
+      }
+    });
+  });
+</script>

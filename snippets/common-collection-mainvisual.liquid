@@ -1,0 +1,37 @@
+<!-- /snippets/common-collection-mainvisual.liquid -->
+{% if section.settings.image != blank %}
+  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  {%- assign img_src_url = section.settings.image | img_url: '2040x' -%}
+{% endif %}
+
+<header class="collectionHeader" style="background-image: url({{img_src_url }})">
+  <h1 class="collectionText">
+    {% if section.settings.custom_heading != blank %}
+      <span class="subTitle heading is-secondary with-line">{{ section.settings.custom_heading }}</span>
+    {% endif %}
+    <span class="mainTitle">{{ section.settings.custom_sub_heading }}</span>
+  </h1>
+</header>
+
+<style>
+  .breadcrumbComponent {
+    color: #ffffff !important;
+  }
+  .breadcrumbComponent a {
+    color: #ffffff;
+  }
+  .breadcrumbComponent svg path {
+    stroke: #ffffff;
+  }
+  @media (max-width: 767px) {
+    .breadcrumbComponent {
+      color: #3B3E43 !important;
+    }
+    .breadcrumbComponent a {
+      color: #3B3E43;
+    }
+    .breadcrumbComponent svg path {
+      stroke: #3B3E43;
+    }
+  }
+</style>

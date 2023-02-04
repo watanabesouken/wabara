@@ -1,0 +1,516 @@
+{{ 'theme_giftcard.css' | asset_url | stylesheet_tag }}
+
+<div class="staticPage">
+  <section class="giftCard for-sender">
+    <header class="giftCard__mv">
+      <h1 class="mvTtl">WABARA <br> eGIFT <br class="isSp"> CARD</h1>
+      <p class="mvTxt">Send Your Thanks</p>
+    </header>
+
+    <section class="giftCard__concept">
+      <div class="contentWidth">
+        <div class="conceptWrapper">
+          <h2 class="conceptTtl">想いを伝える<br>WABARAのeギフトカード</h2>
+          <div class="conceptList">
+            <p>お祝いやお礼に、オンラインで手軽に贈れる<br>WABARAのオリジナルeギフトカードをご用意しました。</p>
+            <p>ご住所がわからない、生花だと贈るタイミングを考えてしまう場合でも、<br>受け取った方が好きなタイミングでお好みの商品を選んでご購入いただけます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__about">
+      <div class="contentWidth">
+        <div class="aboutWrapper">
+          <div class="aboutTtl">
+            <h2 class="enTtl">ABOUT</h2>
+            <p class="jaTtl">eギフトカードとは</p>
+          </div>
+
+          <div class="aboutContent">
+            <div class="contentImg">
+              <img src="{{ 'about_giftcard.png' | asset_img_url }}" data-src="{{ 'about_giftcard.png' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+            </div>
+            <p class="contentTxt">お相手の住所を知らなくても、<br>メールやLINEなどでお送りいただけるデジタルギフトカード。<br>WABARAオンラインショップでのお買い物にご利用いただけます。</p>
+            <dl class="contentList">
+              <div class="listItem">
+                <dt class="itemTtl">即日発送</dt>
+                <dd class="itemTxt">実際のカードをお送りするものではないため、購入後即日発行。急なお礼が必要なシーンやギフトのご用意を忘れてしまった記念日に、メールやLINEなどですぐにお贈りいただけます。 </dd>
+              </div>
+              <div class="listItem">
+                <dt class="itemTtl">プリペイド式</dt>
+                <dd class="itemTxt">金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。金額以上の商品を購入される場合は、eギフトカードの金額分割引する形で利用できます。<br>※有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。 <dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="giftCard__cases">
+      <div class="contentWidth">
+        <div class="caseWrapper" id="giftcardCases">
+          <div class="casesTtl">
+            <h2 class="enTtl">CASES</h2>
+            <p class="jaTtl">おすすめの利用例</p>
+          </div>
+
+          <div class="casesContent">
+            <p class="casesTxt">金額別に以下のようなご利用例があります。</p>
+            <div class="casesTab">
+              <input id="aTab" type="radio" name="tabItem" checked>
+              <label class="tabItem" for="aTab">¥2,200</label>
+              <input id="bTab" type="radio" name="tabItem">
+              <label class="tabItem" for="bTab">¥6,050</label>
+              <input id="cTab" type="radio" name="tabItem">
+              <label class="tabItem" for="cTab">¥8,800</label>
+              <input id="dTab" type="radio" name="tabItem">
+              <label class="tabItem" for="dTab">¥11,000</label>
+              <input id="eTab" type="radio" name="tabItem">
+              <label class="tabItem" for="eTab">¥22,000</label>
+
+              <div id="aContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">シャルロットペリアン1本＋送料</p>
+                  <a href="/collections/wabararose-catalog/products/wabararose-charlotte-perriand" class="contentImg">
+                    <img src="{{ 'giftcard_case2200_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case2200_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">お好きなわばら2本＋送料</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case2200_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case2200_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+              </div>
+
+              <div id="bContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】マンスリーブーケ 1種（内容は毎月変わります）</p>
+                  <a href="/collections/limited-product" class="contentImg">
+                    <img src="{{ 'giftcard_case6050_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case6050_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】お好きなばら5本(シャルロットペリアンの場合には本数が変わります)＋残りは次回のお買い物で</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case6050_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case6050_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+              </div>
+
+              <div id="cContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束mini(わばら15本＋わばらの枝葉) </p>
+                  <a href="/products/bouquet-mini" class="contentImg">
+                    <img src="{{ 'giftcard_case11000_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case11000_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】WABARA SKIN CARE  SET</p>
+                  <a href="/pages/skincare" class="contentImg">
+                    <img src="{{ 'giftcard_case11000_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case11000_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+              </div>
+
+              <div id="dContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束S(わばら18本＋わばらの枝葉) </p>
+                  <a href="/products/bouquet-s" class="contentImg">
+                    <img src="{{ 'giftcard_case16500_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case16500_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】お好きなばら20本(シャルロットペリアンの場合には本数が変わります)</p>
+                  <a href="/collections/wabararose-catalog" class="contentImg">
+                    <img src="{{ 'giftcard_case16500_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case16500_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+              </div>
+
+              <div id="eContent" class="tabContent">
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンA</h3>
+                  <p class="contentTxt">【送料無料】わばらの花束L (わばら40本＋わばらの枝葉)</p>
+                  <a href="/products/bouquet-l" class="contentImg">
+                    <img src="{{ 'giftcard_case22000_A.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case22000_A.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+                <section class="tabContent__pattern">
+                  <h3 class="contentTtl">パターンB</h3>
+                  <p class="contentTxt">【送料無料】シャルロットペリアン30本(ブーケL)</p>
+                  <a href="/products/bouquet-l-rose-charlotte-perriand-1" class="contentImg">
+                    <img src="{{ 'giftcard_case22000_B.jpg' | asset_img_url }}" data-src="{{ 'giftcard_case22000_B.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                  </a>
+                </section>
+              </div>
+
+              <p>＊北海道/沖縄など遠方地域の方は商品により一部送料をご負担いただく場合がございます。送料含めてギフトカードの金額以内の商品をお選びいただければ、ご負担なく購入いただくこと可能です。</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__purchase">
+      <div class="purchaseTtl">
+        <h2 class="enTtl">PURCHASE</h2>
+        <p class="jaTtl">eギフトカードの種類・購入</p>
+      </div>
+
+      <div class="purchaseContent">
+        <div class="contentTtl">
+          <h3 class="contentTtl__en">STEP1</h3>
+          <p class="contentTtl__ja">メッセージを選択</p>
+        </div>
+        <div class="purchaseTab">
+          <input id="fTab" type="radio" name="tabItem2" checked>
+          <label class="tabItem2" for="fTab">Happy Birthday</label>
+          <input id="gTab" type="radio" name="tabItem2">
+          <label class="tabItem2" for="gTab">Thank You</label>
+          <input id="hTab" type="radio" name="tabItem2">
+          <label class="tabItem2" for="hTab">Congratulations!</label>
+          <input id="iTab" type="radio" name="tabItem2">
+          <label class="tabItem2" for="iTab">Happy Mother’s Day</label>
+          <input id="jTab" type="radio" name="tabItem2">
+          <label class="tabItem2" for="jTab">メッセージなし</label>
+          <div id="fContent" class="tabContent">
+            <div class="tabContent__message">
+              <div class="contentImg">
+                <img src="{{ 'giftcard_sample_birthday.jpg' | asset_img_url }}" data-src="{{ 'giftcard_sample_birthday.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                {%- comment -%}
+                <div class="sampleLink">
+                  <a href="#" class="sampleLink__content" target="_blank">サンプルをチェックする</a>
+                </div>
+                {%- endcomment -%}
+              </div>
+
+              <div class="contentTtl">
+                <h3 class="contentTtl__en">STEP2</h3>
+                <p class="contentTtl__ja">金額を選択して購入画面へ</p>
+              </div>
+
+              <ul class="priceLinkList">
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-b2200" class="itemLink">¥2,200</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-b6050" class="itemLink">¥6,050</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-b8800" class="itemLink">¥8,800</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-b11000" class="itemLink">¥11,000</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-b22000" class="itemLink">¥22,000</a>
+                </li>
+              </ul>
+
+              <ul class="supplementList">
+                <li class="supplementList__item">上記は税込価格となります。</li>
+                <li class="supplementList__item">eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。</li>
+                <li class="supplementList__item">有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。</li>
+                <li class="supplementList__item">金額以上の商品を購入される場合、eギフトカードの金額分割引する形で利用できます。</li>
+                <li class="supplementList__item">金額別の商品購入例は<span><a href="#giftcardCases" class="upplementlink">こちら</a></span>をご確認ください。</li>
+                <li class="supplementList__item">受け取った方のeギフトカードの利用方法は<span><a href="/pages/giftcard-recipient#giftcardGuide" class="upplementlink">こちら</a></span>。</li>
+              </ul>
+            </div>
+          </div>
+          <div id="gContent" class="tabContent">
+            <div class="tabContent__message">
+              <div class="contentImg">
+                <img src="{{ 'giftcard_sample_thankyou.jpg' | asset_img_url }}" data-src="{{ 'giftcard_sample_thankyou.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                {%- comment -%}
+                <div class="sampleLink">
+                  <a href="#" class="sampleLink__content" target="_blank">サンプルをチェックする</a>
+                </div>
+                {%- endcomment -%}
+              </div>
+
+              <div class="contentTtl">
+                <h3 class="contentTtl__en">STEP2</h3>
+                <p class="contentTtl__ja">金額を選択して購入画面へ</p>
+              </div>
+
+              <ul class="priceLinkList">
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-t2200" class="itemLink">¥2,200</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-t6050" class="itemLink">¥6,050</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-t8800" class="itemLink">¥8,800</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-t11000" class="itemLink">¥11,000</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-t22000" class="itemLink">¥22,000</a>
+                </li>
+              </ul>
+
+              <ul class="supplementList">
+                <li class="supplementList__item">上記は税込価格となります。</li>
+                <li class="supplementList__item">eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。</li>
+                <li class="supplementList__item">有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。</li>
+                <li class="supplementList__item">金額以上の商品を購入される場合、eギフトカードの金額分割引する形で利用できます。</li>
+                <li class="supplementList__item">金額別の商品購入例は<span><a href="#giftcardCases" class="upplementlink">こちら</a></span>をご確認ください。</li>
+                <li class="supplementList__item">受け取った方のeギフトカードの利用方法は<span><a href="/pages/giftcard-recipient#giftcardGuide" class="upplementlink">こちら</a></span>。</li>
+              </ul>
+            </div>
+          </div>
+          <div id="hContent" class="tabContent">
+            <div class="tabContent__message">
+              <div class="contentImg">
+                <img src="{{ 'giftcard_sample_congratulations.jpg' | asset_img_url }}" data-src="{{ 'giftcard_sample_congratulations.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                {%- comment -%}
+                <div class="sampleLink">
+                  <a href="#" class="sampleLink__content" target="_blank">サンプルをチェックする</a>
+                </div>
+                {%- endcomment -%}
+              </div>
+
+              <div class="contentTtl">
+                <h3 class="contentTtl__en">STEP2</h3>
+                <p class="contentTtl__ja">金額を選択して購入画面へ</p>
+              </div>
+
+              <ul class="priceLinkList">
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-c2200" class="itemLink">¥2,200</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-c6050" class="itemLink">¥6,050</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-c8800" class="itemLink">¥8,800</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-c11000" class="itemLink">¥11,000</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-c22000" class="itemLink">¥22,000</a>
+                </li>
+              </ul>
+
+              <ul class="supplementList">
+                <li class="supplementList__item">上記は税込価格となります。</li>
+                <li class="supplementList__item">eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。</li>
+                <li class="supplementList__item">有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。</li>
+                <li class="supplementList__item">金額以上の商品を購入される場合、eギフトカードの金額分割引する形で利用できます。</li>
+                <li class="supplementList__item">金額別の商品購入例は<span><a href="#giftcardCases" class="upplementlink">こちら</a></span>をご確認ください。</li>
+                <li class="supplementList__item">受け取った方のeギフトカードの利用方法は<span><a href="/pages/giftcard-recipient#giftcardGuide" class="upplementlink">こちら</a></span>。</li>
+              </ul>
+            </div>
+          </div>
+          <div id="iContent" class="tabContent">
+            <div class="tabContent__message">
+              <div class="contentImg">
+                <img src="{{ 'giftcard_sample_mothersday.jpg' | asset_img_url }}" data-src="{{ 'giftcard_sample_mothersday.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                {%- comment -%}
+                <div class="sampleLink">
+                  <a href="#" class="sampleLink__content" target="_blank">サンプルをチェックする</a>
+                </div>
+                {%- endcomment -%}
+              </div>
+
+              <div class="contentTtl">
+                <h3 class="contentTtl__en">STEP2</h3>
+                <p class="contentTtl__ja">金額を選択して購入画面へ</p>
+              </div>
+
+              <ul class="priceLinkList">
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-m2200" class="itemLink">¥2,200</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-m6050" class="itemLink">¥6,050</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-m8800" class="itemLink">¥8,800</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-m11000" class="itemLink">¥11,000</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-m22000" class="itemLink">¥22,000</a>
+                </li>
+              </ul>
+
+              <ul class="supplementList">
+                <li class="supplementList__item">上記は税込価格となります。</li>
+                <li class="supplementList__item">eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。</li>
+                <li class="supplementList__item">有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。</li>
+                <li class="supplementList__item">金額以上の商品を購入される場合、eギフトカードの金額分割引する形で利用できます。</li>
+                <li class="supplementList__item">金額別の商品購入例は<span><a href="#giftcardCases" class="upplementlink">こちら</a></span>をご確認ください。</li>
+                <li class="supplementList__item">受け取った方のeギフトカードの利用方法は<span><a href="/pages/giftcard-recipient#giftcardGuide" class="upplementlink">こちら</a></span>。</li>
+              </ul>
+            </div>
+          </div>
+          <div id="jContent" class="tabContent">
+            <div class="tabContent__message">
+              <div class="contentImg">
+                <img src="{{ 'giftcard_sample_nomessage.jpg' | asset_img_url }}" data-src="{{ 'giftcard_sample_nomessage.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                {%- comment -%}
+                <div class="sampleLink">
+                  <a href="#" class="sampleLink__content" target="_blank">サンプルをチェックする</a>
+                </div>
+                {%- endcomment -%}
+              </div>
+
+              <div class="contentTtl">
+                <h3 class="contentTtl__en">STEP2</h3>
+                <p class="contentTtl__ja">金額を選択して購入画面へ</p>
+              </div>
+
+              <ul class="priceLinkList">
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-w2200" class="itemLink">¥2,200</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-w6050" class="itemLink">¥6,050</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-w8800" class="itemLink">¥8,800</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-w11000" class="itemLink">¥11,000</a>
+                </li>
+                <li class="priceLinkList__item">
+                  <a href="/products/e-giftcard-w22000" class="itemLink">¥22,000</a>
+                </li>
+              </ul>
+
+              <ul class="supplementList">
+                <li class="supplementList__item">上記は税込価格となります。</li>
+                <li class="supplementList__item">eギフトカードはプリペイド式となりますので、金額未満の商品を購入される場合、次回お買い物の際に残りの金額をご利用いただけます（有効期限内で何度でもご利用可能）。</li>
+                <li class="supplementList__item">有効期限は購入から1年となります。お贈りいただいてから1年ではありませんので、ご注意ください。</li>
+                <li class="supplementList__item">金額以上の商品を購入される場合、eギフトカードの金額分割引する形で利用できます。</li>
+                <li class="supplementList__item">金額別の商品購入例は<span><a href="#giftcardCases" class="upplementlink">こちら</a></span>をご確認ください。</li>
+                <li class="supplementList__item">受け取った方のeギフトカードの利用方法は<span><a href="/pages/giftcard-recipient#giftcardGuide" class="upplementlink">こちら</a></span>。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__guide">
+      <div class="contentWidth">
+        <div class="guideWrapper">
+          <div class="guideTtl">
+            <h2 class="enTtl">GUIDE</h2>
+            <p class="jaTtl">購入・贈り方について</p>
+          </div>
+
+          <ul class="guideList">
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP1</h3>
+              <p class="itemTxt">カートに追加後「お届け先の入力」に進みます。<span>連絡先・お届け先情報</span>は、贈り先ではなく、<span>ご購入者さまのメールアドレス</span>をご記入ください（購入完了の明細メールも自動送付されるため、ご注意ください）。画面の表示にしたがい、お支払いまで完了してください。</p>
+              <div class="itemImg">
+                <div class="hidden-phone with-border">
+                  <img src="{{ 'giftcard_guide_step1_sender_pc.jpg' | asset_img_url }}" data-src="{{ 'giftcard_guide_step1_sender_pc.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                </div>
+                <div class="visible-phone">
+                  <img src="{{ 'giftcard_guide_step1_sender_sp.jpg' | asset_img_url }}" data-src="{{ 'giftcard_guide_step1_sender_sp.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" data-sizes="auto" alt="" class="lazyload">
+                </div>
+              </div>
+            </li>
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP2</h3>
+              <p class="itemTxt">購入後、「eギフトカードのご案内」という件名のメールが届きます。ご登録のメールアドレスのメールボックスをご確認ください。<br>※eギフトカードの案内メールが届かない方は<span><a href="/pages/contact-order-after" class="itemLink" target="_blank">問い合わせフォーム</a></span>よりご連絡ください。</p>
+            </li>
+            <li class="guideList__item">
+              <h3 class="itemTtl">STEP3</h3>
+              <p class="itemTxt">案内メールの中の文章をコピーして、メールやLINEなどお好みの方法で、贈り先にお贈りください。</p>
+              <div class="eGiftContent">
+                <p class="eGiftContent__txt">贈り主さまの想いを込めて、 WABARAのeギフトカードをお届けします。</p>
+                <p class="eGiftContent__linktxt">eギフトカードを見る（以下のURLにアクセス）</p>
+                https://checkout.shopify.com/gift_cards/xxxxxxxx/
+                <br>xxxxxxxxxxxxxxxxxxxxxxxx
+                <p class="eGiftContent__linktxt">eギフトカードの利用方法を見る（以下のURLにアクセス）</p>
+                <a href="/pages/giftcard-recipient" class="eGiftContent__link">https://www.wabararose.com/pages/giftcard-recipient</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="giftCard__qa">
+      <div class="contentWidth">
+        <div class="qaWrapper">
+          <div class="qaTtl">
+            <h2 class="enTtl">FAQ</h2>
+            <p class="jaTtl">よくある質問</p>
+          </div>
+
+          <ul class="accordionList" id="accordionList">
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>eギフトカードを使用する際、負担する金額はありますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">プリペイド式なので、贈った金額内の商品であればご負担なくお買い物が可能です。お贈りされた方にも金額内でご負担なくお届けできる商品をご提案しておりますのでご安心くださいませ。<br>＊北海道/沖縄など遠方地域の方は商品により一部送料をご負担いただく場合がございます</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>全国のお花屋さんや直売所で使用できますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">WABARAオリジナルの商品になりますのでWABARAオンラインストアのみでご使用いただけます。オンラインストアでご購入後、WABARAの直売所（滋賀県守山市）で商品をお受け取りいただくことは可能です。ご購入時にご相談くださいませ。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>ノベルティや引き出物にしたい場合などはまとめて購入できますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">可能です。<span><a href="/pages/contact-order-before" class="itemLink">問い合わせフォーム</a></span>よりお気軽にご相談くださいませ。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>相手がカードを使用したかわかりますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">お客様ご自身でサイト上でご確認いただくことはできません。弊社でのご利用状況のお伝えはでき兼ねますので、直接お客様にお尋ねください。</p>
+              </div>
+            </li>
+            <li class="accordionList__item">
+              <h3 class="qaTtl">
+                <span>使用期限はありますか？</span>
+                <span class="arrowIcon"></span>
+              </h3>
+              <div class="qaContent" style="display: none;">
+                <p class="qaContent__txt">ご購入後1年間です。お贈りしてからしてから１年間ではございませんのでご注意ください。お贈りされた方はギフトカード内にて有効期限を確認することが可能です。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</div>
+
+<script src="{{ 'theme_giftcard.js' | asset_url }}" defer="defer"></script>

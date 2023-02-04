@@ -1,0 +1,49 @@
+<!-- /snippets/content-banner.liquid -->
+<ul class="customBannerComponent">
+  {% unless template.suffix contains 'catalog' %}
+    <li class="customBannerItem for-dictionary">
+      <a href="/collections/wabararose-catalog">
+        <img src="{{ 'custom_dictionary_banner.jpg' | asset_img_url }}" data-src="{{ 'custom_dictionary_banner.jpg' | asset_img_url: 'master' }}" data-widths="[600, 1200, 1800]" alt="" width="600" height="" class="lazyload">
+        <div class="contentWrap">
+          <dl class="bannerText">
+            <dt class="subTitle">品種ごとに単品購入できる</dt>
+            <dd class="mainTitle">わばら図鑑</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+    <li class="customBannerItem for-members">
+      <a href="/pages/wabara-members">
+        <div class="hidden-phone">
+          <img src="{{ 'banner_bg_members.jpg' | asset_img_url }}" data-src="{{ 'banner_bg_members.jpg' | asset_img_url: 'master' }}" data-widths="[600, 1200, 1800]" alt="" width="600" height="" class="lazyload">
+        </div>
+        <div class="visible-phone">
+          <img src="{{ 'banner_bg_members_sp.jpg' | asset_img_url }}" data-src="{{ 'banner_bg_members_sp.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" alt="" width="375" height="" class="lazyload">
+        </div>
+        <div class="contentWrap">
+          <dl class="bannerText">
+            <dt class="mainTitle heading is-secondary with-line nova">WABARA Members</dt>
+            <dd class="subTitle">会員になってWABARAを応援する</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+  {% else %}
+    <li class="customBannerItem for-members is-fullwidth">
+      <a href="/pages/wabara-members">
+        <div class="hidden-phone">
+          <img src="{{ 'banner_bg_members_large.jpg' | asset_img_url }}" data-src="{{ 'banner_bg_members_large.jpg' | asset_img_url: 'master' }}" data-widths="[900, 1800, 2700]" alt="" width="900" height="" class="lazyload">
+        </div>
+        <div class="visible-phone">
+          <img src="{{ 'banner_bg_members_sp.jpg' | asset_img_url }}" data-src="{{ 'banner_bg_members_sp.jpg' | asset_img_url: 'master' }}" data-widths="[375, 750, 1125]" alt="" width="375" height="" class="lazyload">
+        </div>
+        <div class="contentWrap">
+          <dl class="bannerText">
+            <dt class="mainTitle heading is-secondary with-line nova">WABARA Members</dt>
+            <dd class="subTitle">会員になってWABARAを応援する</dd>
+          </dl>
+        </div>
+      </a>
+    </li>
+  {% endunless %}
+</ul>

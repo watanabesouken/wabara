@@ -1,0 +1,243 @@
+
+
+<section class="cartPage contentComponent">
+
+  <header class="titleComponent">
+    <h1 class="heading is-primary nova uppercaseTitle"><span>Cart</span></h1>
+  </header>
+  {% if cart.item_count > 0 %}
+
+    {%- assign deliverDateAvailable = true -%}
+    {%- assign containMothersDay = false -%}
+    {%- assign containRosie = false -%}
+    {%- assign containTokyoDeliver = false -%}
+    {%- assign containTokyoPickUp = false -%}
+    {%- assign containFlower = false -%}
+
+    {%- for item in cart.items -%}
+      {% assign isGift = false %}
+       {%- for line_item in cart.items -%}
+  {% for property in line_item.properties %}
+     {% if property.first == "ギフト購入" %}
+        {% assign isGift = true %}
+      {% endif %}
+  {% endfor %}
+{% endfor %}
+      
+      {%- if item.product.tags contains "母の日の花束" -%}
+        {%- assign containMothersDay = true -%}
+        {%- assign deliverDateAvailable = false -%}
+      {%- endif -%}
+      {%- if item.product.tags contains "おすそわけ便" -%}
+        {%- assign deliverDateAvailable = false -%}
+      {%- endif -%}
+      {%- if item.product.tags contains "おへやで育てるわばら" -%}
+        {%- assign containRosie = true -%}
+        {%- assign deliverDateAvailable = false -%}
+      {%- endif -%}
+      {%- if item.product.tags contains "東京デリバリー" -%}
+        {%- assign containTokyoDeliver = true -%}
+        {%- assign deliverDateAvailable = false -%}
+      {%- endif -%}
+      {%- comment -%}上記商品は「カレンダー非表示」タグ追加以前から存在するため、念のためタグ抜け漏れ時も配送指定なし変数を明記。以降の新規追加商品では省略{%- endcomment -%}
+      {%- if item.product.tags contains "東京店引取り" -%}
+        {%- assign containTokyoPickUp = true -%}
+      {%- endif -%}
+      {%- if item.product.tags contains "カレンダー非表示" -%}
+        {%- assign deliverDateAvailable = false -%}
+      {%- endif -%}
+      {%- if item.product.type == "切り花" or item.product.type == "Rosie" or item.product.type == "おうち束" or item.product.type == "わばら束" or item.product.type == "花束・ブーケ" or item.product.type == "花束・ボックス" or item.product.type == "LABORATORY" or item.product.type == "サポーターズ" or item.product.type == "メンバーズ" -%}
+        {%- assign containFlower = true -%}
+      {%- elsif item.product.type == "園芸苗" -%}
+        {%- comment -%}判定条件数が多すぎると動作影響出そう？なので念のためelsifとして分ける{%- endcomment -%}
+        {%- assign containFlower = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <form action="/cart" class="cartForm formComponent" id="cartForm" method="post" novalidate>
+    <table class="cartTable">
+      <thead>
+        <tr class="toprow">
+          <th colspan="2">商品</th>
+          <th class="price">価格</th>
+          <th class="num">数量</th>
+          <th class="total">合計</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items %}
+          <tr class="bodyrow">
+            <td class="productImg">
+              <a href="{{ item.url }}">
+                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              </a>
+            </td>
+            <td class="productTitle nova">
+              <a href="{{ item.url }}">
+                {{ item.product.title }}
+              </a>
+
+              {%- assign variant_options = 'template ' | split: ' ' -%}
+                {%- if item.product.has_only_default_variant != true -%}
+                  {%- assign variant_options = item.options_with_values -%}
+                {%- endif -%}
+                {%- assign property_size = item.properties | size -%}
+
+                <ul class="productVariantTitle{% if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil %} hide{% endif %}" data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
+                  {%- for option in variant_options -%}
+                    <li class="{% if item.product.has_only_default_variant %} hide{% endif %}" data-cart-item-option>{{ option.name }}: {{ option.value }}</li>
+                  {%- endfor -%}
+
+                  <li
+                    class="{% if item.selling_plan_allocation == empty %} hide {% endif %}"
+                    data-cart-item-selling-plan-name
+                  >
+                    {{ item.selling_plan_allocation.selling_plan.name }}
+                  </li>
+
+                  {%- comment -%}
+                    Optional, loop through custom product line items if available
+
+                    Line item properties come in as having two parts. The first part will be passed with the default form,
+                    but p.last is the actual custom property and may be blank. If it is, don't show it.
+
+                    For more info on line item properties, visit:
+                      - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+                  {%- endcomment -%}
+
+                  {%- assign properties = 'template ' | split: ' ' -%}
+                  {%- if property_size > 0 -%}
+                    {%- assign properties = item.properties -%}
+                  {%- endif -%}
+
+                  {%- for p in properties -%}
+                    {% assign property_first_char = p.first | slice: 0 %}
+                    <li class="{%if property_size == 0 or p.last == blank or property_first_char == '_' %} hide{% endif %}" data-cart-item-property>
+                      <span data-cart-item-property-name>{{ p.first }}: </span>
+
+                      {%- comment -%}
+                        Check if there was an uploaded file associated
+                      {%- endcomment -%}
+                      <span data-cart-item-property-value>
+                        {%- if p.last contains '/uploads/' -%}
+                          <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                        {%- else -%}
+                          {{ p.last }}
+                        {%- endif -%}
+                      </span>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+
+            </td>
+            <td class="productPrice nova">{{ item.price | money }}</td>
+            <td class="productQuantity nova">
+              {{ item.quantity }}
+            </td>
+            <td class="productTotal nova">
+              {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+              {{ item.line_price | money }}
+              {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+            </td>
+            <td class="productDelete">
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><span>削除</span></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <footer class="cartFooter primaryLine">
+      {%- if containFlower -%}
+      <div class="orderAnnounce for-policy">
+        <h3 class="announceHeading">必ずご確認ください</h3>
+        <p>当店の切り花、苗類を増殖・転売、海外への輸出及び国外への持ち出しは固く禁止させていただいております。当店の切り花、苗類をご購入いただいた時点で、上記に同意されたものとみなします。</p>
+      </div>
+      <hr>
+      {%- endif -%}
+    {% unless isGift %}
+      <div class="orderAnnounce">
+        <ul>
+          {%- if deliverDateAvailable -%}
+            <li>選択できないお日にちは既に受付を終了しております。注文メモにお届け日のご希望を記載いただいても無効となりますのでご注意ください。必ず、選択できるお日にちにて指定をお願いいたします。</li>
+          {%- else -%}
+            {%- if containMothersDay -%}
+              <li>【5/1-5/11お届け】の商品をご購入の場合、上記 ｢お届け日｣ の項目に表示されているお日にちにお届けいたします。</li>
+            {%- elsif containRosie -%}
+              <li>【おへやで育てるばらをご注文の方へ】<br>オプション選択にてお選びいただいたお日にちにお届けいたします。</li>
+            {%- elsif containTokyoDeliver -%}
+              <li>【東京デリバリーサービスの商品をご注文の方へ】<br>商品ごとにお届け日が異なります。カートに入っている商品が、ご希望のお届け日の商品かをご確認ください。<br>お届け時間は、オプション選択にて必ず選択してください。</li>
+            {%- elsif containTokyoPickUp -%}
+              <li>選択いただいたお日にちお時間にご来店いただきますようお願いいたいます。同日時に多数応募があった場合は、混雑を避けるため先にご注文いただきました方を優先させていただきます。場合によっては来店日時の変更をお願いすることもあることをご了承お願いいたします。その際は別途メールにてご連絡させていただきます。</li>
+            {%- else -%}
+              <li>オプション選択で日付をお選びいただいた場合、そちらのお日にちにお届けいたします。</li>
+            {%- endif -%}
+          {%- endif -%}
+        </ul>
+      </div>
+   {% endunless %}   
+    
+      <div class="orderOtherInfo">
+         {% if property.first == "ギフト購入" %}
+          <div id="orderDate" class="orderDate identixweb-order-delivery"></div>
+        {% elsif deliverDateAvailable %}
+          <div class="orderDate">
+            <div class="hidden identixweb-order-delivery"></div>
+          </div>
+        {% endif %}
+
+        <div class="productInfo">
+          <div class="cartTextArea">
+            <span class="labelTxt">注文メモ</span>
+            {%- if deliverDateAvailable -%}
+              {% assign cartPlaceholder = "カレンダーで選択できないお日にちは既に受付を終了しています。こちらにお日付の希望をご記入いただきましても、ご対応できかねますのでご注意くださいませ。着日が指定されている商品(商品名○月○日お届けと記載されているもの)は、カレンダーのお日付を選ぶ必要はございません。" %}
+            {% else %}
+              {%- if containMothersDay -%}
+                {% assign cartPlaceholder = "｢お届け日｣ の項目に表示されているお日にちにお届けいたします。＊それ以外のお日付の希望をこちらにご記入いただきましても、ご対応できかねますのでご注意くださいませ。" %}
+              {%- elsif containRosie -%}
+                {% assign cartPlaceholder = "オプション選択にてお選びいただいたお日にちにお届けいたします。＊それ以外のお日付の希望をこちらにご記入いただきましても、ご対応できかねますのでご注意くださいませ。" %}
+              {%- elsif containTokyoDeliver -%}
+                {% assign cartPlaceholder = "商品名に記載されているお日にちにお届けいたします。＊それ以外のお日付の希望をこちらにご記入いただきましても、ご対応できかねますのでご注意くださいませ。" %}
+              {%- elsif containTokyoPickUp -%}
+                {% assign cartPlaceholder = "" %}
+              {%- else -%}
+                {% assign cartPlaceholder = "オプション選択にてお選びいただいたお日にちにお届けいたします。＊それ以外のお日付の希望をこちらにご記入いただきましても、ご対応できかねますのでご注意くださいませ。" %}
+              {%- endif -%}
+            {%- endif -%}
+            <textarea class="" name="note" id="cart-note" rows="4" {% unless isGift %} placeholder="{{cartPlaceholder}}"{% endunless %}>{{ cart.note }}</textarea>
+          </div>
+          <dl class="productSubTotal">
+            <dt>小計</dt>
+            <dd class="nova">{{ cart.total_price | money }}</dd>
+          </dl>
+          <p class="productSubTotalNote">送料はこの後のステップで自動計算されます</p>
+          <div class="productCheckout">
+            <div class="productCheckoutFlow">
+              <h3 class="heading">注文画面の流れ</h3>
+              <ol class="productCheckoutFlowList nova">
+                <li>お届け先の入力</li>
+                <li>配送方法の選択</li>
+                <li>決済方法・ご依頼主の入力</li>
+              </ol>
+            </div>
+            <button type="submit" name="checkout" class="btn with-bg for-submit"><span>お届け先の入力に進む</span></button>
+            <a href="/#productLineUp"><span>買い物を続ける</span></a>
+          </div>
+        </div>
+      </div>
+    
+    </footer>
+
+    {% comment %}
+      数量変更用の不可視アップデートボタン、削除しないこと
+    {% endcomment %}
+    <button type="submit" name="update" id="cartUpdate" class="visibility-hidden">Update</button>
+  </form>
+  {% else %}
+  <div class="cartEmpty">
+    <p>カート内に商品がありません。</p>
+    <a href="/#productLineUp">ショッピングを続ける</a>
+  </div>
+  {% endif %}
+</section>

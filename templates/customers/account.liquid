@@ -1,0 +1,94 @@
+<!-- /templates/customers/account.liquid -->
+<div class="accountPage for-account">
+  <div class="accountHeading">
+        <h1><span>マイページ</span></h1>
+      {% if customer %}
+        <a class="accountHeading__link" href="/account?hbSubscriptionPath=/">定期購買一覧へ</a>
+        {% else %}
+      {% endif %}
+ </div>
+
+  <div class="myPageWrap">
+
+    <section class="myPageSection">
+      <h2 class="myPageHeading">{{ 'customer.orders.title' | t }}</h2>
+      {% paginate customer.orders by 20 %}
+        {% if customer.orders.size != 0 %}
+
+          <table class="tableComponent accountDetailTable">
+            <thead>
+              <tr>
+                <th class="orderNum" scope="col">{{ 'customer.orders.order_number' | t }}</th>
+                <th class="orderDate" scope="col">{{ 'customer.orders.date' | t }}</th>
+                <th class="orderDeliver" scope="col">お届け日指定</th>
+                <th class="orderDeliver" scope="col">お届け時間指定</th>
+                <th class="orderPayment" scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+                <th class="orderFullfill" scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                <th class="orderTotal" scope="col">{{ 'customer.orders.total' | t }}</th>
+              </tr>
+            </thead>
+            <tbody class="nova">
+              {% for order in customer.orders %}
+                <tr>
+                  <th class="orderNum" data-label="{{ 'customer.orders.order_number' | t }}" scope="row">
+                    <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+                  </th>
+                  <td data-label="{{ 'customer.orders.date' | t }}" class="orderDate">{{ order.created_at | date: "%Y.%m.%d" }}</td>
+                  <td data-label="お届け日指定" class="orderDeliver">
+                    {%- if order.attributes contains "お届け予定日" -%}
+                      {%- for attribute in order.attributes -%}
+                        {%- assign attributeName = attribute | first -%}
+                        {%- if attributeName == "お届け予定日" -%}
+                          {{ attribute | last | date: "%Y.%m.%d" }}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                       <p>指定なし</p>
+                    {%- endif -%}
+                  </td>
+                  <td data-label="お届け予定時間帯" class="orderDeliver">
+                    {%- if order.attributes contains "お届け予定時間帯" -%}
+                      {%- for attribute in order.attributes -%}
+                        {%- assign attributeName = attribute | first -%}
+                        {%- if attributeName == "お届け予定時間帯" -%}
+                          {{ attribute | last }}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                       <p>指定なし</p>
+                    {%- endif -%}
+                  </td>
+
+                  <td data-label="{{ 'customer.orders.payment_status' | t }}" class="orderPayment">{{ order.financial_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.fulfillment_status' | t }}" class="orderFullfill">{{ order.fulfillment_status_label }}</td>
+                  <td data-label="{{ 'customer.orders.total' | t }}" class="orderTotal">{{ order.total_price | money }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        {% else %}
+
+          <p>{{ 'customer.orders.none' | t }}</p>
+
+        {% endif %}
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+        {% endif %}
+      {% endpaginate %}
+    </section>
+
+    <section class="myPageSection">
+      <h2 class="myPageHeading">{{ 'customer.account.details' | t }}</h2>
+      {{ customer.default_address | format_address }}
+
+      <a href="{{ routes.account_addresses_url }}">アドレス帳へ</a>
+    </section>
+
+    <div class="loginAside">
+      {{ 'layout.customer.log_out' | t | customer_logout_link }}
+    </div>
+  </div>
+
+</div>
+{% render 'huckleberry-subscription-customer-portal' %}

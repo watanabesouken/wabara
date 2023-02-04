@@ -1,0 +1,37 @@
+<div class="staticPage workshopPage">
+
+  <section>
+    <header class="titleComponent">
+      <h1 class="heading is-primary nova uppercaseTitle with-line"><span>{{ page.title }}</span></h1>
+      <p>農園のイベント、ばらの育て方のワークショップ</p>
+    </header>
+    <div class="staticPageHeaderBg">
+      <span class="hidden-phone">
+        <img
+          src="{{ 'workshop_header_bg_pc.jpg' | asset_img_url }}"
+          data-src="{{ 'workshop_header_bg_pc.jpg' | asset_img_url: 'master' }}"
+          data-widths="[1150, 2300, 3450]"
+          data-sizes="auto"
+          alt="" class="lazyload">
+      </span>
+      <span class="visible-phone">
+        <img
+          src="{{ 'workshop_header_bg_sp.jpg' | asset_img_url }}"
+          data-src="{{ 'workshop_header_bg_sp.jpg' | asset_img_url: 'master' }}"
+          data-widths="[375, 750, 1125]"
+          data-sizes="auto"
+          alt="" class="lazyload">
+      </span>
+    </div>
+
+    <div class="contentComponent">
+      <div class="comingSpringComponent">
+        <span role="img" aria-label="Coming in Spirng">
+          {% render 'svg-comingspring' %}
+        </span>
+      </div>
+    </div>
+
+  </section>
+
+</div>

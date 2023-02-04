@@ -1,0 +1,29 @@
+<!-- /sections/cutrose-collection-mainvisual.liquid -->
+{% include 'common-collection-mainvisual' %}
+
+{% schema %}
+{
+  "name": "メインビジュアル",
+  "settings": [
+    {
+      "type": "header",
+      "content": "メインビジュアル設定"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_heading",
+      "label": "ページのタイトル"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_sub_heading",
+      "label": "ページのサブタイトル"
+    }
+  ]
+}
+{% endschema %}

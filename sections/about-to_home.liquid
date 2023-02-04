@@ -1,0 +1,63 @@
+<!-- /sections/about-to_home.liquid -->
+<div class="toHomeBlockWrap">
+  {%- for block in section.blocks -%}
+    <section class="toHomeBlock">
+      {% if block.settings.content_img != blank %}
+        {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+        <div>
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[322, 644, 966]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+      {% endif %}
+      <h3 class="toHomeBlockHeading">{{ block.settings.custom_heading }}</h3>
+      <div class="toHomeBlockText">
+        <p>
+          {{ block.settings.custom_text | newline_to_br }}
+        </p>
+      </div>
+    </section>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "FARM TO HOME",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "カスタム項目",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_farm_block",
+      "name": "カスタムブロック",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "ブロックの画像"
+        },
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "ブロックの見出し"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_text",
+          "label": "ブロックのテキスト"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

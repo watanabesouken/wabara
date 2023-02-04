@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<html lang="ja">
+<head>
+
+  <!-- Basic page needs ============================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Title and description =========================== -->
+  <title>
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Helpers ========================================== -->
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {% endif %}
+
+  {% if template.suffix == 'gift' %}
+    {% render 'social-meta-tags', suffix: 'gift' %}
+  {% elsif template.suffix == 'edibleroses' %}
+    {% render 'social-meta-tags', suffix: 'edibleroses' %}
+  {% elsif template.suffix == 'cutroses' %}
+    {% render 'social-meta-tags', suffix: 'cutroses' %}
+  {% elsif template.suffix == 'fragrance' %}
+    {% render 'social-meta-tags', suffix: 'fragrance' %}
+  {% elsif template.suffix == 'limited' %}
+    {% render 'social-meta-tags', suffix: 'limited' %}
+  {% elsif template.suffix == 'charlotte' %}
+    {% render 'social-meta-tags', suffix: 'charlotte' %}
+  {% else %}
+    {% include 'social-meta-tags' %}
+  {% endif %}
+
+  <!-- Header hook for plugins ========================== -->
+  <link rel="preconnect" href="https://cdn.shopify.com">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {{ content_for_header }} <!-- Header hook for plugins -->
+  <meta name="p:domain_verify" content="31373ff31cec952845914b1303035650"/><!-- Pinterest Verify -->
+
+  <!-- CSS & Font ======================================== -->
+  <link rel="stylesheet" href="https://use.typekit.net/fgz4thz.css">
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {%- if template contains 'product' -%}
+    {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+
+  {%- if template contains 'gallery-' -%}
+    {{ 'lightcase.min.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {%- if template == 'index' -%}
+    {{ 'theme_home.css' | asset_url | stylesheet_tag }}
+  {%- elsif template contains 'collection' or template contains 'page' -%}
+    {{ 'theme_collection.css' | asset_url | stylesheet_tag }}
+    {{ 'static.css' | asset_url | stylesheet_tag }}
+  {%- elsif template contains 'product' -%}
+    {{ 'theme_product.css' | asset_url | stylesheet_tag }}
+  {%- elsif template contains 'cart' -%}
+    {{ 'theme_cart.css' | asset_url | stylesheet_tag }}
+  {%- elsif template contains 'blog' or template contains 'article' -%}
+    {{ 'theme_blog.css' | asset_url | stylesheet_tag }}
+  {%- elsif template.directory == 'customers' -%}
+    {{ 'theme_customer.css' | asset_url | stylesheet_tag }}
+  {%- else -%}
+    {{ 'static.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+
+  <!-- Sections  ==================================== -->
+  <script>
+    window.theme = window.theme || {};
+    theme.strings = {
+      zoomClose: {{ "products.zoom.close" | t | json }},
+      zoomPrev: {{ "products.zoom.prev" | t | json }},
+      zoomNext: {{ "products.zoom.next" | t | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      addressError: {{ 'home_page.map.address_error' | t | json }},
+      addressNoResults: {{ 'home_page.map.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'home_page.map.address_query_limit_html' | t | json }},
+      authError: {{ 'home_page.map.auth_error_html' | t | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartCookie: {{ 'cart.general.cookies_required' | t | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: savings: '[savings]' | json }},
+      productSlideLabel: {{ 'products.product.slide_label' | t: slide_number: '[slide_number]', slide_max: '[slide_max]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      gridType: {{ settings.collection_products_grid | json }}
+    };
+  </script>
+
+  {% comment %}Clarity tracking code{% endcomment %}
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "cruwhvidqt");
+  </script>
+
+  {% render 'bookthatapp-widgets' %}
+</head>
+
+{% comment %}Templates Variables{% endcomment %}
+{% if template == 'index' or template contains 'gallery-soundscape-' or template == 'page.mothersday2022' or template == 'page.cosmetics' or template contains 'giftcard-'  or page.metafields.custom.transparent_header == true %}
+  {% assign transparentHeaderActive = true %}
+{% else %}
+  {% assign transparentHeaderActive = false %}
+{% endif %}
+
+{% if template == '404' or template contains 'gallery-soundscape-' or template == 'page.cosmetics' or template == 'page.mothersday2022' or template contains 'giftcard-' or template == 'page.cosmetics' or page.metafields.custom.transparent_header == true %}
+  {% assign breadcrumbsActive = false %}
+{% else %}
+  {% assign breadcrumbsActive = true %}
+{% endif %}
+
+<body id="{%- if template == 'index' -%}home{%- else -%}{{ page_title | handle }}{%- endif -%}" class="loading {% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }} {% if transparentHeaderActive %}transparentHeaderActive {% endif %} {% if page.metafields.custom.transparent_header == true %}headerTxtColorWh{% endif %}">
+
+  {%- if template == 'index' -%}
+  <div id="loadingArea" class="visible">
+    <div class="loadingAreaWrap">
+      {% section 'index-loading' %}
+    </div>
+  </div>
+  {%- endif -%}
+
+  <div id="contentArea">
+    {% section 'header' %}
+    <main role="main" class="main">
+      <div class="headerBg"></div>
+      <div class="wrapper">
+        {% if breadcrumbsActive %}
+          {% render 'breadcrumbs' %}
+        {% endif %}
+        {{ content_for_layout }}
+      </div>
+    </main>
+    {% unless template contains 'gallery-soundscape-' %}
+      {% if settings.mothersday_bannser == true %}
+        {% unless template contains 'mothersday2022' %}
+          <div class="mothersdayFixBanner">
+            <a href="/pages/mothersday2022">
+              <img
+                srcset="
+                  {{ 'mothersday_banner_fix_sp.jpg' | asset_img_url: '767x' }} 767w,
+                  {{ 'mothersday_banner_fix_pc.jpg' | asset_img_url: 'master' }} 1218w"
+                sizes="(max-width: 767px) 50vw, 100vw"
+                src="{{ mothersday_banner_top_pc.jpg | asset_img_url }}"
+                alt="HAPPY MOTHER'S DAY 母の日特集はこちら"
+                width="350"
+                loading="lazy"
+              >
+            </a>
+          </div>
+        {% endunless %}
+      {% endif %}
+      {% section 'footer' %}
+    {% endunless %}
+  </div>
+
+  <!-- JS ==================================== -->
+  {{ 'jquery-3.5.1.min.js' | asset_url | script_tag }}
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CObject.assign"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom-min.js' | asset_url }}" defer="defer"></script>
+
+  <script defer>
+    let rootMarginPx = "0px 0px 0px 0px";
+    const options = {
+      rootMargin: rootMarginPx,
+      threshold: [0, 1.0]
+    };
+    const observerHeader = new IntersectionObserver(headerTransform, options);
+    observerHeader.observe(document.querySelector('.headerBg'));
+    function headerTransform(entries) {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio >= 1) {
+          document.querySelector('.header').classList.remove("visible");
+        } else {
+          document.querySelector('.header').classList.add("visible");
+        }
+      });
+    }
+  </script>
+
+  {%- if template.directory == 'customers' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  {%- if template contains 'gallery-' -%}
+    <script src="{{ 'lightcase.min.js' | asset_url }}"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        $('a[data-rel^=lightcase]').lightcase({
+          overlayOpacity: 1,
+          maxWidth: 1550,
+          maxHeight: 1550,
+          showCaption: false,
+          showSequenceInfo: false,
+        });
+      });
+    </script>
+  {%- endif -%}
+
+  {%- if template contains 'gallery-soundscape-' -%}
+    <script src="//player.vimeo.com/api/player.js" async></script>
+    <script src="{{ 'gallery_soundscape-min.js' | asset_url }}" async></script>
+  {%- endif -%}
+
+  {% include 'gtranslate', float: 'yes' %}
+
+<!-- Back in Stock helper snippet -->
+{% render 'back-in-stock-helper' %}
+<!-- End Back in Stock helper snippet -->
+
+<!-- WorldShopping Checkout -->
+<script type="text/javascript" charset="UTF-8" async="true" src="https://checkout-api.worldshopping.jp/v1/script?token=wabararose_com"></script>
+<!-- End WorldShopping Checkout -->
+
+<!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "ff739539-eaf9-48aa-abc5-da3dc6c82282"
+  });
+</script>
+<!-- End Channel Plugin -->
+
+</body>
+</html>

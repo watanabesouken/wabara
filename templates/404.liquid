@@ -1,0 +1,19 @@
+<div class="notFoundPage staticPage">
+  <section class="">
+    <header class="titleComponent">
+      <h1 class="heading is-primary nova uppercaseTitle with-line"><span>404 NOT FOUND</span></h1>
+      <p>恐れ入りますが、ページが見つかりませんでした</p>
+    </header>
+    <div class="linkWrap">
+      <a href="/" class="borderLink">サイトトップへ</a>
+    </div>
+    <div class="imgWrap">
+      <img
+        src="{{ 'common_404_image.jpg' | asset_img_url }}"
+        data-src="{{ 'common_404_image.jpg' | asset_img_url: 'master' }}"
+        data-widths="[600, 1200, 1800]"
+        data-sizes="auto"
+        alt="" class="lazyload">
+    </div>
+  </section>
+</div>

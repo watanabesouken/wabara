@@ -1,0 +1,27 @@
+{% if section.settings.tabs_banner_available %}
+  {% if template.suffix == 'limited' %}
+    <div class="staticWrapComponent">
+      {% render 'tabs-banner' with current: "other" %}
+    </div>
+  {% else %}
+    {% render 'tabs-banner' with current: "mothersday" %}
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "母の日限定バナー表出",
+  "settings": [
+    {
+      "type": "header",
+      "content": "バナー表出設定"
+    },
+    {
+      "type": "checkbox",
+      "id": "tabs_banner_available",
+      "label": "タブ切り替えバナーを表示する",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

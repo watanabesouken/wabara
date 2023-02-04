@@ -1,0 +1,81 @@
+<!-- /sections/contact-nav-contents.liquid -->
+<ul class="contactNav">
+  <li><a onclick="ChannelIO('showMessenger')"><img class="hidden-phone" src="//cdn.shopify.com/s/files/1/0035/7557/8659/t/24/assets/contact_pc.jpg?v=1667489976"><img class="visible-phone" src="//cdn.shopify.com/s/files/1/0035/7557/8659/t/24/assets/contact_sp.jpg?v=1667490002"></a></li>
+  {% for block in section.blocks %}
+    {% if block.settings.content_img != blank %}
+      {%- assign img_url = block.settings.content_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_src_url = block.settings.content_img | img_url: 'small' -%}
+    {% endif %}
+    {% if block.settings.content_img_sp != blank %}
+      {%- assign img_mobile_url = block.settings.content_img_sp | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {%- assign img_mobile_src_url = block.settings.content_img_sp | img_url: '828x' -%}
+    {% endif %}
+    <li class="contactNavItem block--{{ block.id }}">
+      <a href="{{ block.settings.custom_link_url }}">
+        <div class="hidden-phone">
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="visible-phone">
+          <img class="lazyload"
+          src="{{ img_mobile_src_url }}"
+          data-src="{{ img_mobile_url }}"
+          data-widths="[740, 900, 1080, 1296]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </div>
+        <div class="contentWrap">
+          <span>{{ block.settings.custom_link_text }}</span>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "Contactナビゲーション",
+  "presets": [
+    {
+      "category": "Custom Content",
+      "name": "Contactナビゲーション",
+      "settings": {
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_link_panel",
+      "name": "任意ページへの画像リンク",
+      "settings": [
+        {
+          "type": "url",
+          "id": "custom_link_url",
+          "label": "バナーリンク先"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "バナー内の画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img_sp",
+          "label": "バナー内の画像（モバイル表示用）"
+        },
+        {
+          "type": "text",
+          "id": "custom_link_text",
+          "label": "タイトル"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

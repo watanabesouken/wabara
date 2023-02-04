@@ -1,0 +1,122 @@
+<!-- /sections/article-gallery-farm-spring2021.liquid -->
+<div class="galleryImg">
+  {% for block in section.blocks %}
+    {% if block.type == 'image' %}
+      {% if block.settings.image != blank %}
+        {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- assign img_src_url = block.settings.image | img_url: '2040x' -%}
+      {% endif %}
+      <div class="blockChildContent itemImg">
+        <a data-rel="lightcase:myCollection" href="{{ img_src_url }}" title="{{ block.settings.image_caption }}">
+          <img class="lazyload"
+          src="{{ img_src_url }}"
+          data-src="{{ img_url }}"
+          data-widths="[322, 644, 966]"
+          data-sizes="auto"
+          alt=""
+          data-image>
+        </a>
+      </div>
+    {% elsif block.type == 'video' %}
+      {% assign video_url = block.settings.video_url %}
+        <div class="itemVideo">
+          <iframe class="itemVideoContent" src="https://player.vimeo.com/video/{{ video_url.id }}?autoplay=0&loop=1&muted=1" width="750" height="422" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+          <a class="itemVideoClick" data-rel="lightcase:myCollection" href="https://player.vimeo.com/video/{{ video_url.id }}" target="_blank"><div class="itemVideoClickArea"></div></a>
+        </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="galleryText">
+  <section>
+    <h2>{{ section.settings.title }}</h2>
+    {{ section.settings.gallery_text_jp | newline_to_br }}
+  </section>
+
+  <section>
+    <h2>{{ section.settings.title_en }}</h2>
+    {{ section.settings.gallery_text_en | newline_to_br }}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Gallery記事内容",
+  "settings": [
+    {
+      "type": "header",
+      "content": "画面下部テキスト"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "日本語見出し"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_text_jp",
+      "label": "日本語テキスト"
+    },
+    {
+      "type": "text",
+      "id": "title_en",
+      "label": "英語見出し"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_text_en",
+      "label": "英語テキスト"
+    }
+  ],
+  "presets": [
+    {
+      "name": "画像登録",
+      "category": "画像",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "video"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "静止画イメージ",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "画像キャプション"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "動画",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL",
+          "accept": ["vimeo"],
+          "info": "vimeoのみ、Youtube不可"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "動画キャプション"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

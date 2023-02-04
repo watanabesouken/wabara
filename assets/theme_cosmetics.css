@@ -1,0 +1,1204 @@
+@charset "UTF-8";
+.cosmeticsTop {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+}
+.cosmeticsTop__mv {
+  height: 100vh;
+  background: url("cosmetics_fv.jpg");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.cosmeticsTop__mv .mvTtl {
+  position: absolute;
+  bottom: 48px;
+  left: 50px;
+  font-size: 59px;
+  letter-spacing: 4.72px;
+  line-height: 1.15;
+  color: #fff;
+}
+.cosmeticsTop__mv .mvTxt {
+  position: absolute;
+  bottom: 53px;
+  right: 49px;
+  font-size: 24px;
+  letter-spacing: 4.8px;
+  color: #fff;
+}
+.cosmeticsTop .lineUp {
+  position: relative;
+  margin-top: 76px;
+}
+.cosmeticsTop .lineUp__ttl {
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 12px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.cosmeticsTop .lineUp .skinCareList {
+  max-width: 1120px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 87px;
+  margin-top: 70px;
+}
+.cosmeticsTop .lineUp .skinCareList__item {
+  width: 30%;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink {
+  transition: 0.5s ease;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink:hover {
+  opacity: 0.9;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareImg {
+  height: 441px;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareImg img {
+  width: 35%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareItemTtl {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 1.9px;
+  text-align: center;
+  margin-top: 39px;
+  line-height: 1.2;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareItemTtl span {
+  display: block;
+  font-weight: normal;
+  letter-spacing: 0px;
+  font-size: 15px;
+  margin-top: 9px;
+}
+.cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareItemPrice {
+  text-align: center;
+  margin-top: 0.8em;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+.cosmeticsTop .lineUp .skinCareList__item .skinCareItemTxt {
+  margin-top: 32px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.cosmeticsTop .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg {
+  position: relative;
+}
+.cosmeticsTop .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg img {
+  width: 66%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cosmeticsTop .lineUp .skinCareList__item:nth-last-of-type(2) .skinCareImg img {
+  width: 37.4%;
+}
+.cosmeticsTop .lineUp .glayBack {
+  position: absolute;
+  background-color: #fcfcfc;
+  height: 820px;
+  width: 100%;
+  z-index: -1;
+  top: 320px;
+}
+.cosmeticsTop .skinCareSet {
+  max-width: 1120px;
+  margin: auto;
+  margin-top: 70px;
+  padding: 0 87px;
+}
+.cosmeticsTop .skinCareSet__link {
+  display: flex;
+  transition: 0.5s ease;
+  height: 231px;
+}
+.cosmeticsTop .skinCareSet__link:hover {
+  opacity: 0.9;
+}
+.cosmeticsTop .skinCareSet__link .setImg {
+  width: 117%;
+}
+.cosmeticsTop .skinCareSet__link .setImg img {
+  width: 100%;
+  height: 231px;
+  object-fit: cover;
+}
+.cosmeticsTop .skinCareSet__link .setContent {
+  padding: 30px 44px;
+  background-color: #fff;
+}
+.cosmeticsTop .skinCareSet__link .setContent__ttl {
+  font-size: 19px;
+  letter-spacing: 1.9px;
+  line-height: 1.2;
+}
+.cosmeticsTop .skinCareSet__link .setContent__subttl {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+.cosmeticsTop .skinCareSet__link .setContent .skinCareItemPrice {
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+}
+.cosmeticsTop .skinCareSet__link .setContent__txt {
+  font-size: 15px;
+  margin-top: 0;
+  line-height: 1.9;
+}
+.cosmeticsTop .skinCareStory {
+  margin-top: 80px;
+  background-color: #254144;
+  padding: 80px 87px;
+  color: #fff;
+}
+.cosmeticsTop .skinCareStory__ttl {
+  font-size: 24px;
+  letter-spacing: 12px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1;
+}
+.cosmeticsTop .skinCareStory__list {
+  max-width: 1120px;
+  margin: auto;
+  margin-top: 80px;
+}
+.cosmeticsTop .skinCareStory__list .storyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 87px;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__content {
+  width: 45.4%;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__content .itemTtl {
+  font-size: 20px;
+  line-height: 1.7;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList {
+  margin-top: 70px;
+  font-size: 15px;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList__child {
+  margin-top: 40px;
+  line-height: 1.9;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList__child:nth-of-type(1) {
+  margin-top: 0;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__img {
+  width: 45.5%;
+}
+.cosmeticsTop .skinCareStory__list .storyItem__img img {
+  width: 100%;
+}
+.cosmeticsTop .skinCareStory__list .storyItem:nth-of-type(1) {
+  margin-top: 0;
+}
+.cosmeticsTop__bottomMv {
+  position: relative;
+  padding-bottom: 56.15%;
+  height: 0;
+  overflow: hidden;
+}
+.cosmeticsTop__bottomMv iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.titleComponent {
+  margin-top: -50px;
+}
+.titleComponent .heading {
+  font-size: 20px;
+  letter-spacing: 12px;
+  font-weight: 600;
+}
+
+.productInfoArea .productTitle {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 22px !important;
+  letter-spacing: 11px;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+}
+.productInfoArea .skinCareTtl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 15px;
+  letter-spacing: 7.5px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+.productInfoArea .skinCareTxt {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-top: 23px;
+}
+
+.skinCareSetDetail {
+  padding-top: 50px;
+  border-top: 1px solid rgba(112, 112, 112, 0.2);
+}
+.skinCareSetDetail__link {
+  display: flex;
+  align-items: flex-start;
+}
+.skinCareSetDetail__link .setImg {
+  width: 36.6%;
+}
+.skinCareSetDetail__link .setImg img {
+  width: 100%;
+  height: 80px;
+}
+.skinCareSetDetail__link .setContent {
+  width: 50%;
+  padding: 31px 67px;
+  text-align: center;
+  background-color: #254144;
+}
+.skinCareSetDetail__link .setContent__txt {
+  font-size: 15px;
+  letter-spacing: 0.75px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.aboutContent__list {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 87px;
+  margin-top: 70px;
+}
+.aboutContent__list .listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 87px;
+}
+.aboutContent__list .listItem__content {
+  width: 45.4%;
+}
+.aboutContent__list .listItem__content .itemTtl {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.aboutContent__list .listItem__content .itemTxtList {
+  margin-top: 77px;
+  font-size: 15px;
+}
+.aboutContent__list .listItem__content .itemTxtList__child {
+  margin-top: 40px;
+  line-height: 1.9;
+}
+.aboutContent__list .listItem__content .itemTxtList__child:nth-of-type(1) {
+  margin-top: 0;
+}
+.aboutContent__list .listItem__img {
+  width: 45.5%;
+}
+.aboutContent__list .listItem__img img {
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+}
+.aboutContent__list .listItem:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.detailContent {
+  color: #fff;
+  background-color: #254144;
+  padding: 80px 87px;
+  margin-top: 95px;
+}
+.detailContent .contentWidth {
+  max-width: 1120px;
+  margin: auto;
+}
+.detailContent__top {
+  display: flex;
+  justify-content: space-between;
+}
+.detailContent__top .texture {
+  width: 45%;
+}
+.detailContent__top .texture__ttl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 24px;
+  letter-spacing: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+.detailContent__top .texture__img {
+  margin-top: 60px;
+}
+.detailContent__top .texture__img img {
+  width: 100%;
+  height: 254px;
+  object-fit: cover;
+}
+.detailContent__top .texture__img.clayImg img {
+  height: 356px;
+}
+.detailContent__top .texture__img {
+  margin-top: 60px;
+}
+.detailContent__top .texture__img img {
+  width: 100%;
+  height: 254px;
+  object-fit: cover;
+}
+.detailContent__top .howTo {
+  width: 45%;
+}
+.detailContent__top .howTo__ttl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 12px;
+  text-align: center;
+}
+.detailContent__top .howTo__content {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 100px 36px;
+  margin-top: 60px;
+}
+.detailContent__top .howTo__content .howToTxt {
+  font-size: 15px;
+  line-height: 1.87;
+}
+.detailContent__top .howTo__content.clayContent {
+  padding: 44px 49px;
+  margin-top: 24px;
+}
+.detailContent__top .howTo__content.serumContent {
+  padding: 46px;
+}
+.detailContent__top .howTo .contentFlex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.detailContent__top .howTo .contentFlex .contentImg {
+  width: 38.6%;
+}
+.detailContent__top .howTo .contentFlex .contentImg img {
+  width: 100%;
+}
+.detailContent__top .howTo .contentFlex .contentTxt {
+  width: 54.7%;
+}
+.detailContent__top .howTo .contentFlex .contentTxt__item {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.detailContent__top .howTo .contentFlex .contentTxt__item:nth-of-type(1) {
+  margin-top: 0;
+}
+.detailContent__bottom {
+  margin-top: 90px;
+}
+.detailContent__bottom .ingredients {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+}
+.detailContent__bottom .ingredients__ttl {
+  font-size: 24px;
+  letter-spacing: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+.detailContent__bottom .ingredients__list {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem {
+  position: relative;
+  width: 28.8%;
+  height: 561px;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem__subttl {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 60px;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem__subttl::after {
+  content: "";
+  display: block;
+  width: 41px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: auto;
+  margin-top: 24px;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem__ttl {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  line-height: 1.45;
+  margin-top: 26px;
+  text-align: center;
+  min-height: 2.9em;
+}
+.detailContent__bottom .ingredients__list .ingredientsItem__txt {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 43px;
+  padding: 0 41px;
+}
+.detailContent__bottom .ingredients__serumlist li:nth-of-type(1) {
+  background: url("serum_ingredients_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.detailContent__bottom .ingredients__serumlist li:nth-of-type(2) {
+  background: url("serum_ingredients_02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.detailContent__bottom .ingredients__serumlist li:nth-of-type(3) {
+  background: url("serum_ingredients_03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.detailContent__bottom .ingredients__oilserumlist li:nth-of-type(1) {
+  background: url("oilserum_ingredients_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.detailContent__bottom .ingredients__oilserumlist li:nth-of-type(2) {
+  background: url("oilserum_ingredients_02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.detailContent__bottom .ingredients__claylist li:nth-of-type(1) {
+  background: url("clay_ingredients_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.detailContent__bottom .ingredients__claylist li:nth-of-type(2) {
+  background: url("clay_ingredients_02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.detailContent__bottom .ingredients__claylist li:nth-of-type(3) {
+  background: url("clay_ingredients_03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.detailContent__bottom .ingredients__oilserumlist .ingredientsItem {
+  width: 46.8%;
+  height: 454px;
+}
+.detailContent__accordion {
+  margin-top: 60px;
+}
+.detailContent__accordion .accordionList__item .cosmeticsTitle {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 55px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.detailContent__accordion .accordionList__item .cosmeticsTitle .arrowIcon {
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+.detailContent__accordion .accordionList__item .cosmeticsTitle .arrowIcon::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-bottom: solid 1px #fff;
+  border-right: solid 1px #fff;
+  transform: rotate(45deg);
+}
+.detailContent__accordion .accordionList__item .cosmeticsTitle.is-open {
+  border-bottom: none;
+}
+.detailContent__accordion .accordionList__item .cosmeticsTitle.is-open .arrowIcon {
+  transform: rotate(-180deg);
+}
+.detailContent__accordion .accordionList__item .cosmeticsContent {
+  display: none;
+  border-bottom: 1px solid #e5e5e5;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 0 20px;
+}
+
+.detailCommonContent .lineUp {
+  position: relative;
+  margin-top: 76px;
+}
+.detailCommonContent .lineUp__ttl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 12px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.detailCommonContent .lineUp .skinCareList {
+  max-width: 1120px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 87px;
+  margin-top: 70px;
+}
+.detailCommonContent .lineUp .skinCareList__item {
+  width: 30%;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink {
+  transition: 0.5s ease;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink:hover {
+  opacity: 0.9;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareImg {
+  height: 441px;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareImg img {
+  width: 35.7%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareItemTtl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 1.9px;
+  text-align: center;
+  margin-top: 39px;
+  line-height: 1.2;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareItemTtl span {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: block;
+  font-weight: normal;
+  letter-spacing: 0px;
+  font-size: 15px;
+  margin-top: 9px;
+}
+.detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareItemPrice {
+  text-align: center;
+  margin-top: 0.8em;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+.detailCommonContent .lineUp .skinCareList__item .skinCareItemTxt {
+  margin-top: 32px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.detailCommonContent .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg {
+  position: relative;
+}
+.detailCommonContent .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg img {
+  width: 66%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.detailCommonContent .lineUp .skinCareList__item:nth-last-of-type(2) .skinCareImg img {
+  width: 37.4%;
+}
+.detailCommonContent .lineUp .glayBack {
+  position: absolute;
+  background-color: #fcfcfc;
+  height: 820px;
+  width: 100%;
+  z-index: -1;
+  top: 320px;
+}
+.detailCommonContent .skinCareSet {
+  max-width: 1120px;
+  margin: auto;
+  margin-top: 70px;
+  padding: 0 87px;
+}
+.detailCommonContent .skinCareSet__link {
+  display: flex;
+  transition: 0.5s ease;
+  height: 231px;
+}
+.detailCommonContent .skinCareSet__link:hover {
+  opacity: 0.9;
+}
+.detailCommonContent .skinCareSet__link .setImg {
+  width: 117%;
+}
+.detailCommonContent .skinCareSet__link .setImg img {
+  width: 100%;
+  height: 231px;
+  object-fit: cover;
+}
+.detailCommonContent .skinCareSet__link .setContent {
+  padding: 30px 44px;
+  background-color: #fff;
+}
+.detailCommonContent .skinCareSet__link .setContent__ttl {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  font-size: 19px;
+  letter-spacing: 1.9px;
+  line-height: 1.2;
+}
+.detailCommonContent .skinCareSet__link .setContent__subttl {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+.detailCommonContent .skinCareSet__link .setContent .skinCareItemPrice {
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+}
+.detailCommonContent .skinCareSet__link .setContent__txt {
+  font-size: 15px;
+  margin-top: 0;
+  line-height: 1.9;
+}
+.detailCommonContent .aboutWabara {
+  text-align: center;
+}
+.detailCommonContent .aboutWabara__link {
+  font-family: proxima-nova, "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 12px;
+  margin-top: 246px;
+  margin-bottom: 95px;
+}
+.detailCommonContent .aboutWabara__link span {
+  font-family: "游ゴシック", YuGothic, Helvetica, ArialMT, Roboto, "Droid Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: block;
+  margin-top: 21px;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.contentComponent {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+#infiniteoptions-container {
+  display: none;
+}
+
+.cosmeticsBtn {
+  display: none !important;
+}
+
+.productShare {
+  display: none;
+}
+
+.webletterComponent {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .cosmeticsTop__mv {
+    background: url("mv_sp.jpeg");
+    height: 90vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  .cosmeticsTop__mv .mvTtl {
+    font-size: 33px;
+    text-align: right;
+    letter-spacing: 2.64px;
+    top: 92px;
+    right: 30px;
+  }
+  .cosmeticsTop__mv .mvTxt {
+    font-size: 14px;
+    top: 176px;
+    right: 30px;
+    letter-spacing: 2.8px;
+  }
+  .cosmeticsTop .lineUp {
+    margin-top: 39px;
+  }
+  .cosmeticsTop .lineUp__ttl {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  .cosmeticsTop .lineUp .skinCareList {
+    flex-direction: column;
+    padding: 0 16px;
+    margin-top: 37px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item {
+    width: 100%;
+    margin-top: 42px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareImg {
+    height: auto;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareImg img {
+    width: 21.1%;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareItemTtl {
+    font-size: 17px;
+    letter-spacing: 1.7px;
+    margin-top: 26px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item .itemLink .skinCareItemTtl span {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-top: 7px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item .skinCareItemTxt {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg {
+    height: 102px;
+  }
+  .cosmeticsTop .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg img {
+    width: 40%;
+  }
+  .cosmeticsTop .lineUp .glayBack {
+    display: none;
+  }
+  .cosmeticsTop .skinCareSet {
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+  .cosmeticsTop .skinCareSet__link {
+    flex-direction: column;
+    height: auto;
+  }
+  .cosmeticsTop .skinCareSet__link .setImg {
+    width: 100%;
+  }
+  .cosmeticsTop .skinCareSet__link .setImg img {
+    height: auto;
+  }
+  .cosmeticsTop .skinCareSet__link .setContent {
+    padding: 0;
+    margin-top: 19px;
+  }
+  .cosmeticsTop .skinCareSet__link .setContent__ttl {
+    font-size: 17px;
+    letter-spacing: 1.7px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .cosmeticsTop .skinCareSet__link .setContent__subttl {
+    font-size: 14px;
+    text-align: center;
+  }
+  .cosmeticsTop .skinCareSet__link .setContent .skinCareItemPrice {
+    text-align: center;
+  }
+  .cosmeticsTop .skinCareSet__link .setContent__txt {
+    font-size: 14px;
+    margin-top: 26px;
+  }
+  .cosmeticsTop .skinCareStory {
+    margin-top: 40px;
+    padding: 40px 16px;
+    color: #fff;
+  }
+  .cosmeticsTop .skinCareStory__ttl {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  .cosmeticsTop .skinCareStory__list {
+    margin-top: 40px;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem:nth-of-type(1) {
+    flex-direction: column-reverse;
+    margin-top: 0;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__content {
+    width: 100%;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__content .itemTtl {
+    font-size: 16px;
+    margin-top: 36px;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList__child {
+    margin-top: 25px;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__content .itemTxtList__child:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem__img {
+    width: 100%;
+  }
+  .cosmeticsTop .skinCareStory__list .storyItem:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .cosmeticsTop__bottomMv {
+    background-position: center;
+  }
+
+  .productInfoArea {
+    padding: 0 16px;
+    width: auto !important;
+  }
+  .productInfoArea .productTitle {
+    font-size: 17px !important;
+    letter-spacing: 8.5px;
+  }
+  .productInfoArea .skinCareTtl {
+    font-size: 11px;
+    letter-spacing: 5.5px;
+    margin-top: 1px;
+  }
+  .productInfoArea .skinCareTxt {
+    margin-top: 16px;
+    font-size: 13px;
+  }
+  .productInfoArea .productDesc {
+    margin-bottom: 25px !important;
+  }
+
+  .skinCareSetDetail {
+    padding-top: 25px;
+  }
+  .skinCareSetDetail__link {
+    display: flex;
+    align-items: flex-start;
+  }
+  .skinCareSetDetail__link .setImg {
+    width: 50%;
+  }
+  .skinCareSetDetail__link .setImg img {
+    width: 100%;
+    height: 50px;
+  }
+  .skinCareSetDetail__link .setContent {
+    width: 80%;
+    padding: 17px 22px;
+    background-color: #254144;
+  }
+  .skinCareSetDetail__link .setContent__txt {
+    font-size: 13px;
+    letter-spacing: 0.55px;
+  }
+
+  .aboutContent__list {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+  .aboutContent__list .listItem {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .aboutContent__list .listItem:nth-of-type(1) {
+    flex-direction: column-reverse;
+  }
+  .aboutContent__list .listItem__content {
+    width: 100%;
+  }
+  .aboutContent__list .listItem__content .itemTtl {
+    font-size: 16px;
+    margin-top: 24px;
+    line-height: 1.2;
+  }
+  .aboutContent__list .listItem__content .itemTxtList {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  .aboutContent__list .listItem__content .itemTxtList__child {
+    margin-top: 40px;
+    line-height: 1.9;
+  }
+  .aboutContent__list .listItem__content .itemTxtList__child:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .aboutContent__list .listItem__img {
+    width: 100%;
+  }
+  .aboutContent__list .listItem__img img {
+    height: 257px;
+  }
+  .aboutContent__list .listItem:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .titleComponent {
+    margin-top: -20px;
+    line-height: 1;
+  }
+
+  .detailContent {
+    padding: 30px 16px;
+    margin-top: 40px;
+  }
+  .detailContent__top {
+    flex-direction: column;
+  }
+  .detailContent__top .texture {
+    width: 100%;
+  }
+  .detailContent__top .texture__ttl {
+    font-size: 20px;
+  }
+  .detailContent__top .texture__img {
+    margin-top: 30px;
+  }
+  .detailContent__top .texture__img img {
+    height: auto;
+  }
+  .detailContent__top .texture__img.clayImg img {
+    height: auto;
+  }
+  .detailContent__top .howTo {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .detailContent__top .howTo__ttl {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  .detailContent__top .howTo__content {
+    padding: 28px 27px;
+    margin-top: 30px;
+  }
+  .detailContent__top .howTo__content.clayContent {
+    padding: 28px 22px;
+  }
+  .detailContent__top .howTo__content.serumContent {
+    padding: 28px 27px;
+  }
+  .detailContent__top .howTo .contentFlex {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .detailContent__top .howTo .contentFlex .contentImg {
+    width: 49.6%;
+    margin: auto;
+  }
+  .detailContent__top .howTo .contentFlex .contentTxt {
+    width: 100%;
+    margin-top: 35px;
+  }
+  .detailContent__bottom {
+    margin-top: 41px;
+  }
+  .detailContent__bottom .ingredients__ttl {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  .detailContent__bottom .ingredients__list {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem {
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+    margin-top: 15px;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem:nth-of-type(2) {
+    background-position: center;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem__subttl {
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    padding-top: 40px;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem__ttl {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-top: 29px;
+  }
+  .detailContent__bottom .ingredients__list .ingredientsItem__txt {
+    margin-top: 30px;
+    padding: 0 26px;
+  }
+  .detailContent__accordion {
+    margin-top: 25px;
+  }
+  .detailContent__accordion .accordionList__item .cosmeticsTitle {
+    min-height: 55px;
+  }
+  .detailContent__accordion .accordionList__item .cosmeticsTitle .arrowIcon {
+    margin-right: 5px;
+  }
+  .detailContent__accordion .accordionList__item .cosmeticsTitle .arrowIcon::after {
+    width: 6px;
+    height: 6px;
+  }
+  .detailContent__accordion .accordionList__item .cosmeticsContent {
+    border-bottom: 1px solid #e5e5e5;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .detailCommonContent .lineUp {
+    margin-top: 39px;
+  }
+  .detailCommonContent .lineUp__ttl {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  .detailCommonContent .lineUp .skinCareList {
+    flex-direction: column;
+    padding: 0 16px;
+    margin-top: 37px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item {
+    width: 100%;
+    margin-top: 42px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item:nth-of-type(1) {
+    margin-top: 0;
+  }
+  .detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareImg {
+    height: auto;
+  }
+  .detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareImg img {
+    width: 21.1%;
+  }
+  .detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareItemTtl {
+    font-size: 17px;
+    letter-spacing: 1.7px;
+    margin-top: 26px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item .itemLink .skinCareItemTtl span {
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-top: 7px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item .skinCareItemTxt {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg {
+    height: 100px;
+  }
+  .detailCommonContent .lineUp .skinCareList__item:nth-last-of-type(1) .skinCareImg img {
+    width: 40%;
+  }
+  .detailCommonContent .lineUp .glayBack {
+    display: none;
+  }
+  .detailCommonContent .skinCareSet {
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+  .detailCommonContent .skinCareSet__link {
+    flex-direction: column;
+    height: auto;
+  }
+  .detailCommonContent .skinCareSet__link .setImg {
+    width: 100%;
+  }
+  .detailCommonContent .skinCareSet__link .setImg img {
+    height: auto;
+  }
+  .detailCommonContent .skinCareSet__link .setContent {
+    padding: 0;
+    margin-top: 19px;
+  }
+  .detailCommonContent .skinCareSet__link .setContent__ttl {
+    font-size: 17px;
+    letter-spacing: 1.7px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .detailCommonContent .skinCareSet__link .setContent__subttl {
+    font-size: 14px;
+    text-align: center;
+  }
+  .detailCommonContent .skinCareSet__link .setContent .skinCareItemPrice {
+    text-align: center;
+  }
+  .detailCommonContent .skinCareSet__link .setContent__txt {
+    font-size: 14px;
+    margin-top: 26px;
+  }
+  .detailCommonContent .aboutWabara__link {
+    font-size: 18px;
+    letter-spacing: 9px;
+    margin-top: 70px;
+    margin-bottom: 0;
+  }
+  .detailCommonContent .aboutWabara__link span {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  br {
+    display: none;
+  }
+}

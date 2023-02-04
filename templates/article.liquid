@@ -1,0 +1,56 @@
+<!-- templates/article.liquid -->
+<div class="articlePage">
+  <article class="articleComponent">
+    {% unless article.image == blank %}
+      <div class="imgSquareFit articleMv">
+        {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img class="lazyload"
+            src="{{ article.image | img_url: '300x300' }}"
+            data-src="{{ img_url }}"
+            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+            data-aspectratio="{{ article.image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ article.title | escape }}">
+      </div>
+    {% endunless %}
+    <header class="articleHeader">
+      <h1 class="articleTitle">{{ article.title }}</h1>
+      <ul class="articleTagList">
+        {%- for tag in article.tags -%}
+          <li>{{ tag }}</li>
+        {%- endfor -%}
+      </ul>
+      <p class="articleDate nova">{{ article.published_at | date: '%Y.%m.%d' }}</p>
+    </header>
+    <div class="stripHtml articleBody">{{ article.content }}</div>
+    <div class="articleShare">
+      <p class="heading nova">Share</p>
+      {% include 'social-sharing-article', share_title: article.title, share_permalink: article.url, share_image: featured_image %}
+    </div>
+  </article>
+
+  <nav class="articlePager nova">
+    {% if blog.next_article or blog.previous_article %}
+      <ul>
+        <li class="prev">
+          {% if blog.previous_article %}
+            <a href="{{ blog.previous_article }}">
+              <span class="arrowIcon">{% render 'icon' with 'arrow-r' %}</span>
+              <span>Prev</span>
+            </a>
+          {% endif %}
+        </li>
+        <li><a href="{{ blog.url }}">Back to list</a></li>
+        <li class="next">
+          {% if blog.next_article %}
+            <a href="{{ blog.next_article }}">
+              <span>Next</span>
+              <span class="arrowIcon">{% render 'icon' with 'arrow-r' %}</span>
+            </a>
+          {% endif %}
+        </li>
+      </ul>
+    {% endif %}
+  </nav>
+
+</div>
